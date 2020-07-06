@@ -119,7 +119,7 @@ var LanguageSwitcher = (function () {
       languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
       li.style.display = "";
       logoWrapper.classList.remove("ls-logo");
-      LanguageSwitcher.removeOverflowHidden(isMobile, body);
+      body.classList.remove("overflow-hidden");
     });
   };
 
