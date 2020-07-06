@@ -46,27 +46,24 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
   closeIconLi.appendChild(CloseIconATag);
   console.log(closeIconLi); // Media Query
-  // let isMobile = window.matchMedia("(max-width: 700px)");
 
-  var isMobile = LanguageSwitcher.checkScreenSize();
+  var isMobile = LanguageSwitcher.checkScreenSize(); // On mobile add Pick a language title and close buttonn to langage switcher
+
+  LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // On mobile on on screen resize add Pick a language title and close buttonn to langage switcher
 
   window.onresize = function () {
     console.log("resize");
-    isMobile = LanguageSwitcher.checkScreenSize(); // if (isMobile.matches) {
+    isMobile = LanguageSwitcher.checkScreenSize();
+    LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
 
-    LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
-    // ul[0].prepend(closeIconLi);
-    // ul[0].prepend(liTag);
-    // }
-  }; // if (isMobile.matches) {
+    if (languageSwitcherWrapper.classList.contains("mobile-languages-switcher")) {
+      LanguageSwitcher.addOverflowHidden(isMobile, body);
+    } // On desktop remove the overflow-hidden class from body element
 
 
-  LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
-  // ul[0].prepend(closeIconLi);
-  // ul[0].prepend(liTag);
-  // }
-  // console.log(isMobile.matches)
-  //Span elemetn with the title "Translate"
+    LanguageSwitcher.removeOverflowHidden(isMobile, body);
+  }; //Span element with the title "Translate"
+
 
   var span = document.createElement("span");
 
@@ -92,36 +89,38 @@ var LanguageSwitcher = function LanguageSwitcher() {
   if (document.querySelector(".wpml-ls-legacy-list-horizontal")) {
     var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
     ul[0].appendChild(li);
-  }
+  } // Hide all languages
+
 
   var allLanguages = document.querySelectorAll(".wpml-ls-item");
 
-  this._hideAllLanguages(allLanguages); // allLanguages.forEach(item => {
-  // if (!item.classList.contains('wpml-ls-current-language')) {
-  //   item.style.display = "none"
-  // }
-  // });
+  this._hideAllLanguages(allLanguages); // Body element
 
 
-  console.log(logoWrapper);
+  var body = document.querySelector("body");
+  console.log(body); // On click reveal language list
+
   aTag.addEventListener('click', function (e) {
     this$1._toggle(allLanguages, currentLanguage);
 
     li.style.display = "none";
     languageSwitcherWrapper.classList.toggle("mobile-languages-switcher");
     logoWrapper.classList.add("ls-logo");
-  });
+    LanguageSwitcher.addOverflowHidden(isMobile, body); // window.onresize = function () {
+    // isMobile = LanguageSwitcher.checkScreenSize();
+    // LanguageSwitcher.toggleOverflowHidden(isMobile, body)
+    // }
+  }); // On mobile On click close language switcher
+
   CloseIconATag.addEventListener('click', function (e) {
     this$1._hideAllLanguages(allLanguages);
 
     languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
     li.style.display = "";
     logoWrapper.classList.remove("ls-logo");
+    LanguageSwitcher.removeOverflowHidden(isMobile, body);
   });
-}; // _checkScreenSize() {
-// 	return window.matchMedia("(max-width: 700px)");
-// }
-
+};
 
 LanguageSwitcher.prototype._toggle = function _toggle(allLanguages, currentLanguage) {
   allLanguages.forEach(function (item) {
@@ -152,6 +151,18 @@ LanguageSwitcher.addCloseIconTitle = function (liTag, closeIconLi, isMobile) {
     if (ul$1[0].contains(liTag)) {
       ul$1[0].removeChild(liTag);
     }
+  }
+};
+
+LanguageSwitcher.addOverflowHidden = function (isMobile, body) {
+  if (isMobile.matches) {
+    body.classList.add("overflow-hidden");
+  }
+};
+
+LanguageSwitcher.removeOverflowHidden = function (isMobile, body) {
+  if (!isMobile.matches) {
+    body.classList.remove("overflow-hidden");
   }
 };
 
