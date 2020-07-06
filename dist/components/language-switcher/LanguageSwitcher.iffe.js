@@ -15,6 +15,7 @@ var LanguageSwitcher = (function () {
     var currentLanguage = document.querySelector("." + this._settings.currentLanguage);
     var languageSwitcherWrapper = document.querySelector("." + this._settings.languageSwitcherWrapper);
     var logoWrapper = document.querySelector("." + this._settings.logoWrapper);
+    console.dir(this);
 
     if (languagesDiv) {
       languagesDiv.classList.add("desktop:w-11/12");
@@ -46,15 +47,27 @@ var LanguageSwitcher = (function () {
 
     closeIconLi.appendChild(CloseIconATag);
     console.log(closeIconLi); // Media Query
+    // let isMobile = window.matchMedia("(max-width: 700px)");
 
-    var isMobile = window.matchMedia("(max-width: 700px)");
+    var isMobile = LanguageSwitcher.checkScreenSize();
 
-    if (isMobile.matches) {
-      var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
-      ul[0].prepend(closeIconLi);
-      ul[0].prepend(liTag);
-    } //Span elemetn with the title "Translate"
+    window.onresize = function () {
+      console.log("resize");
+      isMobile = LanguageSwitcher.checkScreenSize(); // if (isMobile.matches) {
 
+      LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+      // ul[0].prepend(closeIconLi);
+      // ul[0].prepend(liTag);
+      // }
+    }; // if (isMobile.matches) {
+
+
+    LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+    // ul[0].prepend(closeIconLi);
+    // ul[0].prepend(liTag);
+    // }
+    // console.log(isMobile.matches)
+    //Span elemetn with the title "Translate"
 
     var span = document.createElement("span");
 
@@ -78,8 +91,8 @@ var LanguageSwitcher = (function () {
     li.appendChild(aTag);
 
     if (document.querySelector(".wpml-ls-legacy-list-horizontal")) {
-      var ul$1 = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
-      ul$1[0].appendChild(li);
+      var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+      ul[0].appendChild(li);
     }
 
     var allLanguages = document.querySelectorAll(".wpml-ls-item");
@@ -106,7 +119,10 @@ var LanguageSwitcher = (function () {
       li.style.display = "";
       logoWrapper.classList.remove("ls-logo");
     });
-  };
+  }; // _checkScreenSize() {
+  // 	return window.matchMedia("(max-width: 700px)");
+  // }
+
 
   LanguageSwitcher.prototype._toggle = function _toggle(allLanguages, currentLanguage) {
     allLanguages.forEach(function (item) {
@@ -120,6 +136,24 @@ var LanguageSwitcher = (function () {
         item.style.display = "none";
       }
     });
+  };
+
+  LanguageSwitcher.checkScreenSize = function () {
+    return window.matchMedia("(max-width: 700px)");
+  };
+
+  LanguageSwitcher.addCloseIconTitle = function (liTag, closeIconLi, isMobile) {
+    if (isMobile.matches) {
+      var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+      ul[0].prepend(closeIconLi);
+      ul[0].prepend(liTag);
+    } else {
+      var ul$1 = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+
+      if (ul$1[0].contains(liTag)) {
+        ul$1[0].removeChild(liTag);
+      }
+    }
   };
 
   LanguageSwitcher.Selector = "rounded";

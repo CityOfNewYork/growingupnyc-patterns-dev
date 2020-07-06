@@ -21,7 +21,7 @@ class LanguageSwitcher {
     const languageSwitcherWrapper = document.querySelector(`.${this._settings.languageSwitcherWrapper}`);
     const logoWrapper = document.querySelector(`.${this._settings.logoWrapper}`);
 
-
+    console.dir(this)
     if (languagesDiv) {
       languagesDiv.classList.add("desktop:w-11/12");
     }
@@ -58,12 +58,30 @@ class LanguageSwitcher {
     console.log(closeIconLi)
 
     // Media Query
-    let isMobile = window.matchMedia("(max-width: 700px)");
-    if (isMobile.matches) {
-      let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
-      ul[0].prepend(closeIconLi);
-      ul[0].prepend(liTag);
-    }
+    // let isMobile = window.matchMedia("(max-width: 700px)");
+    let isMobile = LanguageSwitcher.checkScreenSize();
+
+    window.onresize = function () {
+      console.log("resize")
+      isMobile = LanguageSwitcher.checkScreenSize();
+      // if (isMobile.matches) {
+        LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile)
+        //   let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+        //   ul[0].prepend(closeIconLi);
+        //   ul[0].prepend(liTag);
+        // }
+      }
+
+      // if (isMobile.matches) {
+        LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile)
+    //   let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+    //   ul[0].prepend(closeIconLi);
+    //   ul[0].prepend(liTag);
+      // }
+    // console.log(isMobile.matches)
+
+
+
 
 
     //Span elemetn with the title "Translate"
@@ -103,7 +121,7 @@ class LanguageSwitcher {
         //   }
         // });
 
-	console.log(logoWrapper)
+  console.log(logoWrapper)
     aTag.addEventListener('click', (e) => {
       this._toggle(allLanguages, currentLanguage);
       li.style.display = "none";
@@ -119,6 +137,10 @@ class LanguageSwitcher {
       logoWrapper.classList.remove("ls-logo")
     })
 }
+
+  // _checkScreenSize() {
+  // 	return window.matchMedia("(max-width: 700px)");
+  // }
 
 
   _toggle(allLanguages, currentLanguage) {
@@ -136,6 +158,25 @@ class LanguageSwitcher {
   }
 
 }
+
+LanguageSwitcher.checkScreenSize = function() {
+  return window.matchMedia("(max-width: 700px)");
+}
+
+LanguageSwitcher.addCloseIconTitle = function(liTag, closeIconLi, isMobile) {
+  if (isMobile.matches) {
+    let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+    ul[0].prepend(closeIconLi);
+    ul[0].prepend(liTag);
+  } else {
+    let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+    if (ul[0].contains(liTag)) {
+      ul[0].removeChild(liTag);
+    }
+  }
+}
+
+
 
 
 LanguageSwitcher.Selector = "rounded"
