@@ -160,16 +160,30 @@
                   border: none;
                   width: 50%;
                   display: inline-block;
-                  text-align: left;
+
+                  @if ($language == 'ar') or ($language == 'ur') {
+                    text-align: right;
+                  } @else {
+                    text-align: left;
+                  }
                 }
                 &:nth-child(2) {
                   border: none;
                   width: 50%;
                   display: inline-block;
-                  text-align: right;
+
+                  @if ($language == 'ar') or ($language == 'ur') {
+                    text-align: left;
+                  } @else {
+                    text-align: right;
+                  }
 
                   a {
-                  text-align: right;
+                    @if ($language == 'ar') or ($language == 'ur') {
+                      text-align: left;
+                    } @else {
+                      text-align: right;
+                    }
 
                   }
                 }
