@@ -195,7 +195,11 @@
 
                 a {
                   padding: 0;
-                  text-align: left;
+                    @if ($language == 'ar') or ($language == 'ur') {
+                      text-align: right;
+                    } @else {
+                      text-align: left;
+                    }
                 }
               }
             }
