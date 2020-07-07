@@ -22,8 +22,8 @@ $font-size-xx-large: map-get($font-sizes, 'font-size-xx-large');
 $font-size-xxx-large-mobile: map-get($font-sizes, 'font-size-xxx-large-mobile');
 $font-size-xxx-large: map-get($font-sizes, 'font-size-xxx-large');
 
-$font-family-text: map-get($fonts, 'text-sans');
-$font-family-display: map-get($fonts, 'display-sans');
+// $font-family-text: map-get($fonts, 'text-sans');
+// $font-family-display: map-get($fonts, 'display-sans');
 
 $font-weight-medium: map-get($font-weights, 'medium');
 $font-weight-semibold: map-get($font-weights, 'semibold');

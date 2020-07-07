@@ -40,9 +40,9 @@ const modules = [
     devModule: true
   },
   {
-    file: './src/scss/site-es.scss',
+    file: './src/scss/site-ru.scss',
     outDir: './dist/styles/',
-    outFile: 'site-es.css',
+    outFile: 'site-ru.css',
     sourceMapEmbed: sass.sourceMapEmbed,
     precision: sass.precision,
     includePaths: sass.includePaths,

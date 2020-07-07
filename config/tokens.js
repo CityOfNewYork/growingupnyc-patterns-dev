@@ -37,14 +37,14 @@ const tokens = {
       '"Helvetica Neue"',
       'sans-serif'
     ],
-    'text-sans': [
-      '"Open Sans"',
-      'sans-serif'
-    ],
-    'display-sans': [
-      '"museo-sans-rounded"',
-      'sans-serif'
-    ],
+    // 'text-sans': [
+    //   '"Open Sans"',
+    //   'sans-serif'
+    // ],
+    // 'display-sans': [
+    //   '"museo-sans-rounded"',
+    //   'sans-serif'
+    // ],
     'icons': [
       '"FontAwesome"',
       'sans-serif'

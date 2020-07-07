@@ -1,2 +1,9 @@
 $language: 'zh-hant';
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+
+$font-family-text: 'ZCOOL XiaoWei', serif;
+$font-family-display: 'ZCOOL QingKe HuangYou', cursive;
+
 @import 'imports';
