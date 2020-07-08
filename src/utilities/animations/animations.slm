@@ -2,12 +2,12 @@
 / Animations
 
 div class="rotating-text"
-  span data-js="rotate-text" class="rotating-text__entry hidden"
+  span data-js="rotate-text" class="rotating-text__entry"
     = "Learning"
-  span data-js="rotate-text" class="rotating-text__entry hidden"
+  span data-js="rotate-text" class="rotating-text__entry"
     = "Playing"
-  span data-js="rotate-text" class="rotating-text__entry hidden"
+  span data-js="rotate-text" class="rotating-text__entry"
     = "Making"
-  span data-js="rotate-text" class="rotating-text__entry hidden"
+  span data-js="rotate-text" class="rotating-text__entry"
     = "Growing"
   span data-js="rotate-controller" id="rotate"

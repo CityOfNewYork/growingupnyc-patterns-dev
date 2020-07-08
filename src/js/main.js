@@ -117,7 +117,7 @@ class main {
   // }
 
   animations() {
-    return new Animations();
+    return Animations();
   }
 
   form() {
