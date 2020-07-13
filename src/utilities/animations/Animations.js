@@ -35,6 +35,8 @@ class Animations {
 
   rotateTerm(terms) {
     const controller = document.querySelector(this._settings.controller)
+    Animations.fadein(controller)
+
 		// console.log(terms[0]);
 
     controller.innerText = terms[0].trim();
@@ -46,17 +48,42 @@ class Animations {
       }
       controller.innerText = terms[i].trim();
 
-      var fadeEffect = setInterval(function () {
-        if (controller.style.opacity > 0) {
-          controller.style.opacity -= 0.1;
-        } else {
-          clearInterval(fadeEffect)
-        }
-      }, 100);
+      Animations.fadeout(controller)
+      // Animations.fadeout(controller)
+      // var fadeEffect = setInterval(function () {
+      //   if (controller.style.opacity > 0) {
+      //     controller.style.opacity -= 0.1;
+      //   } else {
+      //     clearInterval(fadeEffect)
+      //   }
+      // }, 100);
 
       i++;
-    }, 2000);
+    }, 3000);
   }
+}
+
+Animations.fadeout = function(cat) {
+  console.log('fadeout')
+  let fdout = setInterval(function () {
+    if (parseFloat(cat.style.opacity) > 0) {
+      cat.style.opacity = parseFloat(cat.style.opacity) - 0.01;
+    } else {
+      clearInterval(fdout);
+    }
+  }, 10);
+}
+
+
+Animations.fadein = function(cat) {
+  console.log('fadin')
+  let fdin = setInterval(function () {
+    if (parseFloat(cat.style.opacity) < 1) {
+      cat.style.opacity = parseFloat(cat.style.opacity) + 0.01;
+    } else {
+      clearInterval(fdin);
+    }
+  }, 10);
 }
 
 Animations.selector = '[data-js*="rotate-text"]';
