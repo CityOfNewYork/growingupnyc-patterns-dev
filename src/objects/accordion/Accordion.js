@@ -227,5 +227,4 @@ Accordion.reInitialize = function($accordionElem) {
   }
 }
 
-
 export default Accordion;
