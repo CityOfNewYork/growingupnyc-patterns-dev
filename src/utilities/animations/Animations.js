@@ -9,10 +9,10 @@ import forEach from 'lodash/forEach';
 // var quotes = $(".rotating-text__entry");
 // var quoteIndex = -1;
 
-export default function() {
+export default function(className, delayDuration, fadeDuration) {
   var terms = [];
 
-  $('.rotating-text__entry').each(function (i, e) {
+  $(`.${className}`).each(function (i, e) {
     if ($(e).text().trim() !== '') {
       terms.push($(e).text());
     }
@@ -20,7 +20,7 @@ export default function() {
 
 	function rotateTerm() {
     var ct = $("#rotate").data("term") || 0;
-    $("#rotate").data("term", ct === terms.length -1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(2000).fadeOut(200, rotateTerm);
+    $("#rotate").data("term", ct === terms.length -1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(delayDuration).fadeOut(fadeDuration, rotateTerm);
   }
   $(rotateTerm);
 }

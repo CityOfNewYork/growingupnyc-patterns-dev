@@ -10862,9 +10862,9 @@ var Animations = (function () {
 	// var quotes = $(".rotating-text__entry");
 	// var quoteIndex = -1;
 
-	function Animations () {
+	function Animations (className, delayDuration, fadeDuration) {
 	  var terms = [];
-	  jquery('.rotating-text__entry').each(function (i, e) {
+	  jquery("." + className).each(function (i, e) {
 	    if (jquery(e).text().trim() !== '') {
 	      terms.push(jquery(e).text());
 	    }
@@ -10872,7 +10872,7 @@ var Animations = (function () {
 
 	  function rotateTerm() {
 	    var ct = jquery("#rotate").data("term") || 0;
-	    jquery("#rotate").data("term", ct === terms.length - 1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(2000).fadeOut(200, rotateTerm);
+	    jquery("#rotate").data("term", ct === terms.length - 1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(delayDuration).fadeOut(fadeDuration, rotateTerm);
 	  }
 
 	  jquery(rotateTerm);

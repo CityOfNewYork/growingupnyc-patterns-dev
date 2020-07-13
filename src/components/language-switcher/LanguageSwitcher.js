@@ -23,7 +23,7 @@ class LanguageSwitcher {
     const languageSwitcherWrapper = document.querySelector(`.${this._settings.languageSwitcherWrapper}`);
     const logoWrapper = document.querySelector(`.${this._settings.logoWrapper}`);
 
-    console.log("npm-debug")
+    // console.log("npm-debug")
     if (languagesDiv) {
       languagesDiv.classList.add("desktop:w-11/12");
     }
