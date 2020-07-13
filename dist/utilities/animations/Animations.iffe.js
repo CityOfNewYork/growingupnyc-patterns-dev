@@ -10876,7 +10876,26 @@ var Animations = (function () {
 	  }
 
 	  jquery(rotateTerm);
-	}
+	} // export default function showNextQoute() {
+	//     ++quoteIndex;
+	//       quotes.eq(quoteIndex % quotes.length)
+	//         .fadeIn(2000)
+	//         .delay(2000)
+	//         .fadeOut(2000, showNextQoute);
+	// }
+	// class Animations {
+	// 	constructor(){
+	// 		Animations.showNextQoute(quotes, quoteIndex)
+	// 	}
+	// }
+	// Animations.showNextQoute = function(quotes, quoteIndex) {
+	//   ++quoteIndex;
+	//   quotes.eq(quoteIndex % quotes.length)
+	//     .fadeIn(2000)
+	//     .delay(2000)
+	//     .fadeOut(2000, Animations.showNextQoute(quotes, quoteIndex));
+	// }
+	// export default Animations;
 
 	return Animations;
 

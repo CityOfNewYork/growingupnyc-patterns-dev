@@ -3,22 +3,22 @@
 class Reveal {
 
   constructor(elNumber) {
-
     const numElements = isNaN(elNumber) ? 1 : elNumber;
     const content = document.querySelector(Reveal.target);
     const trigger = document.querySelector(Reveal.trigger);
-    
+
     window.onresize = function () {
-      
+
       if (trigger.style.display !== 'none') {
         Reveal.updateHeight(content, trigger, numElements);
       }
     }
+    console.log("npm debug");
 
     if(numElements === content.children.length) {
       trigger.style.display = 'none';
     }
-    
+
     trigger.addEventListener('click', function(e) {
       trigger.style.display = 'none';
       content.style.overflow = 'visible';
