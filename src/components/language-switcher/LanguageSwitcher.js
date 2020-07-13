@@ -13,7 +13,9 @@ class LanguageSwitcher {
       currentLanguage: LanguageSwitcher.currentLanguage,
       languageSwitcherWrapper: LanguageSwitcher.LanguageSwitcherWrapper,
       logoWrapper: LanguageSwitcher.logoWrapper
-    };
+		};
+
+
 
     const switcher = document.querySelector(`.${this._settings.selector}`)
     const languagesDiv = document.querySelector(`.${this._settings.target}`)
@@ -21,7 +23,7 @@ class LanguageSwitcher {
     const languageSwitcherWrapper = document.querySelector(`.${this._settings.languageSwitcherWrapper}`);
     const logoWrapper = document.querySelector(`.${this._settings.logoWrapper}`);
 
-    console.dir(this)
+    console.log("npm-debug")
     if (languagesDiv) {
       languagesDiv.classList.add("desktop:w-11/12");
     }

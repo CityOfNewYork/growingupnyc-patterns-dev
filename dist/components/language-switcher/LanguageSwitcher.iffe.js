@@ -15,7 +15,7 @@ var LanguageSwitcher = (function () {
     var currentLanguage = document.querySelector("." + this._settings.currentLanguage);
     var languageSwitcherWrapper = document.querySelector("." + this._settings.languageSwitcherWrapper);
     var logoWrapper = document.querySelector("." + this._settings.logoWrapper);
-    console.dir(this);
+    console.log("npm-debug");
 
     if (languagesDiv) {
       languagesDiv.classList.add("desktop:w-11/12");
