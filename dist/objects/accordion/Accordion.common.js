@@ -11710,7 +11710,7 @@ Accordion.initialize = function ($accordionElem, multiSelectable) {
    */
 
   $accordionElem.on('DOMNodeInserted', function (event) {
-    reInitialize(jquery(this));
+    Accordion.reInitialize(jquery(this));
   });
 };
 /**
