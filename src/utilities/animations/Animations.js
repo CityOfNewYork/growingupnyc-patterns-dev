@@ -2,18 +2,8 @@
 
 import forEach from 'lodash/forEach';
 
-/**
- * The Animations module
- * @class
- */
 class Animations {
-  /**
-   * @param  {object} settings This could be some configuration options.
-   *                           for the pattern module.
-   * @param  {object} data     This could be a set of data that is needed
-   *                           for the pattern module to render.
-   * @constructor
-   */
+  
   constructor() {
 
     this._settings = {
@@ -35,12 +25,6 @@ class Animations {
   }
 }
 
-/**
- * Rotates text and updates fade class on element
- * @param {*} terms 
- * @param {*} control 
- * @param {*} speed 
- */
 Animations.rotateTerms = function (terms, control, speed) {
   const controller = document.querySelector(control)
 
@@ -59,10 +43,6 @@ Animations.rotateTerms = function (terms, control, speed) {
   }, 3000);
 }
 
-/**
- * Add fadeIn and fadeOut classes to element
- * @param {*} controller 
- */
 Animations.fadeInOut = function(controller){
   controller.classList.add('fadeIn')
 
