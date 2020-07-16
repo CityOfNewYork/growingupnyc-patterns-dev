@@ -17,8 +17,11 @@ const sass = {
     './node_modules/bourbon/core',
     './node_modules/bourbon-neat/core',
     './node_modules/@fortawesome/fontawesome-free/scss',
+    './node_modules/animate.scss',
   ]
 };
+
+
 
 const modules = [
   {
