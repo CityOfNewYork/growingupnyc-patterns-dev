@@ -31,108 +31,48 @@ class Animations {
       }
     })
 
-    const controller = document.querySelector(this._settings.controller)
-    controller.innerHTML = `<span class="animated fadeIn fadeOut">${terms[0].trim()}</span>`;
-    const aTag = document.querySelector(".animated");
-
-
-    setTimeout(function(){
-      aTag.classList.remove("fadeIn");
-    }, 2700)
-    Animations.rotateTerms(terms, controller, this._settings.speed)
+    Animations.rotateTerms(terms, this._settings.controller, this._settings.speed)
   }
 }
 
 /**
- * Rotates strings
- * @param {*} terms
- * @param {*} control
- * @param {*} speed
+ * Rotates text and updates fade class on element
+ * @param {*} terms 
+ * @param {*} control 
+ * @param {*} speed 
  */
+Animations.rotateTerms = function (terms, control, speed) {
+  const controller = document.querySelector(control)
 
- Animations.rotateTerms = function(terms, controller, speed) {
-
+  controller.innerText = terms[0].trim();
+  Animations.fadeInOut(controller);
 
   var i = 1;
   setInterval(function () {
     if (i == terms.length) {
       i = 0;
     }
-    controller.innerHTML = `<span class="animated fadeIn fadeOut">${terms[i].trim()}</span>`;
-    let aTag = document.querySelector(".animated")
-
-
-    setTimeout(function(){
-      aTag.classList.remove("fadeIn");
-    }, 2700)
-
+    controller.innerText = terms[i].trim();
+    Animations.fadeInOut(controller);
 
     i++;
-  }, speed);
+  }, 3000);
 }
 
 /**
- * Fades out element
- * Reference: https://stackoverflow.com/questions/28662893/fade-in-and-fade-out-in-pure-javascript-without-jquery
- * @param {*} elem the element
- * @param {*} speed the speed of the interval
+ * Add fadeIn and fadeOut classes to element
+ * @param {*} controller 
  */
-// Animations.fadeOut = function(elem, speed) {
-//   if (!elem.style.opacity) {
-//     elem.style.opacity = 1;
-//   }
+Animations.fadeInOut = function(controller){
+  controller.classList.add('fadeIn')
 
-//   var outInterval = setInterval(function () {
-//     elem.style.opacity -= 0.02;
-//     if (elem.style.opacity <= 0) {
-//       clearInterval(outInterval);
-//     }
-//   }, speed / 50);
-// }
+  setTimeout(function () {
+    controller.classList.add('fadeOut')
+    controller.classList.remove('fadeIn')
+  }, 2000)
 
-// /**
-//  * Fades in element
-//  * Reference: https://stackoverflow.com/questions/28662893/fade-in-and-fade-out-in-pure-javascript-without-jquery
-//  * @param {*} elem the element
-//  * @param {*} speed the speed of the interval
-//  */
-// Animations.fadeIn = function (elem, speed) {
-//   if (!elem.style.opacity) {
-//     elem.style.opacity = 0;
-//   }
-
-//   var inInterval = setInterval(function () {
-//     elem.style.opacity = Number(elem.style.opacity) + 0.02;
-//     if (elem.style.opacity >= 1)
-//       clearInterval(inInterval);
-//   }, speed / 50);
-// }
-
-// /**
-//  * Fades in and out element
-//  * @param {*} elem the element
-//  * @param {*} speed the speed of the interval
-//  */
-// Animations.fadeInOut = function (elem, speed) {
-//   if (!elem.style.opacity) {
-//     elem.style.opacity = 0;
-//   }
-
-//   var inInterval = setInterval(function () {
-//     elem.style.opacity = Number(elem.style.opacity) + 0.02;
-//     if (elem.style.opacity >= 1){
-//       clearInterval(inInterval);
-//       var outInterval = setInterval(function () {
-//         elem.style.opacity -= 0.02;
-//         if (elem.style.opacity <= 0) {
-//           clearInterval(outInterval);
-//         }
-//       }, speed / 50);
-//     }
-//   }, speed / 50);
-// }
-
-Animations.speed = 3000;
+}
+Animations.speed = 1500;
 
 Animations.selector = '[data-js*="rotate-text"]';
 
