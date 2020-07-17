@@ -117,7 +117,7 @@ class main {
   // }
 
   animations() {
-    return Animations("rotating-text__entry", 2000, 200);
+    return new Animations();
   }
 
   form() {

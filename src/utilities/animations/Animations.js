@@ -1,54 +1,61 @@
 'use strict';
 
-import $ from 'jquery';
 import forEach from 'lodash/forEach';
 
+class Animations {
 
+  constructor() {
 
-// https://codepen.io/motion333/pen/EBBGVM
-// var quotes = $(".rotating-text__entry");
-// var quoteIndex = -1;
+    this._settings = {
+      selector: Animations.selector,
+      controller: Animations.controller,
+      speed: Animations.speed,
+    };
 
-export default function(className, delayDuration, fadeDuration) {
-  var terms = [];
+    const rotating = document.querySelectorAll(this._settings.selector);
+    var terms = [];
 
-  $(`.${className}`).each(function (i, e) {
-    if ($(e).text().trim() !== '') {
-      terms.push($(e).text());
-    }
-  });
+    forEach(rotating, function (term) {
+      if (term.innerText.trim() !== '') {
+        terms.push(term.innerText);
+      }
+    })
 
-	function rotateTerm() {
-    var ct = $("#rotate").data("term") || 0;
-    $("#rotate").data("term", ct === terms.length -1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(delayDuration).fadeOut(fadeDuration, rotateTerm);
+    Animations.rotateTerms(terms, this._settings.controller, this._settings.speed)
   }
-  $(rotateTerm);
 }
 
-// export default function showNextQoute() {
-//     ++quoteIndex;
-//       quotes.eq(quoteIndex % quotes.length)
-//         .fadeIn(2000)
-//         .delay(2000)
-//         .fadeOut(2000, showNextQoute);
-// }
+Animations.rotateTerms = function (terms, control, speed) {
+  const controller = document.querySelector(control)
 
+  controller.innerText = terms[0].trim();
+  Animations.fadeInOut(controller);
 
+  var i = 1;
+  setInterval(function () {
+    if (i == terms.length) {
+      i = 0;
+    }
+    controller.innerText = terms[i].trim();
+    Animations.fadeInOut(controller);
 
+    i++;
+  }, 3000);
+}
 
+Animations.fadeInOut = function(controller){
+  controller.classList.add('fadeIn')
 
-// class Animations {
-// 	constructor(){
-// 		Animations.showNextQoute(quotes, quoteIndex)
-// 	}
-// }
+  setTimeout(function () {
+    controller.classList.add('fadeOut')
+    controller.classList.remove('fadeIn')
+  }, 2000)
 
-// Animations.showNextQoute = function(quotes, quoteIndex) {
-//   ++quoteIndex;
-//   quotes.eq(quoteIndex % quotes.length)
-//     .fadeIn(2000)
-//     .delay(2000)
-//     .fadeOut(2000, Animations.showNextQoute(quotes, quoteIndex));
-// }
+}
+Animations.speed = 1500;
 
-// export default Animations;
+Animations.selector = '[data-js*="rotate-text"]';
+
+Animations.controller = '[data-js*="rotate-controller"]';
+
+export default Animations;
