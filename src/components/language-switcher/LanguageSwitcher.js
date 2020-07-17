@@ -54,7 +54,7 @@ class LanguageSwitcher {
 
 
 
-    // CloseIconATag.textContent = "Close";
+
 
     closeIconLi.appendChild(CloseIconATag)
     console.log(closeIconLi)
@@ -79,7 +79,6 @@ class LanguageSwitcher {
       // On desktop remove the overflow-hidden class from body element
       LanguageSwitcher.removeOverflowHidden(isMobile, body);
     }
-
 
     //Span element with the title "Translate"
     const span = document.createElement("span");
