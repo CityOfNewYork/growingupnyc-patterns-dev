@@ -18,12 +18,15 @@ class AlertBanner {
       cookieName: AlertBanner.cookieName
     };
     
-    
-    control.addEventListener('click', (event) => {
-      this.assignCookie(el);
-    });
-    
-    this.checkAlertCookie(el);
+    if (control != null) {
+      control.addEventListener('click', (event) => {
+        this.assignCookie(el);
+      });
+      
+      this.checkAlertCookie(el);
+    } else {
+      return;
+    }
   }
   
   checkAlertCookie(element){

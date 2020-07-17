@@ -391,6 +391,24 @@ const modules = [
         strict: rollup.strict
       }
     ]
+  },
+  {
+    input: './src/objects/alert-banner/AlertBanner.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'LanguageSwitcher',
+        file: `./dist/objects/alert-banner/AlertBanner.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'LanguageSwitcher',
+        file: `./dist/objects/alert-banner/AlertBanner.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
   }
 ];
 
