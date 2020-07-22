@@ -8,6 +8,8 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
 
   div class="tablet:flex-1 w-full mb-10"
     h3 = 'Elements'
+    a href="base" class="block"
+      = 'Base'
     a href="button" class="block"
       = 'Button'
     a href="divider" class="block"
@@ -32,32 +34,28 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
       = 'Sticker'
     a href="table" class="block"
       = 'table'
-    a href="inline-list" class="block"
-      = 'Inline List'
 
   div class="tablet:flex-1 w-full mb-10"
     h3
       = 'Components'
-    a href="age-guide" class="block"
-      = 'Age Guide'
+    a href="age-guide-card" class="block"
+      = 'Age Guide Card'
     a href="arrow-pager" class="block"
-      = 'arrow pager'
-    a href="base" class="block"
-      = 'Base'
+      = 'Arrow pager'
     a href="block-list" class="block"
       = 'Block List'
     a href="card" class="block"
       = 'Card'
     a href="details-list" class="block"
       = 'Details List'
-    a href="fonts" class="block"
-      = 'Fonts'
     a href="footer" class="block"
       = 'Footer'
+    a href="form" class="block"
+      = 'Form'
     a href="hero" class="block"
-      = 'hero'
+      = 'Hero'
     a href="language-switcher" class="block"
-      = 'language switcher'
+      = 'Language switcher'
     a href="list-box" class="block"
       = 'List Box'
     a href="share" class="block"
@@ -67,9 +65,11 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
     a href="side-navigation" class="block"
       = 'Side Navigation'
     a href="tip" class="block"
-      = 'tip'
+      = 'Tip'
+    a href="tip-card" class="block"
+      = 'Tip Card'
     a href="tout" class="block"
-      = 'tout'
+      = 'Tout'
 
   div class="tablet:flex-1 w-full mb-10"
     h3
@@ -77,29 +77,29 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
     a href="accordion" class="block"
       = 'Accordion'
     a href="alert-banner" class="block"
-      = 'alert banner'
-    a href="animations" class="block"
-      = 'animations'
+      = 'Alert banner'
     a href="article" class="block"
-      = 'article'
+      = 'Article'
     a href="container" class="block"
       = 'Container'
     a href="content" class="block"
       = 'Content'
     a href="feature-photo" class="block"
-      = 'feature photo'
+      = 'Feature photo'
     a href="flex-embed" class="block"
-      = 'flex embed'
+      = 'Flex embed'
+    a href="inline-list" class="block"
+      = 'Inline List'
     a href="navigation" class="block"
       = 'Navigation'
     a href="newsletter" class="block"
       = 'Newsletter'
     a href="overlay" class="block"
-      = 'overlay'
+      = 'Overlay'
     a href="search" class="block"
       = 'Search'
     a href="static-column" class="block"
-      = 'static column'
+      = 'Static column'
 
   div class="tablet:flex-1 w-full mb-10"
     h3
@@ -118,6 +118,10 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
       = 'Form Effects'
     a href="offcanvas" class="block"
       = 'Offcanvas'
+    a href="reveal" class="block"
+      = 'Reveal'
+    a href="section-highlighter" class="block"
+      = 'Section Highlighter'
     a href="sticky" class="block"
       = 'sticky'
     a href="tailwind" class="block"

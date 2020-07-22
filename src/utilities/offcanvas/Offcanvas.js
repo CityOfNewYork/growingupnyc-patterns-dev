@@ -1,7 +1,7 @@
 'use strict';
 
 import forEach from 'lodash/forEach';
-import { xor } from 'lodash';
+
 if(window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
@@ -18,17 +18,17 @@ class Offcanvas {
    * @constructor
    */
   constructor(settings) {
+		this._settings = {
+			sideSelector: (settings.sideSelector) ? settings.sideSelector : Offcanvas.side,
+			nav: Offcanvas.nav,
+			mainOff: Offcanvas.mainOff,
+			offCanvas: Offcanvas.offCanvas
+		};
 
+		const nav = document.querySelector(`.${this._settings.nav}`)
+		const mainOff = document.querySelector(`.${this._settings.mainOff}`)
 
-    const body = document.querySelector('body');
-    const nav = document.querySelector('.js-offcanvas__side')
-    const mainOff = document.querySelector('.js-offcanvas__main')
-
-
-    this._settings = {
-      sideSelector: (settings.sideSelector) ? settings.sideSelector : Offcanvas.side
-    };
-
+		// Depending on the argument passed toggle element class
     let openClass = "";
     if (this._settings.sideSelector === 'left') {
       openClass = 'is-open-left';
@@ -41,13 +41,10 @@ class Offcanvas {
         mainOff.classList.toggle("o-offcanvas__main-down")
     }
 
-
-
-    const offCanvas = document.querySelectorAll('.js-offcanvas');
+		// Offcanvas element
+    const offCanvas = document.querySelectorAll(`.${this._settings.offCanvas}`);
 
     if (offCanvas) {
-      // console.log(offCanvas)
-      // debugger
       forEach(offCanvas, function (offCanvasElem) {
         const offCanvasSide = offCanvasElem.querySelector('.js-offcanvas__side');
 
@@ -140,6 +137,10 @@ class Offcanvas {
   };
 }
 Offcanvas.side = "right";
+Offcanvas.nav = "js-offcanvas__side";
+Offcanvas.mainOff = "js-offcanvas__main";
+Offcanvas.offCanvas = "js-offcanvas";
+
 
 Offcanvas.dataset = function (elem, attr) {
   if (typeof elem.dataset === 'undefined') {

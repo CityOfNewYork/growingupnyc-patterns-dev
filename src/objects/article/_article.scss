@@ -2,86 +2,38 @@
  * Article
  */
 
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
-
-// Declarations
-// .o-article { }
-
 .o-article {
   margin-left: -#{rem-calc($outer-gutter)};
   margin-right: -#{rem-calc($outer-gutter)};
 
-  // @include grid-media($bp-small) {
-  //   margin-left: -#{rem-calc($outer-gutter-small)};
-  //   margin-right: -#{rem-calc($outer-gutter-small)};
-  // }
 	@media screen and (min-width: $screen-mobile) {
     margin-left: -#{rem-calc($outer-gutter-small)};
     margin-right: -#{rem-calc($outer-gutter-small)};
 	  }
 
-  // @include grid-media($bp-large) {
-  //   margin-left: 0;
-  //   margin-right: 0;
-  //   display: block;
-  //   float: left;
-  //   margin-right: 0;
-  //   width: 65%;
-
-  //   // @include span-columns(8);
-  //   @include grid-column(8);
-  //   // @include omega;
-  // }
 	@media screen and (min-width: $screen-desktop) {
     margin-left: 0;
     margin-right: 0;
     display: block;
-    // float: left;
     margin-right: 0;
-    // width: 65%;
 	  }
 }
 
 .o-article-sidebar {
   margin-left: -#{rem-calc($outer-gutter)};
   margin-right: -#{rem-calc($outer-gutter)};
-  // width: 100%;
-  // @include grid-media($bp-small) {
-  //   margin-left: -#{rem-calc($outer-gutter-small)};
-  //   margin-right: -#{rem-calc($outer-gutter-small)};
-  //   // margin-left: 49px;
-  // }
+
 	@media screen and (min-width: $screen-mobile) {
     margin-left: -#{rem-calc($outer-gutter-small)};
     margin-right: -#{rem-calc($outer-gutter-small)};
 	}
 
-  // @include grid-media($bp-large) {
-  //   display: block;
-  //   float: left;
-  //   margin-left: 0;
-  //   margin-right: 0;
-  //   width: 35%;
-  //   // @include span-columns(4);
-  //   // @include grid-column(4);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     display: block;
-    // float: left;
     margin-left: 0;
     margin-right: 0;
-		// margin-right: 3.125%;
-    // width: 35%;
+
 		@if ($language == 'ar') or ($language == 'ur') {
-      // margin-right: 0;
 		  margin-left: 3.125%;
     } @else {
 		  margin-right: 3.125%;
@@ -90,10 +42,6 @@
 }
 
 .o-article--shift {
-  // @include grid-media($bp-large) {
-  //   margin-left: 35%;
-  // }
 	@media screen and (min-width: $screen-desktop) {
-    // margin-left: 35%;
   }
 }

@@ -5,11 +5,9 @@ import Cookies from 'js-cookie/src/js.cookie.js';
 class AlertBanner {
   constructor(expirationDaysParam) {
     const expirationDays = expirationDaysParam || AlertBanner.expiration;
-    const el = document.querySelector(AlertBanner.selector);
-    const control = document.querySelector(AlertBanner.controller);
-    
+
     this._settings = {
-      selector: AlertBanner.selector,
+			selector: AlertBanner.selector,
       controller: AlertBanner.controller,
       inactiveClass: AlertBanner.inactiveClass,
       activeClass: AlertBanner.activeClass,
@@ -17,17 +15,26 @@ class AlertBanner {
       remover: AlertBanner.remover,
       cookieName: AlertBanner.cookieName
     };
-    
-    
-    control.addEventListener('click', (event) => {
-      this.assignCookie(el);
-    });
-    
-    this.checkAlertCookie(el);
+
+		const el = document.querySelector(this._settings.selector);
+		const control = document.querySelector(this._settings.controller);
+
+		if (control != null) {
+      control.addEventListener('click', (event) => {
+        this.assignCookie(el);
+      });
+
+      this.checkAlertCookie(el);
+    } else {
+      return;
+    };
   }
-  
+
+	/**
+	 * Checks if cookie exists
+	 * @param {element} element
+	 */
   checkAlertCookie(element){
-    // Cookies.remove(element.dataset.alert)
     if (Cookies.get(element.dataset.alert)) {
       if (element.classList.contains(this._settings.activeClass)){
         element.classList.toggle(this._settings.activeClass)
@@ -36,14 +43,24 @@ class AlertBanner {
       element.classList.toggle(this._settings.inactiveClass)
       element.classList.toggle(this._settings.activeClass)
     }
-  }
+	}
+
+	/**
+	 * Sets cookie and applies class to the element
+	 * @param {element} element
+	 */
   assignCookie(element){
     if(element.classList.contains(this._settings.activeClass)){
       element.classList.toggle(this._settings.inactiveClass)
       element.classList.toggle(this._settings.activeClass)
       Cookies.set(element.dataset.alert, 'dismissed', { expires: this._settings.expiration });
     }
-  }
+	}
+
+	/**
+	 * On click removed cookie, used in the patterns library for demo purposes
+	 * @param {string} cookieName
+	 */
   removeCookie(cookieName){
     const cookieRemoverButton = document.getElementById(AlertBanner.remover)
     cookieRemoverButton.addEventListener('click', (event) => {
@@ -51,7 +68,7 @@ class AlertBanner {
       location.reload();
     });
   }
-  
+
 }
 
 AlertBanner.selector = '[data-js*="alert-banner"]';

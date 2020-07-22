@@ -971,10 +971,7 @@ var FormEffects = (function () {
       forEach_1(checkboxes, function (checkbox) {
         checkbox.checked = false;
       });
-    } // debugger
-    // this.data = data;
-    // this.settings = settings;
-
+    }
   };
 
   FormEffects.handleFocus = function (event) {

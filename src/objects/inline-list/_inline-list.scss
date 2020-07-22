@@ -2,19 +2,7 @@
  * Inline-list
  */
 
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
 @import 'config/media';
-
-// Declarations
-// .o-inline-list { }
 
 .o-inline {
   display: block;
@@ -35,19 +23,11 @@ ol.o-inline {
     margin-left: 0;
   }
 
-  // @include grid-media($bp-small) {
-  //   margin-left: rem-calc(16);
-  // }
 	@media screen and (min-width: $screen-mobile) {
     margin-left: rem-calc(16);
   }
 
-
-  // @include grid-media($bp-large) {
-  //   margin-left: rem-calc(56);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     margin-left: rem-calc(56);
   }
-
 }

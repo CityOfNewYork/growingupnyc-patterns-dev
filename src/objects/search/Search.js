@@ -5,7 +5,6 @@ import MissPlete from 'miss-plete-js';
 class Search {
   constructor() {
 	}
-
   /**
    * Initializes the module
    */

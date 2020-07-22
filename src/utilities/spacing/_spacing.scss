@@ -10,25 +10,13 @@
 .u-lg-gutter {
   margin-bottom: #{$outer-gutter}px;
 
-  // @include media($bp-small) {
-  //   margin-bottom: #{$outer-gutter-small}px;
-  // }
-
   @media screen and (min-width: $screen-mobile) {
     margin-bottom: #{$outer-gutter-small}px;
   }
 
-  // @include media($bp-medium) {
-  //   margin-bottom: #{$outer-gutter-medium}px;
-  // }
-
   @media screen and (min-width: $screen-tablet) {
     margin-bottom: #{$outer-gutter-medium}px;
   }
-
-  // @include media($bp-large) {
-  //   margin-bottom: #{$outer-gutter-large}px;
-  // }
 
   @media screen and (min-width: $screen-desktop) {
     margin-bottom: #{$outer-gutter-large}px;
@@ -43,10 +31,6 @@
 .u-top-spacing {
   padding-top: 45px;
 
-  // @include media($bp-large) {
-  //   padding-top: 60px;
-  // }
-
   @media screen and (min-width: $screen-desktop) {
     padding-top: 60px;
   }
@@ -55,17 +39,9 @@
 .u-top-spacing-small {
   padding-top: 30px;
 
-  // @include media($bp-small) {
-  //   padding-top: 35px;
-  // }
-
   @media screen and (min-width: $screen-mobile) {
     padding-top: 35px;
   }
-
-  // @include media($bp-large) {
-  //   padding-top: #{$outer-gutter-large}px;
-  // }
 
   @media screen and (min-width: $screen-desktop) {
     padding-top: #{$outer-gutter-large}px;
@@ -76,9 +52,6 @@
 .u-bottom-spacing {
   padding-bottom: 45px;
 
-  // @include media($bp-large) {
-  //   padding-bottom: 60px;
-  // }
 
   @media screen and (min-width: $screen-desktop) {
     padding-bottom: 45px;
@@ -88,17 +61,9 @@
 .u-bottom-spacing-small {
   padding-bottom: 30px;
 
-  // @include media($bp-small) {
-  //   padding-bottom: 35px;
-  // }
-
   @media screen and (min-width: $screen-mobile) {
     padding-bottom: 35px;
   }
-
-  // @include media($bp-large) {
-  //   padding-bottom: #{$outer-gutter-large}px;
-  // }
 
   @media screen and (min-width: $screen-desktop) {
     padding-bottom: #{$outer-gutter-large}px;

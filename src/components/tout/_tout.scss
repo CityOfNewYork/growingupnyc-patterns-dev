@@ -1,34 +1,6 @@
 /**
  * Tout
  */
-
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
-
-// Declarations
-// .c-tout { }
-
-// Content Blocks
-//
-
-// Content Touts
-//
-// Displays post previews
-//
-// markup:
-// <div class="c-content-tout">
-//   <a class="c-content-tout__title">Post Title</a>
-//   <p class="c-content-tout__subtitle">Subtitle</p>
-//   <a class="c-content-tout__link">Link</a>
-// </div>
-//
 .tout {
   color: $color-text-weak;
   @include font-size-small;
@@ -55,9 +27,6 @@
   margin: rem-calc(7 0 3);
   text-transform: uppercase;
 
-  // @include grid-media($bp-small) {
-  //   margin: rem-calc(10 0 1);
-  // }
 	@media screen and (min-width: $screen-mobile) {
     margin: rem-calc(10 0 1);
   }
@@ -67,9 +36,6 @@
     top: 2px;
     vertical-align: top;
 
-    // @include grid-media($bp-small) {
-    //   top: 3px;
-    // }
 		@media screen and (min-width: $screen-mobile) {
 			top: 3px;
 		}

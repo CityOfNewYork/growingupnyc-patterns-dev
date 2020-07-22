@@ -3,11 +3,8 @@
   display: block;
   justify-content: center;
 
-  // @include media($bp-small) {
-  //   display: flex;
-  //   align-items: baseline;
-  // }
-	@media screen and (min-width: $screen-mobile) {
+
+  @media screen and (min-width: $screen-mobile) {
     display: flex;
     align-items: baseline;
   }
@@ -20,24 +17,20 @@
 
   button {
     margin-top: rem-calc(20);
-    // @include media($bp-medium) {
-    //   margin-top: 0;
-    // }
-		@media screen and (min-width: $screen-tablet) {
-			margin-top: 0;
-		}
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-top: 0;
+    }
   }
 
   &--full {
     max-width: 100%;
     button {
       margin-top: rem-calc(20);
-      // @include media($bp-medium) {
-      //   margin-top: 0;
-      // }
-			@media screen and (min-width: $screen-tablet) {
+
+      @media screen and (min-width: $screen-tablet) {
         margin-top: 0;
-  		}
+      }
     }
   }
 }
@@ -52,17 +45,11 @@
   font-size: rem-calc(15);
   margin-right: rem-calc(10) !important;
 
-  // @include media($bp-medium) {
-  //   width: rem-calc(240);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     width: rem-calc(240);
   }
 
-  // @include media($bp-xlarge) {
-  //   width: rem-calc(352);
-  // }
-	@media screen and (min-width: $screen-desktop-large) {
+  @media screen and (min-width: $screen-desktop-large) {
     width: rem-calc(352);
   }
 }
@@ -76,10 +63,8 @@
 
 .sms-form__submit {
   min-width: rem-calc(180);
-  // @include media($bp-medium) {
-  //   min-width: rem-calc(194);
-  // }
-	@media screen and (min-width: $screen-desktop-large) {
+
+  @media screen and (min-width: $screen-desktop-large) {
     min-width: rem-calc(194);
   }
 }
@@ -94,10 +79,6 @@
 }
 
 //Succes
-// .success-js .sms-form-wrapper {
-//   max-width: 610px;
-// }
-
 .g-recaptcha,
 .error-message,
 .c-validation {

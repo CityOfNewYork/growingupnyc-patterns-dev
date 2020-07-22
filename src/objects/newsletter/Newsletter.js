@@ -16,12 +16,6 @@ class Newsletter {
   constructor(mailchimpUrl) {
 		const url = mailchimpUrl || Newsletter.url
 
-    // this.data = data;
-    // this.settings = {
-    //   // user: settings.user ? settings.user : Newsletter.user,
-    //   // id: settings.id ? settings.id : Newsletter.id
-    // };
-
     $('#mc-embedded-subscribe:button[type="submit"]').click(function(event){
       event.preventDefault();
 
@@ -224,8 +218,6 @@ Newsletter.zipcodes = [
 ]
 
 Newsletter.url = "https://cityofnewyork.us18.list-manage.com/subscribe/post-json?u=d04b7b607bddbd338b416fa89&amp;id=a02dc5e68b&c=?"
-
-
 
 
 

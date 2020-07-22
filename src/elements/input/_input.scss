@@ -29,9 +29,6 @@ input[type="search"].form-field {
   line-height: normal;
   padding: rem-calc(10 75 10 20);
 
-  // @include grid-media($bp-medium) {
-  //   padding: rem-calc(20 95 20 25);
-  // }
   @media screen and (min-width: $screen-tablet) {
     padding: rem-calc(20 95 20 25);
   }
@@ -39,9 +36,6 @@ input[type="search"].form-field {
 
 .input--full-width {
   width: 100%;
-  // @include grid-media($bp-medium) {
-  //   width: rem-calc(240);
-  // }
 }
 
 
@@ -54,17 +48,12 @@ input[type="search"].form-field {
   display: block;
   color: $color-primary;
   cursor: pointer;
-  // height: rem-calc(20);
   height: 100%;
-  // margin-top: rem-calc(-10);
   position: absolute;
   right: rem-calc(15);
   top: 0;
   width: rem-calc(20);
 
-  // @include grid-media($bp-medium) {
-  //   right: rem-calc(25);
-  // }
   @media screen and (min-width: $screen-tablet) {
     right: rem-calc(25);
   }
@@ -82,9 +71,6 @@ input[type="search"].form-field {
   + .input__icon {
     right: rem-calc(50);
 
-    // @include grid-media($bp-medium) {
-    //   right: rem-calc(55);
-    // }
     @media screen and (min-width: $screen-tablet) {
       right: rem-calc(55);
     }
@@ -109,19 +95,8 @@ input[type="search"].form-field {
 
 // Large
 .input__icon--large {
-  // height: rem-calc(20);
-  // margin-top: rem-calc(-15);
   width: rem-calc(20);
 
-  // @include grid-media($bp-medium) {
-  //   // height: rem-calc(30);
-  //   // margin-top: rem-calc(-15);
-  //   width: rem-calc(30);
-
-  //   + .input__icon--large {
-  //     right: rem-calc(65);
-  //   }
-  // }
   @media screen and (min-width: $screen-tablet) {
       width: rem-calc(30);
 
@@ -130,40 +105,4 @@ input[type="search"].form-field {
       }
     }
 }
-
-
-
-
-
-
-// Signup Form Field
-//
-// .is-error - Error state
-//
-// Text input field
-// .signup-form__field {
-//   border: 2px solid transparent;
-//   width: 100%;
-
-//   &:focus {
-//     border-color: $dark-gray;
-//     outline: none;
-//   }
-
-//   &.is-error {
-//     border-color: $color-error;
-//   }
-// }
-
-// .signup-form__field-blue {
-//   @extend .signup-form__field;
-//   border: 2px solid $bright-blue;
-// }
-
-// .signup-form__field-purple {
-//   @extend .signup-form__field;
-//   border: 2px solid $purple;
-// }
-
-// Signup Form Label
 

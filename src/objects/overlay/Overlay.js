@@ -11,8 +11,6 @@ class Overlay {
    * @constructor
    */
   constructor() {
-    // this.data = data;
-    // this.settings = settings;
 
     const overlay = document.querySelectorAll('.js-overlay');
     if (overlay) {

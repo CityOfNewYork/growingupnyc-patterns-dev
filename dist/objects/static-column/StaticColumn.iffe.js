@@ -929,14 +929,10 @@ var StaticColumn = (function () {
   var forEach_1 = forEach;
 
   var StaticColumn = function StaticColumn() {
-    // const el = document.querySelector(AlertBanner.selector);
-    // const control = document.querySelector(AlertBanner.controller);
-    var stickyContent = document.querySelectorAll('.js-static');
-    // selector: StaticColumn.selector,
-    // notStickyClass: StaticColumn.notStickyClass,
-    // bottomClass: StaticColumn.bottomClass
-    // };
-
+    this._settings = {
+      selector: StaticColumn.selector
+    };
+    var stickyContent = document.querySelectorAll("." + this._settings.selector);
     /**
     * Calculates the window position and sets the appropriate class on the element
     * @param {object} stickyContentElem - DOM node that should be stickied
@@ -944,6 +940,12 @@ var StaticColumn = (function () {
 
     this.assignStickyFeature(stickyContent);
   };
+  /**
+   * Iterate over elemets containing the class 'js-static'.
+   * On page load, screenResize and scroll events, calls StaticColumn.calcWindowPos function .
+   * @param {elements} stickyContent Element in chich the sticky effect will be applied
+   */
+
 
   StaticColumn.prototype.assignStickyFeature = function assignStickyFeature(stickyContent) {
     if (stickyContent) {
@@ -970,6 +972,11 @@ var StaticColumn = (function () {
       });
     }
   };
+  /**
+   * depending on elements postion in the page add and remove classes
+   * @param {element} stickyContentElem an element with the class name 'js-static'
+   */
+
 
   StaticColumn.calcWindowPos = function (stickyContentElem) {
     var elemTop = stickyContentElem.parentElement.getBoundingClientRect().top;

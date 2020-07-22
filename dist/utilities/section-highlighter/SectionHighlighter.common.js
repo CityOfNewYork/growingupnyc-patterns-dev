@@ -10581,14 +10581,10 @@ return jQuery;
 // * @see https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section
 
 var SectionHighlighter = function SectionHighlighter() {
-  this._settings = {// selector: Animations.selector,
-    // controller: Animations.controller,
-  };
   var $navigationLinks = jquery('.js-section-set > li > a');
   var $sections = jquery("section");
   var $sectionsReversed = jquery(jquery("section").get().reverse());
-  var sectionIdTonavigationLink = {}; //var eTop = $('#free-day-trips').offset().top;
-
+  var sectionIdTonavigationLink = {};
   $sections.each(function () {
     var section = jquery(this); // fallback for acf_fc_layout sections
 
@@ -10609,12 +10605,8 @@ var SectionHighlighter = function SectionHighlighter() {
 SectionHighlighter.optimized = function ($navigationLinks, $sectionsReversed, sectionIdTonavigationLink) {
   var scrollPosition = jquery(window).scrollTop();
   $sectionsReversed.each(function () {
-    var currentSection = jquery(this); // console.log(currentSection)
-
-    var sectionTop = currentSection.offset().top; // if(currentSection.is('section:first-child') && sectionTop > scrollPosition){
-    //   console.log('scrollPosition', scrollPosition);
-    //   console.log('sectionTop', sectionTop);
-    // }
+    var currentSection = jquery(this);
+    var sectionTop = currentSection.offset().top;
 
     if (scrollPosition >= sectionTop || currentSection.is('section:first-child') && sectionTop > scrollPosition) {
       var id = currentSection.attr('data-id');
@@ -10628,6 +10620,6 @@ SectionHighlighter.optimized = function ($navigationLinks, $sectionsReversed, se
       return false;
     }
   });
-}; // Animations.controller = '[data-js*="rotate-controller"]';
+};
 
 module.exports = SectionHighlighter;

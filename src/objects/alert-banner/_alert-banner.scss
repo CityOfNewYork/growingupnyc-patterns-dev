@@ -1,36 +1,6 @@
 /**
  * Alert-banner
  */
-
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
-
-// Declarations
-// .o-alert-banner { }
-
-// Alert Banner
-//
-// markup:
-// <div class="c-alert is-open">
-//   <div class="c-alert__banner">
-//     <button type="button" class="c-alert__button"><svg role="img" class="icon--small"><title>Close</title><use xlink:href="assets/img/svg-sprite.svg#close"></use></svg></button>
-//     <div class="o-container">
-//       <p>Lorem ipsum set dolor amet</p>
-//     </div>
-//   </div>
-// </div>
-//
-// .o-alert {
-//   display: none;
-// }
-
 // .js .o-alert.is-open {
 .o-alert-banner {
   background: $color-white;
@@ -49,7 +19,6 @@
 }
 
 // Inner banner content
-// .o-alert__banner {
 .o-alert-banner__content {
   background: $color-dark-gray-dark;
   border-radius: 3px 3px 0 0;

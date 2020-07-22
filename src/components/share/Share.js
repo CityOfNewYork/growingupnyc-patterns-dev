@@ -4,8 +4,7 @@
 import $ from 'jquery';
 import Cookies from 'js-cookie';
 import Utility from './utility.js';
-// import Cleave from 'cleave.js/dist/cleave.min';
-// import 'cleave.js/dist/addons/cleave-phone.us';
+
 
 /* eslint no-undef: "off" */
 // const Variables = require('../../variables.json');
@@ -61,10 +60,6 @@ class ShareForm {
 
     let selected = this._el.querySelector('input[type="tel"]');
 			console.log(selected);
-
-    // if (selected) {
-    //   this._maskPhone(selected);
-    // }
 
     $(`.${ShareForm.CssClass.SHOW_DISCLAIMER}`)
       .on('focus', () => {
@@ -129,17 +124,7 @@ class ShareForm {
    * @param  {HTMLElement} input the "tel" input to mask
    * @return {constructor}       the input mask
    */
-  // _maskPhone(input) {
-	// 	console.log(input);
 
-  //   let cleave = new Cleave(input, {
-  //     phone: true,
-  //     phoneRegionCode: 'us',
-  //     delimiter: '-'
-  //   });
-  //   input.cleave = cleave;
-  //   return input;
-  // }
 
   /**
    * Toggles the disclaimer visibility

@@ -32,7 +32,6 @@
 
 .c-list-box--secondary .c-list-box__item {
   margin-bottom: rem-calc(2);
-
 }
 
 // List Box Heading
@@ -63,12 +62,8 @@
 }
 
 .c-list-box--primary .c-list-box__heading {
-  // @include text-uppercase;
   padding: rem-calc(12 20);
 
-  // @include grid-media($bp-large) {
-  //   padding: rem-calc(28 40);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     padding: rem-calc(28 40);
   }
@@ -119,9 +114,6 @@
 }
 
 .c-list-box--quaternary .c-list-box__heading {
-  // @include grid-media($bp-large) {
-  //   padding: rem-calc(28);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     padding: rem-calc(28);
   }
@@ -188,13 +180,6 @@
     padding-bottom: rem-calc(30);
   }
 
-  // @include grid-media($bp-large) {
-  //   padding: rem-calc(3 40);
-
-  //   &:last-child {
-  //     padding-bottom: rem-calc(40);
-  //   }
-  // }
 	@media screen and (min-width: $screen-desktop) {
     padding: rem-calc(3 40);
 
@@ -205,7 +190,6 @@
 }
 
 .c-list-box--secondary .c-list-box__subitem {
-  // @include text-uppercase;
 
   &:focus {
     background: $color-secondary;
@@ -238,9 +222,6 @@
     margin-top: rem-calc(2);
   }
 
-  // @include grid-media($bp-large) {
-  //   padding-left: rem-calc(60);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     padding-left: rem-calc(60);
   }

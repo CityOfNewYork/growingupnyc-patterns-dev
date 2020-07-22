@@ -18,23 +18,17 @@
   background-size: contain;
   color: $color-text-invert;
   overflow: hidden;
-  // padding: percentage(94/375) 0 rem-calc(33);
   padding-bottom: rem-calc(15);
   position: relative;
   text-align: center;
 
-  // @include grid-media($bp-medium) {
-  //   background-size: cover;
-  //   text-align: left;
-  //   padding: rem-calc(92 40 80);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     background-size: cover;
     text-align: left;
     padding: rem-calc(92 40 80);
   }
 
-	@media screen and (max-width: $screen-mobile) {
+  @media screen and (max-width: $screen-mobile) {
       background-size: cover;
   }
 }
@@ -44,29 +38,17 @@
   text-align: left;
   padding: percentage(57/375) 0 rem-calc(65);
 
-  // @include grid-media($bp-medium) {
-  //   padding: rem-calc(100 ($outer-gutter-medium - $outer-gutter-small) 36);
-  // }
-
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     padding: rem-calc(100 ($outer-gutter-medium - $outer-gutter-small) 36);
   }
 
-  // @include grid-media($bp-large) {
-  //   padding: rem-calc(100 0 36);
-  // }
-
-	@media screen and (min-width: $screen-desktop) {
+  @media screen and (min-width: $screen-desktop) {
     padding: rem-calc(100 0 36);
   }
 }
 
 .c-hero {
-  // @include grid-media($bp-xlarge) {
-  //   padding: rem-calc(113 80 60);
-  // }
-
-	@media screen and (min-width: $screen-desktop-large) {
+  @media screen and (min-width: $screen-desktop-large) {
     padding: rem-calc(113 80 60);
   }
 }
@@ -75,7 +57,7 @@
 .c-hero--light {
   padding: rem-calc(50 0 60);
 
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     padding: rem-calc(113 0 60);
   }
 }
@@ -83,17 +65,11 @@
 .c-hero--large {
   padding: percentage(126/375) 0 rem-calc(65);
 
-  // @include grid-media($bp-medium) {
-  //   padding: rem-calc(165 40 80);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     padding: rem-calc(165 40 80);
   }
 
-  // @include grid-media($bp-xlarge) {
-  //   padding: rem-calc(227 80 80);
-  // }
-	@media screen and (min-width: $screen-desktop-large) {
+  @media screen and (min-width: $screen-desktop-large) {
     padding: rem-calc(227 80 80);
   }
 }
@@ -119,7 +95,6 @@
   @include font-size-xxx-large;
   line-height: 1;
   padding-top: rem-calc(($sticker-size-mobile / 2) + 3);
-  // text-transform: uppercase;
   // Set z-index for text to appear on top of bg image
   z-index: 1;
 }
@@ -129,22 +104,15 @@
   position: relative;
   padding-top: rem-calc(($sticker-size-mobile / 2) + 3);
 
-  // @include grid-media($bp-medium) {
-  //   padding-top: 0;
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     padding-top: 0;
   }
 }
 
 .flexbox .c-hero__title,
 .flexbox .c-hero__title--long {
-  // @include grid-media($bp-medium) {
-  //   display: flex;
-  //   flex-flow: row nowrap;
-  //   align-items: center;
-  // }
-	@media screen and (min-width: $screen-tablet) {
+
+  @media screen and (min-width: $screen-tablet) {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -159,74 +127,49 @@
   top: rem-calc($sticker-size-mobile / -2);
   position: absolute;
 
-		@if ($language == 'ar') or ($language == 'ur') {
-  		right: 0;
+    @if ($language == 'ar') or ($language == 'ur') {
+      right: 0;
     } @else {
-  		left: 0;
-		}
-  // @include grid-media($bp-medium) {
-  //   box-shadow: none;
-  //   height: rem-calc(65);
-  //   line-height: rem-calc(65);
-  //   margin-right: rem-calc(20);
-  //   position: static;
-  //   width: rem-calc(65);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+      left: 0;
+    }
+
+  @media screen and (min-width: $screen-tablet) {
     box-shadow: none;
     height: rem-calc(65);
     line-height: rem-calc(65);
     position: static;
     width: rem-calc(65);
 
-		@if ($language == 'ar') or ($language == 'ur') {
-    	margin-left: rem-calc(20);
+    @if ($language == 'ar') or ($language == 'ur') {
+      margin-left: rem-calc(20);
     } @else {
     margin-right: rem-calc(20);
-		}
+    }
   }
 }
 
 .flexbox .c-hero__sticker {
-  // @include grid-media($bp-medium) {
-  //   flex-shrink: 0;
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     flex-shrink: 0;
   }
 }
 
 // Hero Tagline
 .c-hero__tagline {
-  // font-family: $font-family-display;
-  // font-size: rem-calc($font-size-xx-large * $font-size-ratio);
-  // font-weight: $font-weight-extrablack;
   line-height: 1.2;
   margin-top: rem-calc(10);
   margin-bottom: rem-calc(15);
   position: relative;
   z-index: 1; // Set z-index for text to appear on top of bg image
 
-  // @include grid-media($bp-medium) {
-  //   font-size: rem-calc($font-size-xx-large);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: rem-calc($font-size-x-large);
-		@if ($language == 'ar') or ($language == 'ur') {
-    	text-align: right;
+    @if ($language == 'ar') or ($language == 'ur') {
+      text-align: right;
     }
   }
 
-  // @include grid-media($bp-large) {
-    // // @include span-columns(6);
-    // // @include grid-column(6);
-    // // @include omega;
-    // margin-right: 0;
-  // }
-	@media screen and (min-width: $screen-desktop) {
-    // @include span-columns(6);
-    // @include grid-column(6);
-    // @include omega;
+  @media screen and (min-width: $screen-desktop) {
     margin-right: 0;
   }
 }
@@ -240,21 +183,7 @@
     margin-top: rem-calc(15);
   }
 
-  // @include grid-media($bp-medium) {
-  //   font-size: rem-calc($font-size-large);
-  // }
-	@media screen and (min-width: $screen-tablet) {
-    // padding: rem-calc(113 80 60);
-  }
-
-  // @include grid-media($bp-large) {
-  //   // @include grid-column(9);
-  //   // @include omega;
-  //   margin-right:0;
-  // }
-	@media screen and (min-width: $screen-desktop) {
-    // @include grid-column(9);
-    // @include omega;
+  @media screen and (min-width: $screen-desktop) {
     margin-right:0;
   }
 }
@@ -266,46 +195,34 @@
   height: auto;
   position: absolute;
   top: percentage(60/375);
-  // right: percentage(-50/375);
   width: percentage(140/375);
 
-		@if ($language == 'ar') or ($language == 'ur') {
-		  left: percentage(-114/1440);
-			transform: scaleX(-1);
+    @if ($language == 'ar') or ($language == 'ur') {
+      left: percentage(-114/1440);
+      transform: scaleX(-1);
     } @else {
-    	right: percentage(-114/1440);
-		}
-  // @include grid-media($bp-medium) {
-  //   bottom: percentage(-87/480);
-  //   top: auto;
-  //   right: percentage(-114/1440);
-  //   width: percentage(404/1440);
-  // }
-	@media screen and (min-width: $screen-tablet) {
+      right: percentage(-114/1440);
+    }
+
+  @media screen and (min-width: $screen-tablet) {
     bottom: percentage(-87/480);
     top: auto;
     width: percentage(404/1440);
 
   }
 
-
-  // @include grid-media($bp-xlarge) {
-  //   bottom: -87px;
-  //   right: -114px;
-  //   width: 404px;
-  // }
-	@media screen and (min-width: $screen-desktop-large) {
+  @media screen and (min-width: $screen-desktop-large) {
     bottom: -87px;
     width: 404px;
 
-		@if ($language == 'ar') or ($language == 'ur') {
-    	left: -114px;
-		  left: percentage(-114/1440);
-			transform: scaleX(-1);
+    @if ($language == 'ar') or ($language == 'ur') {
+      left: -114px;
+      left: percentage(-114/1440);
+      transform: scaleX(-1);
     } @else {
-    	right: -114px;
-    	right: percentage(-114/1440);
-		}
+      right: -114px;
+      right: percentage(-114/1440);
+    }
   }
 }
 
@@ -335,10 +252,7 @@
 .c-hero__search {
   padding-top: rem-calc(($sticker-size-mobile / 2) + 3);
 
-  // @include grid-media($bp-medium) {
-  //   padding-top: 0;
-  // }
-	@media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-tablet) {
     padding-top: 0;
   }
 }

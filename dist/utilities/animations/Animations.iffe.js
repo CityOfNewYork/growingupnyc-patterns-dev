@@ -935,7 +935,8 @@ var Animations = (function () {
       speed: Animations.speed
     };
     var rotating = document.querySelectorAll(this._settings.selector);
-    var terms = [];
+    var terms = []; // Iterate over the element and add their textContent in an array
+
     forEach_1(rotating, function (term) {
       if (term.innerText.trim() !== '') {
         terms.push(term.innerText);
@@ -943,6 +944,14 @@ var Animations = (function () {
     });
     Animations.rotateTerms(terms, this._settings.controller, this._settings.speed);
   };
+  /**
+   * Accepts array of string and creates rotating loop for the duration of the time provided as a speed argument.
+   * After every rotation calles the Animation.fadeInout function
+   * @param {array} terms array of strings
+   * @param {data-js} control the animation controlling element class
+   * @param {number} speed animation speeed
+   */
+
 
   Animations.rotateTerms = function (terms, control, speed) {
     var controller = document.querySelector(control);
@@ -959,6 +968,11 @@ var Animations = (function () {
       i++;
     }, 3000);
   };
+  /**
+   * After evey rotation adds and removes animate.css classes to fade in and fade out the strings
+   * @param {element} controller
+   */
+
 
   Animations.fadeInOut = function (controller) {
     controller.classList.add('fadeIn');

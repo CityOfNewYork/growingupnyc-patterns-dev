@@ -39,9 +39,6 @@ class FormEffects {
       })
     }
 
-    // debugger
-    // this.data = data;
-    // this.settings = settings;
   }
 }
 

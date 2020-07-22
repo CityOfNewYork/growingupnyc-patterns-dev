@@ -1,40 +1,11 @@
 /**
  * Sticky
  */
-
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
-
-// Declarations
-// .sticky { }
-
 .o-sticky-nav {
 		transform: translate3d(0, 0, 0);
 		backface-visibility: hidden;
 }
 
-// @include grid-media($bp-large) {
-// 	.o-sticky-nav {
-// 			width: 295px;
-
-// 		&.is-sticky {
-// 			position: fixed;
-// 			top: 20px;
-// 			// left: 40px;
-// 			width: 295px;
-// 		}
-// 		&.is-stuck {
-// 			position: absolute;
-// 		}
-// 	}
-// }
 @media screen and (min-width: $screen-desktop) {
 	.o-sticky-nav {
 			width: 100%;
@@ -42,20 +13,16 @@
 		&.is-sticky {
 			position: fixed;
 			top: 20px;
-			// left: 40px;
-			// width: 367px;
 		}
 
 		&.is-stuck {
 			position: absolute;
 
 			@if ($language == 'ar') or ($language == 'ur') {
-				// right: 20px;
 				width: 318px;
 				top: auto;
 				bottom: 0px;
 			} @else {
-				// left: 20px;
 				width: 318px;
 				top: auto;
 				bottom: 0px;
@@ -63,23 +30,3 @@
 		}
 	}
 }
-
-// @include grid-media($bp-xlarge) {
-// 	.o-sticky-nav {
-// 		width: 414px;
-
-// 		&.is-sticky {
-// 			width: 414px;
-// 		}
-// 	}
-// }
-// @media screen and (min-width: $screen-desktop-large) {
-// 	.o-sticky-nav {
-// 		width: 414px;
-
-// 		&.is-sticky {
-// 			width: 414px;
-// 		}
-// 	}
-// }
-

@@ -6,12 +6,6 @@
   -ms-word-break: normal;
   word-break: break-word;
 
-  // @include media($bp-medium) {
-  //   overflow-wrap: initial;
-  //   word-wrap: initial;
-  //   -ms-word-break: initial;
-  //   word-break: initial;
-  // }
 	@media screen and (min-width: $screen-tablet) {
     overflow-wrap: initial;
     word-wrap: initial;
@@ -22,9 +16,6 @@
   h3 {
     margin-top: rem-calc(30);
 
-    // @include media($bp-large) {
-    //   margin-top: rem-calc(50);
-    // }
 		@media screen and (min-width: $screen-desktop) {
       margin-top: rem-calc(50);
 	  }
@@ -33,9 +24,6 @@
   ol {
     padding-left: rem-calc(30);
 
-    // @include media($bp-large) {
-    //   padding-left: rem-calc(50);
-    // }
 		@media screen and (min-width: $screen-desktop) {
       padding-left: rem-calc(50);
 	  }
@@ -54,9 +42,6 @@
     list-style: none;
     padding-left: rem-calc(10);
 
-    // @include media($bp-large) {
-    //   padding-left: rem-calc(30);
-    // }
 		@media screen and (min-width: $screen-desktop) {
       padding-left: rem-calc(30);
 	  }

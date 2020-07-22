@@ -12,26 +12,23 @@ import forEach from 'lodash/forEach';
 
 class StaticColumn {
   constructor() {
+		this._settings = {
+      selector: StaticColumn.selector
+    };
 
-    // const el = document.querySelector(AlertBanner.selector);
-    // const control = document.querySelector(AlertBanner.controller);
-
-		const stickyContent = document.querySelectorAll('.js-static');
-		const notStickyClass = StaticColumn.notStickyClass;
-		const bottomClass = StaticColumn.bottomClass;
-
-    // this._settings = {
-    //   selector: StaticColumn.selector,
-    //   notStickyClass: StaticColumn.notStickyClass,
-    //   bottomClass: StaticColumn.bottomClass
-    // };
-
+		const stickyContent = document.querySelectorAll(`.${this._settings.selector}`);
 		  /**
   * Calculates the window position and sets the appropriate class on the element
   * @param {object} stickyContentElem - DOM node that should be stickied
   */
 	this.assignStickyFeature(stickyContent);
 }
+
+/**
+ * Iterate over elemets containing the class 'js-static'.
+ * On page load, screenResize and scroll events, calls StaticColumn.calcWindowPos function .
+ * @param {elements} stickyContent Element in chich the sticky effect will be applied
+ */
 
 assignStickyFeature(stickyContent) {
 	if (stickyContent) {
@@ -57,8 +54,13 @@ assignStickyFeature(stickyContent) {
     });
   }
 }
-
 }
+
+
+/**
+ * depending on elements postion in the page add and remove classes
+ * @param {element} stickyContentElem an element with the class name 'js-static'
+ */
 
  StaticColumn.calcWindowPos = function(stickyContentElem) {
 	let elemTop = stickyContentElem.parentElement.getBoundingClientRect().top;
@@ -68,7 +70,6 @@ assignStickyFeature(stickyContent) {
 	// Absolutely positioning only when necessary and not by default prevents flickering
 	// when removing the "is-bottom" class on Chrome
 	if (elemTop > 0) {
-
 		stickyContentElem.classList.add(StaticColumn.notStickyClass);
 	} else {
 		stickyContentElem.classList.remove(StaticColumn.notStickyClass);
@@ -84,7 +85,6 @@ assignStickyFeature(stickyContent) {
 StaticColumn.selector = 'js-static';
 StaticColumn.notStickyClass = 'is-not-sticky';
 StaticColumn.bottomClass = 'is-bottom';
-
 
 
 export default StaticColumn;

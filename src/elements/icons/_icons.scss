@@ -2,36 +2,17 @@
  * Icons
  */
 
-// Dependencies
-// This is where variables, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting variables from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/variables.js object (which is
-// to SASS during the compilation process).
-// @import 'config/variables';
 @import 'config/media';
 @import 'scss/functions/rem-calc';
-
-// Declarations
-// .icons { }
 
 .icon--logo {
   height: rem-calc(85);
   width: rem-calc(157);
 
-  // @include grid-media($bp-large) {
-  //   height: rem-calc(50);
-  //   width: rem-calc(50);
-  // }
 	@media screen and (min-width: $screen-desktop) {
-		// height: 9.375rem;
-    // width: 4.125rem;
+
     height: rem-calc(85);
     width: rem-calc(150);
-		// height: 5.375rem;
-    // width: 8.125rem;
   }
 }
 
@@ -39,17 +20,9 @@
   height: rem-calc(87);
   width: rem-calc(118);
 
-  // @include grid-media($bp-large) {
-  //   height: rem-calc(50);
-  //   width: rem-calc(50);
-  // }
 	@media screen and (min-width: $screen-desktop) {
-		// height: 7.3125rem;
-    // width: 4.125rem;
     height: rem-calc(87);
     width: rem-calc(120);
-		// height: 5.3125rem;
-    // width: 7.425rem;
   }
 }
 
@@ -58,10 +31,6 @@
   height: rem-calc(30.6);
   width: rem-calc(128);
 
-  // @include grid-media($bp-large) {
-  //   height: rem-calc(50);
-  //   width: rem-calc(50);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     height: rem-calc(36);
     width: rem-calc(110);
@@ -72,10 +41,6 @@
   height: rem-calc(37);
   width: rem-calc(37);
 
-  // @include grid-media($bp-large) {
-  //   height: rem-calc(50);
-  //   width: rem-calc(50);
-  // }
 	@media screen and (min-width: $screen-desktop) {
     height: rem-calc(50);
     width: rem-calc(50);
@@ -86,10 +51,6 @@
   height: rem-calc(37);
   width: rem-calc(37);
 
-  // @include grid-media($bp-medium) {
-  //   height: rem-calc(35);
-  //   width: rem-calc(35);
-  // }
 	@media screen and (min-width: $screen-tablet) {
     height: rem-calc(35);
     width: rem-calc(35);
@@ -114,10 +75,6 @@
   width: rem-calc(13);
   vertical-align: top;
 
-  // @include grid-media($bp-small) {
-  //   height: rem-calc(15);
-  //   width: rem-calc(15);
-  // }
 	@media screen and (min-width: $screen-mobile) {
     height: rem-calc(15);
     width: rem-calc(15);

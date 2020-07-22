@@ -39,9 +39,6 @@
 = content('script')
   javascript:
     var alertBanner = gunyc.alertBanner();
-
-
-
     // a method for removing cookie
     // provide cookie name as an argument, if no argument is specified the expiration will be defaulted to 360days
      alertBanner.removeCookie('notification');

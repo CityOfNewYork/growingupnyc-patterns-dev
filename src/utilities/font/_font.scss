@@ -2,25 +2,15 @@
  * Font
  */
 
-// Dependencies
-// This is where tokens, mixins, or functions are imported that the
-// pattern depends on. It's helpful to import dependencies into each
-// pattern so that they can be exported individually and it's clear
-// where the pattern is getting tokens from. You can create a
-// pattern specific SASS configuration in the /src/config directory, or
-// add configuration to the /config/tokens.js object (which is
-// to SASS during the compilation process).
-// @import 'config/tokens';
-
 // Declarations
-.font-sans--primary { 
+.font-sans--primary {
   font-family: map-get(map-get($tokens, 'fonts'), 'display-sans');
 }
 
-.font-sans--secondary { 
+.font-sans--secondary {
   font-family: map-get(map-get($tokens, 'fonts'), 'text-sans');
 }
 
-.font-icons { 
+.font-icons {
   font-family: map-get(map-get($tokens, 'fonts'), 'icons');
 }

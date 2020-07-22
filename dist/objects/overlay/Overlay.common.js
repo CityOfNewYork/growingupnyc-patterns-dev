@@ -928,8 +928,6 @@ function forEach(collection, iteratee) {
 var forEach_1 = forEach;
 
 var Overlay = function Overlay() {
-  // this.data = data;
-  // this.settings = settings;
   var overlay = document.querySelectorAll('.js-overlay');
 
   if (overlay) {

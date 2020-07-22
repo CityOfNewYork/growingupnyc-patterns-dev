@@ -930,13 +930,15 @@ var forEach_1 = forEach;
 // import debounce from 'lodash/debounce';
 
 var StickyVanilla = function StickyVanilla(mediaQuery) {
-  var screen = mediaQuery || StickyVanilla.mediaQuery; // const el = document.querySelector(AlertBanner.selector);
-  // const control = document.querySelector(AlertBanner.controller);
-
-  var stickyContent = document.querySelectorAll('.js-sticky');
-  var footer = document.querySelector('.c-footer__reached');
-  var stickyContainer = document.querySelector('.o-article-sidebar');
-
+  var screen = mediaQuery || StickyVanilla.mediaQuery;
+  this._settings = {
+    selector: StickyVanilla.selector,
+    footer: StickyVanilla.footer,
+    stickyContainer: StickyVanilla.stickyContainer
+  };
+  var stickyContent = document.querySelectorAll("." + this._settings.selector);
+  var footer = document.querySelector("." + this._settings.footer);
+  var stickyContainer = document.querySelector("." + this._settings.stickyContainer);
   var isSticky = false; // Whether the sidebar is sticky at this exact moment in time
 
   var desktop = window.matchMedia(screen);
@@ -952,14 +954,9 @@ var StickyVanilla = function StickyVanilla(mediaQuery) {
     if (isDesk) {
       StickyVanilla.updateDimensions(stickyContainer, stickyContent);
     } else {
-      StickyVanilla.resetWidth(stickyContainer, stickyContent);
+      StickyVanilla.resetWidth(stickyContent);
     }
-  }; // this._settings = {
-  // selector: StickyVanilla.selector,
-  // StickyClass: StickyVanilla.StickyClass,
-  // StuckClass: StickyVanilla.StuckClass
-  // };
-
+  };
   /**
    * Calculates the window position and sets the appropriate class on the element
    * @param {object} stickyContentElem - DOM node that should be stickied
@@ -969,6 +966,13 @@ var StickyVanilla = function StickyVanilla(mediaQuery) {
   this.assignStickyFeature(stickyContent, footer, isSticky);
   this.snapToFooter(footer, stickyContent); // StickyVanilla.resize(stickyContainer, stickyContent)
 };
+/**
+ * Calles the function StickyVanilla.calcWindowPos and passes arguments to determin when to apply or remove sticky class
+ * @param {elements} stickyContent elements with the class 'js-sticky'
+ * @param {*} footer footer element with class name 'c-footer__reached'
+ * @param {boolean} isSticky boolean
+ */
+
 
 StickyVanilla.prototype.assignStickyFeature = function assignStickyFeature(stickyContent, footer, isSticky) {
   if (stickyContent) {
@@ -995,12 +999,16 @@ StickyVanilla.prototype.assignStickyFeature = function assignStickyFeature(stick
     });
   }
 };
+/**
+ * When footer is scrolled up tp the screen a 'stuck' class will be added to the sticky container and will be forced to stuck with the footer
+ * @param {element} footer footer element
+ * @param {element} stickyContent elements with the class 'js-sticky'
+ */
+
 
 StickyVanilla.prototype.snapToFooter = function snapToFooter(footer, stickyContent) {
   window.addEventListener('scroll', function () {
-    // var element = document.querySelector('#main-container');
-    var position = footer.getBoundingClientRect(); // console.log(position.bottom, window.innerHeight);
-    // checking whether fully visible
+    var position = footer.getBoundingClientRect(); // checking whether fully visible
 
     if (position.top >= 0 && position.bottom <= window.innerHeight) {
       // console.log('Element is fully visible in screen ');
@@ -1015,12 +1023,15 @@ StickyVanilla.prototype.snapToFooter = function snapToFooter(footer, stickyConte
       if (positionSticky.top >= 0) {
         stickyContentElem.classList.remove(StickyVanilla.StuckClass);
       }
-    }); // checking for partial visibility
-    // if(position.top < window.innerHeight && position.bottom >= 0) {
-    // 	console.log('Element is partially visible in screen');
-    // }
+    });
   });
 };
+/**
+ * On screen resize the sticky nav element width will be adjusted with the width of it's parent container
+ * @param {element} stickyContainer
+ * @param {element} stickyContent
+ */
+
 
 StickyVanilla.updateDimensions = function (stickyContainer, stickyContent) {
   var stickyContainerWidth = stickyContainer.clientWidth;
@@ -1028,19 +1039,27 @@ StickyVanilla.updateDimensions = function (stickyContainer, stickyContent) {
     stickyContentElem.style.width = stickyContainerWidth + "px";
   });
 };
+/**
+ * On mobile the sticky nav element width with be left to span though full width of the screen size
+ * @param {*} stickyContent element with class name 'js-sticky'
+ */
 
-StickyVanilla.resetWidth = function (stickyContainer, stickyContent) {
-  var stickyContainerWidth = stickyContainer.clientWidth;
+
+StickyVanilla.resetWidth = function (stickyContent) {
   forEach_1(stickyContent, function (stickyContentElem) {
     stickyContentElem.style.width = "";
   });
 };
+/**
+ * When the sticky nav reaches the top of the screen stikcy class will be added
+ * @param {element} stickyContentElem
+ * @param {boolean} isSticky
+ */
+
 
 StickyVanilla.calcWindowPos = function (stickyContentElem, isSticky) {
   var articleContent = document.querySelector('.js-sticky-article');
-  var elemTop = stickyContentElem.parentElement.getBoundingClientRect().top; // let isPastBottom = window.innerHeight - stickyContentElem.parentElement.clientHeight - stickyContentElem.parentElement.getBoundingClientRect().top < 50;
-  // console.log(elemTop);
-  // Sets element to position absolute if not scrolled to yet.
+  var elemTop = stickyContentElem.parentElement.getBoundingClientRect().top; // Sets element to position absolute if not scrolled to yet.
   // Absolutely positioning only when necessary and not by default prevents flickering
   // when removing the "is-bottom" class on Chrome
 
@@ -1054,6 +1073,8 @@ StickyVanilla.calcWindowPos = function (stickyContentElem, isSticky) {
 };
 
 StickyVanilla.selector = 'js-sticky';
+StickyVanilla.footer = 'c-footer__reached';
+StickyVanilla.stickyContainer = 'o-article-sidebar';
 StickyVanilla.StickyClass = 'is-sticky';
 StickyVanilla.StuckClass = 'is-stuck';
 StickyVanilla.AddLeftMargin = 'o-article--shift';

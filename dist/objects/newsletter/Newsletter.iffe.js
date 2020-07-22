@@ -10580,12 +10580,7 @@ var Newsletter = (function () {
 	});
 
 	var Newsletter = function Newsletter(mailchimpUrl) {
-	  var url = mailchimpUrl || Newsletter.url; // this.data = data;
-	  // this.settings = {
-	  // // user: settings.user ? settings.user : Newsletter.user,
-	  // // id: settings.id ? settings.id : Newsletter.id
-	  // };
-
+	  var url = mailchimpUrl || Newsletter.url;
 	  jquery('#mc-embedded-subscribe:button[type="submit"]').click(function (event) {
 	    event.preventDefault();
 	    var formClass = jquery(this).parents('form').attr('class');
