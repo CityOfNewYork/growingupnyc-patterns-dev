@@ -104,8 +104,7 @@ var LanguageSwitcher = (function () {
     var CloseIconATag = document.createElement("a");
     CloseIconATag.classList.add("wpml-ls-link", "ls-close-link"); // Append close icon
 
-    closeIconLi.appendChild(CloseIconATag); // On mobile add Pick a language title and close button to the language switcher
-    // On mobile On click close language switcher
+    closeIconLi.appendChild(CloseIconATag); // On mobile On click close language switcher
 
     CloseIconATag.addEventListener('click', function (e) {
       this$1._hideAllLanguages(allLanguages);

@@ -119,8 +119,6 @@ class LanguageSwitcher {
     // Append close icon
     closeIconLi.appendChild(CloseIconATag)
 
-    // On mobile add Pick a language title and close button to the language switcher
-
 
     // On mobile On click close language switcher
     CloseIconATag.addEventListener('click', (e) => {
@@ -132,7 +130,6 @@ class LanguageSwitcher {
 
       body.classList.remove("overflow-hidden");
     })
-
 
 
     // Onresize check screen size and apply all the changes
