@@ -136,11 +136,14 @@ class LanguageSwitcher {
     window.onresize = function () {
       isMobile = LanguageSwitcher.checkScreenSize();
 
+      if (!isMobile.matches) {
+        LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile)
+      }
+
       // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
       if (languageSwitcherWrapper.classList.contains("mobile-languages-switcher")) {
         LanguageSwitcher.addOverflowHidden(isMobile, body);
         LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile);
-        LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile)
         LanguageSwitcher.removeOverflowHidden(isMobile, body);
       }
 
@@ -191,13 +194,12 @@ LanguageSwitcher.addCloseIconTitle = function(liTag, closeIconLi, isMobile) {
 * @param {} isMobile- boolon value that checks if screen size is less tha 700px
 */
 LanguageSwitcher.removeCloseIconTitle = function(liTag, closeIconLi, isMobile) {
-  if (!isMobile.matches) {
+    console.log("removed")
     let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
     if (ul[0].contains(liTag)) {
       ul[0].removeChild(liTag);
       ul[0].removeChild(closeIconLi);
     }
-  }
 }
 
      /**

@@ -117,12 +117,16 @@ var LanguageSwitcher = (function () {
     }); // Onresize check screen size and apply all the changes
 
     window.onresize = function () {
-      isMobile = LanguageSwitcher.checkScreenSize(); // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
+      isMobile = LanguageSwitcher.checkScreenSize();
+
+      if (!isMobile.matches) {
+        LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
+      } // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
+
 
       if (languageSwitcherWrapper.classList.contains("mobile-languages-switcher")) {
         LanguageSwitcher.addOverflowHidden(isMobile, body);
         LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile);
-        LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
         LanguageSwitcher.removeOverflowHidden(isMobile, body);
       }
     };
@@ -172,13 +176,12 @@ var LanguageSwitcher = (function () {
 
 
   LanguageSwitcher.removeCloseIconTitle = function (liTag, closeIconLi, isMobile) {
-    if (!isMobile.matches) {
-      var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
+    console.log("removed");
+    var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
 
-      if (ul[0].contains(liTag)) {
-        ul[0].removeChild(liTag);
-        ul[0].removeChild(closeIconLi);
-      }
+    if (ul[0].contains(liTag)) {
+      ul[0].removeChild(liTag);
+      ul[0].removeChild(closeIconLi);
     }
   };
   /**
