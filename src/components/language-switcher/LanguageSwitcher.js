@@ -21,7 +21,7 @@ class LanguageSwitcher {
     const allLanguages = document.querySelectorAll(".wpml-ls-item");
     // Media Query
     let isMobile = LanguageSwitcher.checkScreenSize();
-
+		let cloned = languageSwitcherWrapper.cloneNode(true)
 
     // Gotchas --
     if (languagesDiv) {
@@ -73,7 +73,6 @@ class LanguageSwitcher {
 
     // Hide all languages
     this._hideAllLanguages(allLanguages);
-
 
 
     // On click (Translate Link) reveal language list
@@ -135,7 +134,7 @@ class LanguageSwitcher {
     // Onresize check screen size and apply all the changes
     window.onresize = function () {
       isMobile = LanguageSwitcher.checkScreenSize();
-
+			console.log("language switcher" + isMobile.matches)
       if (!isMobile.matches) {
         LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile)
       }
@@ -194,7 +193,6 @@ LanguageSwitcher.addCloseIconTitle = function(liTag, closeIconLi, isMobile) {
 * @param {} isMobile- boolon value that checks if screen size is less tha 700px
 */
 LanguageSwitcher.removeCloseIconTitle = function(liTag, closeIconLi, isMobile) {
-    console.log("removed")
     let ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
     if (ul[0].contains(liTag)) {
       ul[0].removeChild(liTag);

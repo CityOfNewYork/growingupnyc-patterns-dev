@@ -35,7 +35,8 @@ class StickyVanilla {
     }
 
     window.onresize = function () {
-      isDesk = desktop.matches;
+			isDesk = desktop.matches;
+			console.log("Sticky" + isDesk)
       if(isDesk) {
         StickyVanilla.updateDimensions(stickyContainer, stickyContent);
       } else {

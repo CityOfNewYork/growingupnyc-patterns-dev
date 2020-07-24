@@ -15,7 +15,8 @@ var LanguageSwitcher = function LanguageSwitcher() {
   var body = document.querySelector("body");
   var allLanguages = document.querySelectorAll(".wpml-ls-item"); // Media Query
 
-  var isMobile = LanguageSwitcher.checkScreenSize(); // Gotchas --
+  var isMobile = LanguageSwitcher.checkScreenSize();
+  var cloned = languageSwitcherWrapper.cloneNode(true); // Gotchas --
 
   if (languagesDiv) {
     languagesDiv.classList.add("desktop:w-full");
@@ -117,6 +118,7 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
   window.onresize = function () {
     isMobile = LanguageSwitcher.checkScreenSize();
+    console.log("language switcher" + isMobile.matches);
 
     if (!isMobile.matches) {
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
@@ -175,7 +177,6 @@ LanguageSwitcher.addCloseIconTitle = function (liTag, closeIconLi, isMobile) {
 
 
 LanguageSwitcher.removeCloseIconTitle = function (liTag, closeIconLi, isMobile) {
-  console.log("removed");
   var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
 
   if (ul[0].contains(liTag)) {
