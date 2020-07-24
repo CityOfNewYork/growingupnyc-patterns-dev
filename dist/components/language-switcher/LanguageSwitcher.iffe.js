@@ -117,7 +117,7 @@ var LanguageSwitcher = (function () {
       body.classList.remove("overflow-hidden");
     }); // Onresize check screen size and apply all the changes
 
-    window.onresize = function () {
+    window.addEventListener("resize", function () {
       isMobile = LanguageSwitcher.checkScreenSize();
       console.log("language switcher" + isMobile.matches);
 
@@ -131,7 +131,7 @@ var LanguageSwitcher = (function () {
         LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile);
         LanguageSwitcher.removeOverflowHidden(isMobile, body);
       }
-    };
+    });
   }; // Unhide language list
 
 

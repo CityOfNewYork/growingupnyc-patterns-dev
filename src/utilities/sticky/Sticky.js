@@ -34,7 +34,7 @@ class StickyVanilla {
       StickyVanilla.updateDimensions(stickyContainer, stickyContent);
     }
 
-    window.onresize = function () {
+    window.addEventListener("resize", function () {
 			isDesk = desktop.matches;
 			console.log("Sticky" + isDesk)
       if(isDesk) {
@@ -42,7 +42,7 @@ class StickyVanilla {
       } else {
         StickyVanilla.resetWidth(stickyContent)
       }
-    };
+    });
 
       /**
        * Calculates the window position and sets the appropriate class on the element

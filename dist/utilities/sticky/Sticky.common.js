@@ -948,7 +948,7 @@ var StickyVanilla = function StickyVanilla(mediaQuery) {
     StickyVanilla.updateDimensions(stickyContainer, stickyContent);
   }
 
-  window.onresize = function () {
+  window.addEventListener("resize", function () {
     isDesk = desktop.matches;
     console.log("Sticky" + isDesk);
 
@@ -957,12 +957,11 @@ var StickyVanilla = function StickyVanilla(mediaQuery) {
     } else {
       StickyVanilla.resetWidth(stickyContent);
     }
-  };
+  });
   /**
    * Calculates the window position and sets the appropriate class on the element
    * @param {object} stickyContentElem - DOM node that should be stickied
    */
-
 
   this.assignStickyFeature(stickyContent, footer, isSticky);
   this.snapToFooter(footer, stickyContent); // StickyVanilla.resize(stickyContainer, stickyContent)
