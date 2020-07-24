@@ -16,8 +16,7 @@ var LanguageSwitcher = function LanguageSwitcher() {
   var allLanguages = document.querySelectorAll(".wpml-ls-item");
   var offanvas = document.querySelector(".o-offcanvas__main"); // Media Query
 
-  var isMobile = LanguageSwitcher.checkScreenSize();
-  var cloned = languageSwitcherWrapper.cloneNode(true); // Gotchas --
+  var isMobile = LanguageSwitcher.checkScreenSize(); // Gotchas --
 
   if (languagesDiv) {
     languagesDiv.classList.add("desktop:w-full");
@@ -65,8 +64,9 @@ var LanguageSwitcher = function LanguageSwitcher() {
   } // Hide all languages
 
 
-  this._hideAllLanguages(allLanguages); // On click (Translate Link) reveal language list
+  this._hideAllLanguages(allLanguages);
 
+  var cloned = languageSwitcherWrapper.cloneNode(true); // On click (Translate Link) reveal language list
 
   aTag.addEventListener('click', function (e) {
     this$1._toggle(allLanguages);
@@ -83,7 +83,7 @@ var LanguageSwitcher = function LanguageSwitcher() {
     if (isMobile.matches) {
       cloned.classList.remove("c-language-switcher-wrapper");
       console.log(cloned);
-      offanvas.appendChild(cloned);
+      offanvas.prepend(cloned);
     }
   }); // Add "Pick a language" title on mobile
 
@@ -121,6 +121,7 @@ var LanguageSwitcher = function LanguageSwitcher() {
     logoWrapper.classList.remove("ls-logo");
     LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
     body.classList.remove("overflow-hidden");
+    offanvas.removeChild(cloned);
   }); // Onresize check screen size and apply all the changes
 
   window.addEventListener("resize", function () {
@@ -128,6 +129,7 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
     if (!isMobile.matches) {
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
+      offanvas.removeChild(cloned);
     } // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
 
 
