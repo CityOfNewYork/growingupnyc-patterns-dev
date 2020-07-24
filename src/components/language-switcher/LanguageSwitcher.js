@@ -18,7 +18,8 @@ class LanguageSwitcher {
     const languageSwitcherWrapper = document.querySelector(`.${this._settings.languageSwitcherWrapper}`);
     const logoWrapper = document.querySelector(`.${this._settings.logoWrapper}`);
     let body = document.querySelector("body");
-    const allLanguages = document.querySelectorAll(".wpml-ls-item");
+		const allLanguages = document.querySelectorAll(".wpml-ls-item");
+		const offanvas = document.querySelector(".o-offcanvas__main")
     // Media Query
     let isMobile = LanguageSwitcher.checkScreenSize();
 		let cloned = languageSwitcherWrapper.cloneNode(true)
@@ -87,6 +88,12 @@ class LanguageSwitcher {
 
       // On mobile change body element overflow to hidden
       LanguageSwitcher.addOverflowHidden(isMobile, body);
+
+			if (isMobile.matches) {
+				cloned.classList.remove("c-language-switcher-wrapper")
+				console.log(cloned)
+				offanvas.appendChild(cloned)
+			}
 
     })
 

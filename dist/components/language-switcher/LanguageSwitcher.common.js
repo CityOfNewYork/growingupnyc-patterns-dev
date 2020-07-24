@@ -13,7 +13,8 @@ var LanguageSwitcher = function LanguageSwitcher() {
   var languageSwitcherWrapper = document.querySelector("." + this._settings.languageSwitcherWrapper);
   var logoWrapper = document.querySelector("." + this._settings.logoWrapper);
   var body = document.querySelector("body");
-  var allLanguages = document.querySelectorAll(".wpml-ls-item"); // Media Query
+  var allLanguages = document.querySelectorAll(".wpml-ls-item");
+  var offanvas = document.querySelector(".o-offcanvas__main"); // Media Query
 
   var isMobile = LanguageSwitcher.checkScreenSize();
   var cloned = languageSwitcherWrapper.cloneNode(true); // Gotchas --
@@ -78,6 +79,12 @@ var LanguageSwitcher = function LanguageSwitcher() {
     LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // On mobile change body element overflow to hidden
 
     LanguageSwitcher.addOverflowHidden(isMobile, body);
+
+    if (isMobile.matches) {
+      cloned.classList.remove("c-language-switcher-wrapper");
+      console.log(cloned);
+      offanvas.appendChild(cloned);
+    }
   }); // Add "Pick a language" title on mobile
 
   var liTag = document.createElement("li");
