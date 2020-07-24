@@ -118,7 +118,6 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
   window.addEventListener("resize", function () {
     isMobile = LanguageSwitcher.checkScreenSize();
-    console.log("language switcher" + isMobile.matches);
 
     if (!isMobile.matches) {
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);

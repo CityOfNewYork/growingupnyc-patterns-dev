@@ -951,7 +951,6 @@ var Sticky = (function () {
 
     window.addEventListener("resize", function () {
       isDesk = desktop.matches;
-      console.log("Sticky" + isDesk);
 
       if (isDesk) {
         StickyVanilla.updateDimensions(stickyContainer, stickyContent);
