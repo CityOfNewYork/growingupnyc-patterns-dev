@@ -1,42 +1,51 @@
 
 / contact form
 div class='p-4'
-	form action="" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="guny-contact" target="_blank" data-js="form-contact"
+  form action="" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="guny-contact" target="_blank" data-js="form-contact"
     div class="signup-form-intro"
       div class="text-center"
-        h2 
+        h2
           = 'Contact Us'
     img src="" class="signup-form-logo"
-    = 'Reach out to us for more information.'
-    div class="mc-field-group"
-      label for="mce-EMAIL"
+    div class="block"
+      = 'Reach out to us for more information.'
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-EMAIL-contact" class="signup-form__label"
         = 'Email'
+        span class="asterisk"
+          = '*'
       div class="guny-error-detailed"
-      input type="email" value="" name="EMAIL" class="input input--full-width border-color-blue-light" id="mce-EMAIL" required="true"
-    div class="mc-field-group"
-      label for="mce-FNAME"
+      input type="email" value="" name="EMAIL" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-EMAIL-contact"
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-FNAME" class="signup-form__label"
         = 'First Name'
+        span class="asterisk"
+          = '*'
       div class="guny-error-detailed"
-      input type="text" value="" name="FNAME" class="input input--full-width border-color-blue-light" id="mce-FNAME" required="true"
-    div class="mc-field-group"
-      label for="mce-LNAME"
+      input type="text" value="" name="FNAME" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-FNAME"
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-LNAME" class="signup-form__label"
         = 'Last Name'
+        span class="asterisk"
+          = '*'
       div class="guny-error-detailed"
-      input type="text" value="" name="LNAME" class="input input--full-width border-color-blue-light" id="mce-LNAME" required="true"
-    div class="mc-field-group"
-      label for="mce-ZIP"
+      input type="text" value="" name="LNAME" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-LNAME"
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-ZIP-contact" class="signup-form__label"
         = 'Zip Code'
+        span class="asterisk"
+          = '*'
       div class="guny-error-detailed"
-      input type="text" value="" name="ZIP" class="input input--full-width border-color-blue-light" id="mce-ZIP" required="true"
-    div class="mc-field-group"
-      label for="mce-PHONENUM"
+      input type="text" value="" name="ZIP" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-ZIP-contact"
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-PHONENUM" class="signup-form__label"
         = 'Phone Number'
       div class="guny-error-detailed"
-      input type="text" value="" name="PHONENUM" class="input input--full-width border-color-blue-light" id="mce-PHONENUM" required="true"
-    div class="mc-field-group"
-      label for="mce-ORGWEBSITE"
+      input type="text" value="" name="PHONENUM" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-PHONENUM"
+    div class="mc-field-group signup-form__input signup-form__input--full"
+      label for="mce-ORGWEBSITE" class="signup-form__label"
         = 'Organization Website'
-      input type="url" value="" name="ORGWEBSITE" class="input input--full-width border-color-blue-light" id="mce-ORGWEBSITE"
+      input type="url" value="" name="ORGWEBSITE" class="signup-form__field input input--full-width bg-color-gray-light" id="mce-ORGWEBSITE"
 
     fieldset class="mc-field-group input-group"
       legend
@@ -50,7 +59,7 @@ div class='p-4'
             svg class='checkbox__indicator border-color-blue-light'
               use xlink:href='#icon-check'
             = value.label
-      
+
     button id="mc-embedded-contact" class="signup-form__button button--simple button--simple--alt" type="submit"
       = 'Submit'
 

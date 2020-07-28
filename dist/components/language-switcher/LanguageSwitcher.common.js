@@ -66,7 +66,8 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
   this._hideAllLanguages(allLanguages);
 
-  var cloned = languageSwitcherWrapper.cloneNode(true); // On click (Translate Link) reveal language list
+  var cloned = languageSwitcherWrapper.cloneNode(true);
+  console.log(cloned); // On click (Translate Link) reveal language list
 
   aTag.addEventListener('click', function (e) {
     this$1._toggle(allLanguages);
@@ -74,15 +75,15 @@ var LanguageSwitcher = function LanguageSwitcher() {
     li.style.display = "none"; // on mobile"mobile-languages-switcher" class will reposition and style the language switcher
 
     languageSwitcherWrapper.classList.toggle("mobile-languages-switcher"); // Adjusting logo postion on pages without language switcher
+    // logoWrapper.classList.add("ls-logo");
 
-    logoWrapper.classList.add("ls-logo");
     LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // On mobile change body element overflow to hidden
 
     LanguageSwitcher.addOverflowHidden(isMobile, body);
 
     if (isMobile.matches) {
-      cloned.classList.remove("c-language-switcher-wrapper");
-      console.log(cloned);
+      cloned.classList.remove("c-language-switcher-wrapper"); // console.log(cloned)
+
       offanvas.prepend(cloned);
     }
   }); // Add "Pick a language" title on mobile
@@ -117,8 +118,8 @@ var LanguageSwitcher = function LanguageSwitcher() {
     this$1._hideAllLanguages(allLanguages);
 
     languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
-    li.style.display = "";
-    logoWrapper.classList.remove("ls-logo");
+    li.style.display = ""; // logoWrapper.classList.remove("ls-logo");
+
     LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
     body.classList.remove("overflow-hidden");
     offanvas.removeChild(cloned);
@@ -129,7 +130,6 @@ var LanguageSwitcher = function LanguageSwitcher() {
 
     if (!isMobile.matches) {
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
-      offanvas.removeChild(cloned);
     } // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
 
 

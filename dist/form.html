@@ -154,13 +154,19 @@
                           <div data-js="form-response-newsletter"></div>
                           <div class="signup-form"><h2 class="text-color-white">Get Updates</h2></div>
                           <div class="signup-form__error guny-error"></div>
-                          <div class="form__input">
-                            <label class="form__label" for="mce-EMAIL"><span class="form__label-content" data-content="" title="">Email</span></label>
-                            <input class="input" id="mce-EMAIL" name="EMAIL" required="true" type="email" value="" />
+                          <div class="form__input signup-form__input">
+                            <label class="signup-form__label" for="mce-EMAIL">
+                              Email
+                              <span class="form__label-content" data-content="" title=""></span>
+                            </label>
+                            <input class="signup-form__field input" id="mce-EMAIL" name="EMAIL" type="email" value="" />
                           </div>
-                          <div class="form__input form__input--short">
-                            <label class="form__label" for="mce-ZIP"><span class="form__label-content" data-content="" title="">Zip code</span></label>
-                            <input class="input" id="mce-ZIP" name="ZIP" required="true" type="tel" />
+                          <div class="form__input signup-form__input form__input--short">
+                            <label class="signup-form__label" for="mce-ZIP">
+                              Zip code
+                              <span class="form__label-content" data-content="" title=""></span>
+                            </label>
+                            <input class="signup-form__field input" id="mce-ZIP" name="ZIP" type="tel" />
                           </div>
                           <fieldset class="form__fieldset text-color-white">
                             <legend>I would like to receive updates for:</legend>
@@ -223,13 +229,19 @@
     &lt;div data-js=&quot;form-response-newsletter&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;signup-form&quot;&gt;&lt;h2 class=&quot;text-color-white&quot;&gt;Get Updates&lt;/h2&gt;&lt;/div&gt;
     &lt;div class=&quot;signup-form__error guny-error&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;form__input&quot;&gt;
-      &lt;label class=&quot;form__label&quot; for=&quot;mce-EMAIL&quot;&gt;&lt;span class=&quot;form__label-content&quot; data-content=&quot;&quot; title=&quot;&quot;&gt;Email&lt;/span&gt;&lt;/label&gt;
-      &lt;input class=&quot;input&quot; id=&quot;mce-EMAIL&quot; name=&quot;EMAIL&quot; required=&quot;true&quot; type=&quot;email&quot; value=&quot;&quot; /&gt;
+    &lt;div class=&quot;form__input signup-form__input&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-EMAIL&quot;&gt;
+        Email
+        &lt;span class=&quot;form__label-content&quot; data-content=&quot;&quot; title=&quot;&quot;&gt;&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;input class=&quot;signup-form__field input&quot; id=&quot;mce-EMAIL&quot; name=&quot;EMAIL&quot; type=&quot;email&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;form__input form__input--short&quot;&gt;
-      &lt;label class=&quot;form__label&quot; for=&quot;mce-ZIP&quot;&gt;&lt;span class=&quot;form__label-content&quot; data-content=&quot;&quot; title=&quot;&quot;&gt;Zip code&lt;/span&gt;&lt;/label&gt;
-      &lt;input class=&quot;input&quot; id=&quot;mce-ZIP&quot; name=&quot;ZIP&quot; required=&quot;true&quot; type=&quot;tel&quot; /&gt;
+    &lt;div class=&quot;form__input signup-form__input form__input--short&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-ZIP&quot;&gt;
+        Zip code
+        &lt;span class=&quot;form__label-content&quot; data-content=&quot;&quot; title=&quot;&quot;&gt;&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;input class=&quot;signup-form__field input&quot; id=&quot;mce-ZIP&quot; name=&quot;ZIP&quot; type=&quot;tel&quot; /&gt;
     &lt;/div&gt;
     &lt;fieldset class=&quot;form__fieldset text-color-white&quot;&gt;
       &lt;legend&gt;I would like to receive updates for:&lt;/legend&gt;
@@ -302,35 +314,47 @@
                             <div class="text-center"><h2>Contact Us</h2></div>
                           </div>
                           <img class="signup-form-logo" src="" />
-                          Reach out to us for more information.
-                          <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email</label>
+                          <div class="block">Reach out to us for more information.</div>
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-EMAIL-contact">
+                              Email
+                              <span class="asterisk">*</span>
+                            </label>
                             <div class="guny-error-detailed"></div>
-                            <input class="input input--full-width border-color-blue-light" id="mce-EMAIL" name="EMAIL" required="true" type="email" value="" />
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-EMAIL-contact" name="EMAIL" type="email" value="" />
                           </div>
-                          <div class="mc-field-group">
-                            <label for="mce-FNAME">First Name</label>
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-FNAME">
+                              First Name
+                              <span class="asterisk">*</span>
+                            </label>
                             <div class="guny-error-detailed"></div>
-                            <input class="input input--full-width border-color-blue-light" id="mce-FNAME" name="FNAME" required="true" type="text" value="" />
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-FNAME" name="FNAME" type="text" value="" />
                           </div>
-                          <div class="mc-field-group">
-                            <label for="mce-LNAME">Last Name</label>
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-LNAME">
+                              Last Name
+                              <span class="asterisk">*</span>
+                            </label>
                             <div class="guny-error-detailed"></div>
-                            <input class="input input--full-width border-color-blue-light" id="mce-LNAME" name="LNAME" required="true" type="text" value="" />
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-LNAME" name="LNAME" type="text" value="" />
                           </div>
-                          <div class="mc-field-group">
-                            <label for="mce-ZIP">Zip Code</label>
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-ZIP-contact">
+                              Zip Code
+                              <span class="asterisk">*</span>
+                            </label>
                             <div class="guny-error-detailed"></div>
-                            <input class="input input--full-width border-color-blue-light" id="mce-ZIP" name="ZIP" required="true" type="text" value="" />
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-ZIP-contact" name="ZIP" type="text" value="" />
                           </div>
-                          <div class="mc-field-group">
-                            <label for="mce-PHONENUM">Phone Number</label>
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-PHONENUM">Phone Number</label>
                             <div class="guny-error-detailed"></div>
-                            <input class="input input--full-width border-color-blue-light" id="mce-PHONENUM" name="PHONENUM" required="true" type="text" value="" />
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-PHONENUM" name="PHONENUM" type="text" value="" />
                           </div>
-                          <div class="mc-field-group">
-                            <label for="mce-ORGWEBSITE">Organization Website</label>
-                            <input class="input input--full-width border-color-blue-light" id="mce-ORGWEBSITE" name="ORGWEBSITE" type="url" value="" />
+                          <div class="mc-field-group signup-form__input signup-form__input--full">
+                            <label class="signup-form__label" for="mce-ORGWEBSITE">Organization Website</label>
+                            <input class="signup-form__field input input--full-width bg-color-gray-light" id="mce-ORGWEBSITE" name="ORGWEBSITE" type="url" value="" />
                           </div>
                           <fieldset class="mc-field-group input-group">
                             <legend>I'd like to:</legend>
@@ -380,35 +404,47 @@
       &lt;div class=&quot;text-center&quot;&gt;&lt;h2&gt;Contact Us&lt;/h2&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;img class=&quot;signup-form-logo&quot; src=&quot;&quot; /&gt;
-    Reach out to us for more information.
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-EMAIL&quot;&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;block&quot;&gt;Reach out to us for more information.&lt;/div&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-EMAIL-contact&quot;&gt;
+        Email
+        &lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt;
+      &lt;/label&gt;
       &lt;div class=&quot;guny-error-detailed&quot;&gt;&lt;/div&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-EMAIL&quot; name=&quot;EMAIL&quot; required=&quot;true&quot; type=&quot;email&quot; value=&quot;&quot; /&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-EMAIL-contact&quot; name=&quot;EMAIL&quot; type=&quot;email&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-FNAME&quot;&gt;First Name&lt;/label&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-FNAME&quot;&gt;
+        First Name
+        &lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt;
+      &lt;/label&gt;
       &lt;div class=&quot;guny-error-detailed&quot;&gt;&lt;/div&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-FNAME&quot; name=&quot;FNAME&quot; required=&quot;true&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-FNAME&quot; name=&quot;FNAME&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-LNAME&quot;&gt;Last Name&lt;/label&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-LNAME&quot;&gt;
+        Last Name
+        &lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt;
+      &lt;/label&gt;
       &lt;div class=&quot;guny-error-detailed&quot;&gt;&lt;/div&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-LNAME&quot; name=&quot;LNAME&quot; required=&quot;true&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-LNAME&quot; name=&quot;LNAME&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-ZIP&quot;&gt;Zip Code&lt;/label&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-ZIP-contact&quot;&gt;
+        Zip Code
+        &lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt;
+      &lt;/label&gt;
       &lt;div class=&quot;guny-error-detailed&quot;&gt;&lt;/div&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-ZIP&quot; name=&quot;ZIP&quot; required=&quot;true&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-ZIP-contact&quot; name=&quot;ZIP&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-PHONENUM&quot;&gt;Phone Number&lt;/label&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-PHONENUM&quot;&gt;Phone Number&lt;/label&gt;
       &lt;div class=&quot;guny-error-detailed&quot;&gt;&lt;/div&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-PHONENUM&quot; name=&quot;PHONENUM&quot; required=&quot;true&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-PHONENUM&quot; name=&quot;PHONENUM&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;mc-field-group&quot;&gt;
-      &lt;label for=&quot;mce-ORGWEBSITE&quot;&gt;Organization Website&lt;/label&gt;
-      &lt;input class=&quot;input input--full-width border-color-blue-light&quot; id=&quot;mce-ORGWEBSITE&quot; name=&quot;ORGWEBSITE&quot; type=&quot;url&quot; value=&quot;&quot; /&gt;
+    &lt;div class=&quot;mc-field-group signup-form__input signup-form__input--full&quot;&gt;
+      &lt;label class=&quot;signup-form__label&quot; for=&quot;mce-ORGWEBSITE&quot;&gt;Organization Website&lt;/label&gt;
+      &lt;input class=&quot;signup-form__field input input--full-width bg-color-gray-light&quot; id=&quot;mce-ORGWEBSITE&quot; name=&quot;ORGWEBSITE&quot; type=&quot;url&quot; value=&quot;&quot; /&gt;
     &lt;/div&gt;
     &lt;fieldset class=&quot;mc-field-group input-group&quot;&gt;
       &lt;legend&gt;I&#39;d like to:&lt;/legend&gt;

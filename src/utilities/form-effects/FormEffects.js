@@ -17,6 +17,7 @@ class FormEffects {
     const checkboxes = document.querySelectorAll('.checkbox__field');
 
 
+
     if (inputs.length) {
       forEach(inputs, function(inputElem) {
         inputElem.value = "";

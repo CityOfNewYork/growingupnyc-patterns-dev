@@ -74,7 +74,7 @@ class LanguageSwitcher {
     // Hide all languages
     this._hideAllLanguages(allLanguages);
 		let cloned = languageSwitcherWrapper.cloneNode(true)
-
+		console.log(cloned)
 
     // On click (Translate Link) reveal language list
     aTag.addEventListener('click', (e) => {
@@ -83,7 +83,7 @@ class LanguageSwitcher {
       // on mobile"mobile-languages-switcher" class will reposition and style the language switcher
       languageSwitcherWrapper.classList.toggle("mobile-languages-switcher");
       // Adjusting logo postion on pages without language switcher
-      logoWrapper.classList.add("ls-logo");
+      // logoWrapper.classList.add("ls-logo");
       LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile)
 
       // On mobile change body element overflow to hidden
@@ -91,7 +91,7 @@ class LanguageSwitcher {
 
 			if (isMobile.matches) {
 				cloned.classList.remove("c-language-switcher-wrapper")
-				console.log(cloned)
+				// console.log(cloned)
 				offanvas.prepend(cloned)
 			}
 
@@ -131,7 +131,7 @@ class LanguageSwitcher {
       this._hideAllLanguages(allLanguages);
       languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
       li.style.display = "";
-      logoWrapper.classList.remove("ls-logo");
+      // logoWrapper.classList.remove("ls-logo");
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile)
 
 			body.classList.remove("overflow-hidden");
@@ -145,8 +145,6 @@ class LanguageSwitcher {
       isMobile = LanguageSwitcher.checkScreenSize();
       if (!isMobile.matches) {
 				LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
-				offanvas.removeChild(cloned)
-
       }
 
       // On mobile and if the translate button is clicked add overflowe-hidden class to the body element

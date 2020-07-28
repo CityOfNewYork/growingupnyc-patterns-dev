@@ -10,21 +10,21 @@ div class='bg-color-blue-light p-4'
     div class='signup-form__error guny-error'
 
     / {# EMAIL #}
-    div class='form__input'
-      label for='mce-EMAIL' class='form__label'
-        span class='form__label-content' data-content='' title=''  
-          = 'Email'
-      input type='email' value='' name='EMAIL' class='input' id='mce-EMAIL' required='true'
+    div class='form__input signup-form__input'
+      label for='mce-EMAIL' class='signup-form__label'
+        = 'Email'
+        span class='form__label-content' data-content='' title=''
+      input type='email' value='' name='EMAIL' class='signup-form__field input' id='mce-EMAIL'
 
     / {# ZIPCODE #}
-    div class='form__input form__input--short'
-      label for='mce-ZIP' class='form__label'
+    div class='form__input signup-form__input form__input--short'
+      label for='mce-ZIP' class='signup-form__label'
+        = 'Zip code'
         span class='form__label-content' data-content='' title=''
-          = 'Zip code'
-      input name='ZIP' id='mce-ZIP' type='tel' class='input' required='true'
+      input name='ZIP' id='mce-ZIP' type='tel' class='signup-form__field input'
 
 
-    fieldset class='form__fieldset text-color-white' 
+    fieldset class='form__fieldset text-color-white'
       legend
         = 'I would like to receive updates for:'
 
@@ -36,6 +36,6 @@ div class='bg-color-blue-light p-4'
             svg class='checkbox__indicator'
               use xlink:href='#icon-check'
             = value.label
-    
+
     button type='submit' id='mc-embedded-subscribe' class='signup-form__button button--simple button--simple--alt'
       = 'Sign Up'
