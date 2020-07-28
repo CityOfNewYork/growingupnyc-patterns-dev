@@ -12,15 +12,15 @@ div class='bg-color-blue-light p-4'
     / {# EMAIL #}
     div class='form__input signup-form__input'
       label for='mce-EMAIL' class='signup-form__label'
-        = 'Email'
-        span class='form__label-content' data-content='' title=''
+        span class='signup-form__label-content' data-content='Email' title='Email'
+          = 'Email'
       input type='email' value='' name='EMAIL' class='signup-form__field input' id='mce-EMAIL'
 
     / {# ZIPCODE #}
     div class='form__input signup-form__input form__input--short'
       label for='mce-ZIP' class='signup-form__label'
-        = 'Zip code'
-        span class='form__label-content' data-content='' title=''
+        span class='signup-form__label-content' data-content='Zip code' title='Zip code'
+          = 'Zip code'
       input name='ZIP' id='mce-ZIP' type='tel' class='signup-form__field input'
 
 

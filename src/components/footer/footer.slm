@@ -6,7 +6,7 @@ footer class="c-footer"
     div class="c-footer__section w-full desktop:w-1/2 flex-col flex-wrap"
       div class="c-footer__logos flex"
         figure class="c-footer__logo w-1/2"
-          svg class="icon--large"
+          svg class="icon--logo-guny"
             title = 'Child Care'
             use xlink:href="#icon-growingupnyc-logo-white"
           / img alt="Growing Up NYC" src="images/logo-gunyc-white@236px.png" width="118"
@@ -28,5 +28,34 @@ footer class="c-footer"
             a class="c-footer__link" href="#"
               = 'NYC Social Media'
     div class="c-footer__signup w-full desktop:mt-0 desktop:w-1/2 "
-      h2
-        = "Get Updates"
+      form action='' method='post' id='mc-embedded-subscribe-form' class='guny-signup' target='_blank' data-js='form-newsletter'
+        div data-js="form-response-newsletter"
+        div class='signup-form'
+          h2 class='text-color-white'
+            = 'Get Updates'
+        div class='signup-form__error guny-error'
+        / {# EMAIL #}
+        div class='form__input signup-form__input'
+          label for='mce-EMAIL' class='signup-form__label'
+            span class='signup-form__label-content' data-content='Email' title='Email'
+              = 'Email'
+          input type='email' value='' name='EMAIL' class='signup-form__field input' id='mce-EMAIL'
+        / {# ZIPCODE #}
+        div class='form__input signup-form__input form__input--short'
+          label for='mce-ZIP' class='signup-form__label'
+            span class='signup-form__label-content' data-content='Zip code' title='Zip code'
+              = 'Zip code'
+          input name='ZIP' id='mce-ZIP' type='tel' class='signup-form__field input'
+        fieldset class='form__fieldset text-color-white'
+          legend
+            = 'I would like to receive updates for:'
+          - for (index in this.site.forms.ageGroups)
+            - value = this.site.forms.ageGroups[index];
+            span class='form__checkbox'
+              label class='checkbox' for='${value.id}'
+                input id='${value.id}' class='checkbox__field' name='${value.name}' type='checkbox' value='${value.value}'  required='true'
+                svg class='checkbox__indicator'
+                  use xlink:href='#icon-check'
+                = value.label
+        button type='submit' id='mc-embedded-subscribe' class='signup-form__button button--simple button--simple--alt'
+          = 'Sign Up'
