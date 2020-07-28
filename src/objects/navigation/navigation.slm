@@ -45,7 +45,7 @@ div class="o-offcanvas js-offcanvas" id="offcanvas-ages"
             a href="#" class="c-list-box__subitem"
               = '9 months'
 
-  div class='o-offcanvas__main'
+  div class='o-offcanvas__main mt-20 mb-40'
     header class='o-navigation'
       div class='o-container'
         a href="#" class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu"
@@ -54,13 +54,13 @@ div class="o-offcanvas js-offcanvas" id="offcanvas-ages"
         nav class='o-navigation__nav'
           ul class='o-inline'
             li class='o-inline__item'
-              a class='o-navigation__nav-link' href='#' 
+              a class='o-navigation__nav-link' href='#'
                 = 'Programs'
             li class='o-inline__item'
-              a class='o-navigation__nav-link' href='#' 
+              a class='o-navigation__nav-link' href='#'
                 = 'Events'
             li class='o-inline__item'
-              a class='o-navigation__nav-link js-offcanvas' href='#ages' data-js="offcanvas-ages"
+              a class='o-navigation__nav-link js-offcanvas' href='#ages'
                 = 'Ages'
             li class='o-inline__item'
               a class='o-navigation__nav-link' href='#search'

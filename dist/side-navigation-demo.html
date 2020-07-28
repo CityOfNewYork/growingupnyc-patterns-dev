@@ -52,11 +52,12 @@
   </head>
   <body>
     <div><div></div></div>
-    <div class="js-parallax p-40 bg-color-dark-gray-light"></div>
-    <article class="o-container js-sticky-container">
-      <div class="o-article-sidebar">
+    <div class="my-10 text-center"><a href="/side-navigation">Back to Side Navigation</a></div>
+    <div class="js-parallax p-20 bg-color-dark-gray-light"></div>
+    <article class="o-container js-sticky-container desktop:flex">
+      <div class="o-article-sidebar desktop:w-sidebar">
         <div class="o-content-container--compact u-shift-up">
-          <ol class="c-nav-list js-sticky js-section-set o-sticky-nav">
+          <ol class="c-nav-list js-sticky js-section-set o-sticky-nav" data-js="sticky">
             <li class="c-nav-list__item">
               <a class="scroll c-nav-list__link bg-very-dark-blue border-very-dark-blue hover:border-strong-blue hover:bg-strong-blue" data-section="section-details" href="#section-events">
                 Events
@@ -72,7 +73,7 @@
           </ol>
         </div>
       </div>
-      <div class="o-article js-sticky-article">
+      <div class="o-article js-sticky-article desktop:w-article">
         <section class="o-content-container--compact u-top-spacing u-bottom-spacing">
           <h2>What To Expect</h2>
           <p>Your baby is already learning and growing! Expect your child to begin smiling at people, notice sounds, pay attention to faces, and sleep a lot – up to 18 hours per day! If you need more support, the City’s Newborn Home Visiting Program is available to help with the adjustment to parenthood. Scroll down to find out more!</p>
@@ -95,7 +96,6 @@
         </section>
       </div>
     </article>
-    <div class="my-10 text-center"><a href="/side-navigation">Back to Side Navigation</a></div>
     <script src="scripts/growingup-nyc.js"></script>
     <script type="text/javascript">
       var gunyc = new GUNYC();

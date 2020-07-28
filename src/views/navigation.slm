@@ -15,5 +15,5 @@
 = content('main')
   = mixin('content-header', title);
   div
-    = mixin('section', false, 'objects/navigation/navigation');
+    = mixin('section', title, 'objects/navigation/navigation');
 
