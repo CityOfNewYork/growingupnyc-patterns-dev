@@ -944,7 +944,8 @@ var Offcanvas = (function () {
       offCanvas: Offcanvas.offCanvas
     };
     var nav = document.querySelector("." + this._settings.nav);
-    var mainOff = document.querySelector("." + this._settings.mainOff); // Depending on the argument passed toggle element class
+    var mainOff = document.querySelector("." + this._settings.mainOff);
+    var footer = document.querySelector('.c-footer'); // Depending on the argument passed toggle element class
 
     var openClass = "";
 
@@ -957,6 +958,7 @@ var Offcanvas = (function () {
     } else if (this._settings.sideSelector === 'down') {
       openClass = 'is-open-down';
       mainOff.classList.toggle("o-offcanvas__main-down");
+      nav.classList.toggle("w-full");
     } // Offcanvas element
 
 
@@ -985,10 +987,10 @@ var Offcanvas = (function () {
       });
     }
 
-    this._toggle(openClass, nav, mainOff);
+    this._toggle(openClass, nav, mainOff, footer);
   };
 
-  Offcanvas.prototype._toggle = function _toggle(openClass, nav, mainOff) {
+  Offcanvas.prototype._toggle = function _toggle(openClass, nav, mainOff, footer) {
     var linkActiveClass = 'is-active';
     var toggleElems = document.querySelectorAll('[data-js]');
 
@@ -1026,6 +1028,7 @@ var Offcanvas = (function () {
           nav.classList.toggle("o-offcanvas__side-left");
         } else if (openClass === 'is-open-down') {
           nav.classList.toggle("o-offcanvas__side-down");
+          footer.classList.toggle("c-footer-down");
         } else {
           nav.classList.toggle("o-offcanvas__side-right");
         } // Toggle custom class if it is set

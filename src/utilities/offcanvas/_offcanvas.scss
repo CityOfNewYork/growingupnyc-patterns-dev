@@ -228,6 +228,16 @@ $width-offcanvas-side-large: map-get(map-get($tokens, 'widths'), 'width-offcanva
   }
 
 }
+.c-footer-down {
+  position: fixed;
+  top: 75%;
+  width: 100%;
+
+  @media screen and (min-width: $screen-desktop) {
+    top: 75%;
+  }
+
+}
 
 /**
 * OffCanvas Overlay

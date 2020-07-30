@@ -123,3 +123,15 @@
   line-height: 1.2;
   margin-top: 65px;
 }
+
+
+.is-open-down .c-footer {
+  position: fixed;
+  top: 75%;
+  width: 100%;
+
+  @media screen and (min-width: $screen-desktop) {
+    top: 75%;
+  }
+
+}
