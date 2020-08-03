@@ -9,4 +9,38 @@
   = mixin('head');
 
 = content('main');
-  p The pattern library for Growing Up NYC.
+  div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:pl-24 desktop:pr-24"
+    h2 class="text-center"
+      = "GROWINGUP NYC Patterns Library"
+    div class="mt-16 mb-16"
+      p = "The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of GROWINGUP NYC."
+      p = "Growing Up NYC supports the cognitive, social-emotional, and physical development of all New York City children by shaping City policies, agency practices and program development."
+    div class="text-center mt-16 mb-16"
+      a class="button--primary bg-color-blue text-color-white js-offcanvas" href='#patterns' data-js="offcanvas-patterns"
+        = "Browse the Patterns"
+    div class="pl-5 pr-5 pt-10 pb-10 border-solid border border-color-gray rounded-md mt-16 mb-16 list-unordered--check"
+      h3 class="mb-8 pl-8"
+        = "Features"
+      ul
+        li
+          = "Multi-lingual stylesheets with right-to-left and left-to-right reading orientations."
+        li
+          = "Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11."
+        li
+          = "Module-based design patterns with CSS and JavaScript included for each pattern."
+        li
+          = "Tailwindcss integration."
+    div class="pl-5 pr-5 pt-10 pb-10"
+      h3 class="mt-8 mb-8"
+        = "Instalation"
+      div class="mt-8 mb-8"
+        p = "The Patterns are available as an NPM package and can be installed with the following command."
+      div class="border-solid border border-color-gray rounded-md py-4 px-6 background-color-gray mt-8 mb-8"
+        a = "npm install @nycopportunity/guny-patterns"
+      div class="mt-8 mb-8"
+        p = "All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage."
+      div class="text-center mt-8 mb-8"
+        a class="button--primary bg-color-blue text-color-white js-offcanvas" href='#patterns' data-js="offcanvas-patterns"
+          = "Get Started"
+  div class="pl-5 pr-5 pt-10 pb-10 bg-color-gray-light"
+

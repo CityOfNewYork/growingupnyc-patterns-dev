@@ -1,19 +1,5 @@
 footer class="c-footer"
-  div class="o-container flex flex-wrap mb-20"
-    div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap"
-      div class="c-footer__logos flex flex-wrap -ml-5"
-        figure
-          svg class="icon--logo"
-            title = "Growing Up NYC Logo"
-            use xlink:href="#icon-growingupnyc-logo-white"
-    div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap"
-      p = "Maintained by"
-      div class="c-footer__logos flex flex-wrap"
-        figure
-          svg class="icon--logo"
-            title = "Growing Up NYC Logo"
-            use xlink:href="#icon-mayors-office-logo"
-  div class="o-container flex flex-wrap"
+  div class="o-container flex flex-wrap mb-10"
     div class="tablet:flex-1 w-full mb-10"
       h3 = 'Elements'
       a href="base" class="block text-color-white"
@@ -136,3 +122,17 @@ footer class="c-footer"
         = 'Tailwind'
       a href="typography" class="block text-color-white"
         = 'Typography'
+  div class="o-container flex flex-wrap mb-20"
+    div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap"
+      div class="c-footer__logos flex flex-wrap -ml-5"
+        figure
+          svg class="icon--logo"
+            title = "Growing Up NYC Logo"
+            use xlink:href="#icon-growingupnyc-logo-white"
+    div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap"
+      p = "Maintained by"
+      div class="c-footer__logos flex flex-wrap"
+        figure
+          svg class="icon--logo"
+            title = "Growing Up NYC Logo"
+            use xlink:href="#icon-mayors-office-logo"
