@@ -95,4 +95,4 @@
 
 = content('script')
   javascript:
-   var navigation = gunyc.navigation({sideSelector: 'right'});
+   var navigation = gunyc.navigation({sideSelector: 'down'});
