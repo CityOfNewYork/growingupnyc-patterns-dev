@@ -1,0 +1,76 @@
+= extend('layouts/demo-default')
+
+- title = 'Navigation Demo'
+
+/ Partials
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
+
+
+/ Content blocks
+= content('head');
+  = mixin('head');
+
+= content('main')
+  / = mixin('content-header', title);
+  div class="o-offcanvas js-offcanvas" id="offcanvas-ages"
+    nav class="o-offcanvas__side js-offcanvas__side" id="ages" role="navigation" aria-label="ages-heading"
+      h2 id="ages-heading" class="show-for-screen-reader"
+        = 'Resources by Age'
+      button data-js="offcanvas-ages" class="o-offcanvas__close button--text"
+        svg class="icon--small" role="img"
+          title = 'Close Resources by Age'
+          use xlink:href="#icon-close"
+      ol class="js-accordion c-list-box c-list-box--secondary" data-multiselectable="true"
+        li class='c-list-box__item'
+          h3 class="js-accordion__header c-list-box__heading" id="baby-heading" tabindex="0"
+            = 'Baby'
+          ol class="js-accordion__content c-list-box__content"
+            li
+              a href="#" class="c-list-box__subitem"
+                = '2 months'
+          ol class="js-accordion__content c-list-box__content"
+            li
+              a href="#" class="c-list-box__subitem"
+                = '4 months'
+          ol class="js-accordion__content c-list-box__content"
+            li
+              a href="#" class="c-list-box__subitem"
+                = '6 months'
+          ol class="js-accordion__content c-list-box__content"
+            li
+              a href="#" class="c-list-box__subitem"
+                = '9 months'
+
+    div class="o-offcanvas__main bg-color-blue-light js-offcanvas__main"
+      div class='o-offcanvas__main mt-20 mb-40'
+        header class='o-navigation'
+          div class='o-container'
+            a href="#" class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu"
+              span class="o-navigation__logo"
+                = 'Growing Up NYC'
+            nav class='o-navigation__nav'
+              ul class='o-inline'
+                li class='o-inline__item'
+                  a class='o-navigation__nav-link' href='#'
+                    = 'Programs'
+                li class='o-inline__item'
+                  a class='o-navigation__nav-link' href='#'
+                    = 'Events'
+                li class='o-inline__item'
+                  a class='o-navigation__nav-link js-offcanvas' href='#ages' data-js="offcanvas-patterns"
+                    = 'Ages'
+                li class='o-inline__item'
+                  a class='o-navigation__nav-link' href='#search'
+                    svg class="o-navigation__icon o-navigation__icon__search" role="img"
+                      title
+                        = 'Search'
+                      use xlink:href="#icon-search"
+      a class="o-offcanvas__overlay" data-js="offcanvas-ages" aria-hidden="true"
+
+
+
+= content('script')
+  javascript:
+   var navigation = gunyc.navigation({sideSelector: 'right'});

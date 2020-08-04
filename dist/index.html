@@ -130,7 +130,7 @@
       <div class="o-offcanvas__main js-offcanvas__main">
         <header class="o-navigation p-12">
           <div class="o-container">
-            <a class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-1 mobile:h-16 desktop:h-20 shadow-none p-1" href="/"><span class="o-navigation__logo">Growing Up NYC</span></a>
+            <a class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-1 mobile:h-16 desktop:h-20 shadow-none p-1" href="/growingupnyc-patterns-development/"><span class="o-navigation__logo">Growing Up NYC</span></a>
             <nav class="o-navigation__nav">
               <ul class="o-inline text-left -mt-8">
                 <li class="o-inline__item"><a class="o-navigation__nav-link js-offcanvas" data-js="offcanvas-patterns" href="#patterns">Patterns</a></li>
@@ -141,14 +141,15 @@
         <a aria-hidden="true" class="o-offcanvas__overlay" data-js="offcanvas-patterns"></a>
         <main class="pt-12 mobile:pt-20 tablet:pt-32">
           <div>
-            <div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:pl-24 desktop:pr-24">
+            <div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10">
               <h2 class="text-center">GROWINGUP NYC Patterns Library</h2>
               <div class="mt-16 mb-16">
-                <p>The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of GROWINGUP NYC.</p>
+                <p class="inline">The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of</p>
+                <p class="inline"><a class="inline bg-color-blue-light px-2 text-color-white" href="https://growingupnyc.cityofnewyork.us/">GROWINGUP NYC.</a></p>
                 <p>Growing Up NYC supports the cognitive, social-emotional, and physical development of all New York City children by shaping City policies, agency practices and program development.</p>
               </div>
               <div class="text-center mt-16 mb-16"><a class="button--primary bg-color-blue text-color-white js-offcanvas" data-js="offcanvas-patterns" href="#patterns">Browse the Patterns</a></div>
-              <div class="pl-5 pr-5 pt-10 pb-10 border-solid border border-color-gray rounded-md mt-16 mb-16 list-unordered--check">
+              <div class="px-5 py-5 border-solid border border-color-gray rounded-md list-unordered--check">
                 <h3 class="mb-8 pl-8">Features</h3>
                 <ul>
                   <li>Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.</li>
@@ -160,12 +161,70 @@
               <div class="pl-5 pr-5 pt-10 pb-10">
                 <h3 class="mt-8 mb-8">Instalation</h3>
                 <div class="mt-8 mb-8"><p>The Patterns are available as an NPM package and can be installed with the following command.</p></div>
-                <div class="border-solid border border-color-gray rounded-md py-4 px-6 background-color-gray mt-8 mb-8"><a>npm install @nycopportunity/guny-patterns</a></div>
+                <div class="border-solid border border-color-gray rounded-md py-4 px-6 bg-color-gray-light mt-8 mb-8 flex justify-between">
+                  <p id="npm-install">npm install @nycopportunity/guny-patterns</p>
+                  <button class="hover:text-color-gray-dark" id="copy-text">Copy</button>
+                </div>
                 <div class="mt-8 mb-8"><p>All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.</p></div>
                 <div class="text-center mt-8 mb-8"><a class="button--primary bg-color-blue text-color-white js-offcanvas" data-js="offcanvas-patterns" href="#patterns">Get Started</a></div>
               </div>
             </div>
-            <div class="pl-5 pr-5 pt-10 pb-10 bg-color-gray-light"></div>
+            <div class="px-10 py-10  bg-color-gray-light">
+              <div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 tablet:flex tablet:flex-col">
+                <div><h3 class="mt-8 mb-8">Links</h3></div>
+                <div class="tablet:flex tablet:flex-wrap">
+                  <div class="my-8 tablet:w-1/2 ">
+                    <div>
+                      <h3 class="c-card__title"><a class="my-4" href="/typography">Typography</a></h3>
+                      <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                  <div class="my-8 tablet:w-1/2 ">
+                    <div>
+                      <h3 class="c-card__title"><a class="my-4" href="/color">Color</a></h3>
+                      <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                  <div class="my-8 tablet:w-1/2 ">
+                    <div>
+                      <h3 class="c-card__title"><a class="my-4" href="/button">Button</a></h3>
+                      <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                  <div class="my-8 tablet:w-1/2 ">
+                    <div>
+                      <h3 class="c-card__title"><a class="my-4" href="/icons">Icons</a></h3>
+                      <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 text-center my-16">
+                <div class="rotating-text">
+                  <span class="rotating-text__entry" data-js="rotate-text">Button</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Divider</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Checkbox</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Hero</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Icons</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Input</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Layouts</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">List Box</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Lists</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Icons</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Spinner</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Sticker</span>
+                  <span class="rotating-text__entry" data-js="rotate-text">Table</span>
+                  <h3 class="c-card__title"><span class="animated" data-js="rotate-controller" id="rotate"></span></h3>
+                </div>
+              </div>
+            </div>
+            <div class="layout--row desktop-lg:w-8/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10">
+              <div class="pl-5 pr-5 pt-10 pb-10">
+                <h3 class="mt-8 mb-8">NYC Civic Service Design</h3>
+                <div class="mt-8 mb-8"><p>Growing Up NYC was built using NYC Civic Service Design principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can contact the Service Design Studio to find out how you can implement service design in your work.</p></div>
+                <div class="text-center mt-8 mb-8"><a class="button--primary bg-color-blue text-color-white js-offcanvas" href="https://civicservicedesign.com/service-design-principles-c763f64ac950">Read the Principles</a></div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -271,6 +330,20 @@
       gunyc.accordion();
       gunyc.newsletter();
       gunyc.formEffect();
+    </script>
+    <script type="text/javascript">
+      gunyc.animations();
+
+      function copy(event) {
+        var text = document.getElementById('npm-install').innerText;
+        var elem = document.createElement('textarea');
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand('copy');
+        document.body.removeChild(elem);
+      }
+      document.querySelector('#copy-text').addEventListener('click', copy);
     </script>
     <script src="/reload/reload.js"></script>
   </body>

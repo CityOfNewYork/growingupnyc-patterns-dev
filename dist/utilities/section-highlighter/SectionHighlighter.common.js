@@ -3472,11 +3472,11 @@ function adoptValue( value, resolve, reject, noValue ) {
 	// For Promises/A+, convert exceptions into rejections
 	// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
 	// Deferred#then to conditionally suppress rejection.
-	} catch ( value ) {
+	} catch ( value$1 ) {
 
 		// Support: Android 4.0 only
 		// Strict mode functions invoked without .call/.apply get global-object context
-		reject.apply( undefined, [ value ] );
+		reject.apply( undefined, [ value$1 ] );
 	}
 }
 
@@ -9434,15 +9434,15 @@ jQuery.extend( {
 			try {
 				completed = false;
 				transport.send( requestHeaders, done );
-			} catch ( e ) {
+			} catch ( e$1 ) {
 
 				// Rethrow post-completion exceptions
 				if ( completed ) {
-					throw e;
+					throw e$1;
 				}
 
 				// Propagate others as results
-				done( -1, e );
+				done( -1, e$1 );
 			}
 		}
 

@@ -132,7 +132,7 @@ var AlertBanner = (function () {
 						if (key === name) {
 							break;
 						}
-					} catch (e) {}
+					} catch (e$1) {}
 				}
 
 				return key ? jar[key] : jar;

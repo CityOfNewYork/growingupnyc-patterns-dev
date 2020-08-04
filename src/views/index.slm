@@ -9,16 +9,20 @@
   = mixin('head');
 
 = content('main');
-  div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:pl-24 desktop:pr-24"
+  div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10"
     h2 class="text-center"
       = "GROWINGUP NYC Patterns Library"
     div class="mt-16 mb-16"
-      p = "The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of GROWINGUP NYC."
+      p class="inline"
+        = "The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of "
+      p class="inline"
+        a class="inline bg-color-blue-light px-2 text-color-white" href='https://growingupnyc.cityofnewyork.us/'
+          = "GROWINGUP NYC."
       p = "Growing Up NYC supports the cognitive, social-emotional, and physical development of all New York City children by shaping City policies, agency practices and program development."
     div class="text-center mt-16 mb-16"
       a class="button--primary bg-color-blue text-color-white js-offcanvas" href='#patterns' data-js="offcanvas-patterns"
         = "Browse the Patterns"
-    div class="pl-5 pr-5 pt-10 pb-10 border-solid border border-color-gray rounded-md mt-16 mb-16 list-unordered--check"
+    div class="px-5 py-5 border-solid border border-color-gray rounded-md list-unordered--check"
       h3 class="mb-8 pl-8"
         = "Features"
       ul
@@ -35,12 +39,101 @@
         = "Instalation"
       div class="mt-8 mb-8"
         p = "The Patterns are available as an NPM package and can be installed with the following command."
-      div class="border-solid border border-color-gray rounded-md py-4 px-6 background-color-gray mt-8 mb-8"
-        a = "npm install @nycopportunity/guny-patterns"
+      div class="border-solid border border-color-gray rounded-md py-4 px-6 bg-color-gray-light mt-8 mb-8 flex justify-between"
+        p id="npm-install"
+          = "npm install @nycopportunity/guny-patterns"
+        button id="copy-text" class="hover:text-color-gray-dark"
+          = "Copy"
       div class="mt-8 mb-8"
         p = "All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage."
       div class="text-center mt-8 mb-8"
         a class="button--primary bg-color-blue text-color-white js-offcanvas" href='#patterns' data-js="offcanvas-patterns"
           = "Get Started"
-  div class="pl-5 pr-5 pt-10 pb-10 bg-color-gray-light"
+  div class="px-10 py-10  bg-color-gray-light"
+    div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 tablet:flex tablet:flex-col"
+      div class=""
+        h3 class="mt-8 mb-8"
+          = "Links"
+      div class="tablet:flex tablet:flex-wrap"
+        div class="my-8 tablet:w-1/2 "
+          div
+            h3 class="c-card__title"
+              a class="my-4" href='/typography'
+                = "Typography"
+            p = "Lorem ipsum dolor sit amet"
+        div class="my-8 tablet:w-1/2 "
+          div
+            h3 class="c-card__title"
+              a class="my-4" href='/color'
+                = "Color"
+            p = "Lorem ipsum dolor sit amet"
+        div class="my-8 tablet:w-1/2 "
+          div
+            h3 class="c-card__title"
+              a class="my-4" href='/button'
+                = "Button"
+            p = "Lorem ipsum dolor sit amet"
+        div class="my-8 tablet:w-1/2 "
+          div
+            h3 class="c-card__title"
+              a class="my-4" href='/icons'
+                = "Icons"
+            p = "Lorem ipsum dolor sit amet"
+    div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 text-center my-16"
+      div class="rotating-text"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Button"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Divider"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Checkbox"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Hero"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Icons"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Input"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Layouts"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "List Box"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Lists"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Icons"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Spinner"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Sticker"
+        span data-js="rotate-text" class="rotating-text__entry"
+          = "Table"
+        h3 class="c-card__title"
+          span data-js="rotate-controller" id="rotate" class="animated"
+  div class="layout--row desktop-lg:w-8/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10"
+    div class="pl-5 pr-5 pt-10 pb-10"
+      h3 class="mt-8 mb-8"
+        = "NYC Civic Service Design"
+      div class="mt-8 mb-8"
+        p = "Growing Up NYC was built using NYC Civic Service Design principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can contact the Service Design Studio to find out how you can implement service design in your work."
+      div class="text-center mt-8 mb-8"
+        a class="button--primary bg-color-blue text-color-white js-offcanvas" href='https://civicservicedesign.com/service-design-principles-c763f64ac950'
+          = "Read the Principles"
+
+= content('script')
+  javascript:
+    gunyc.animations();
+
+    function copy(event) {
+      var text = document.getElementById("npm-install").innerText;
+      var elem = document.createElement("textarea");
+      document.body.appendChild(elem);
+      elem.value = text;
+      elem.select();
+      document.execCommand("copy");
+      document.body.removeChild(elem);
+    }
+    document.querySelector("#copy-text").addEventListener("click", copy);
+
+
+
 

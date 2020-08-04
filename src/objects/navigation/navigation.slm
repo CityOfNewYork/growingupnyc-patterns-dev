@@ -60,7 +60,7 @@ div class="o-offcanvas js-offcanvas" id="offcanvas-ages"
               a class='o-navigation__nav-link' href='#'
                 = 'Events'
             li class='o-inline__item'
-              a class='o-navigation__nav-link js-offcanvas' href='#ages'
+              a class='o-navigation__nav-link js-offcanvas' href='#ages' data-js="offcanvas-patterns"
                 = 'Ages'
             li class='o-inline__item'
               a class='o-navigation__nav-link' href='#search'

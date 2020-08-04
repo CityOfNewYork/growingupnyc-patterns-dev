@@ -131,7 +131,7 @@ var js_cookie = createCommonjsModule(function (module, exports) {
 					if (key === name) {
 						break;
 					}
-				} catch (e) {}
+				} catch (e$1) {}
 			}
 
 			return key ? jar[key] : jar;
