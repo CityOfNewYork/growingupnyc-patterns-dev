@@ -14,5 +14,5 @@
 = content('main')
   = mixin('content-header', title);
   div
-    = mixin('section', false, 'components/side-hero/side-hero');
+    = mixin('section', 'Side Hero', 'components/side-hero/side-hero');
 

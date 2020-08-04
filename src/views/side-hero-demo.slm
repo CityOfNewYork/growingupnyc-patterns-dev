@@ -1,0 +1,47 @@
+= extend('layouts/demo-default')
+
+- title = 'Side Hero Demo'
+
+/ Partials
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
+
+
+/ Content blocks
+= content('head');
+  = mixin('head');
+
+= content('main')
+  div class="my-10 text-right mr-64"
+    a href="/side-hero"
+      = "Back to Side Hero"
+  div class="c-side-hero"
+
+  section class="o-static-column o-static-column--left c-side-hero js-static"
+    div class="c-side-hero__image"
+    div class="c-side-hero__content"
+      h1 class="c-side-hero__title"
+        p
+          = "The official"
+          svg aria-hidden="true" class="icon--nyc"
+              use xlink:href="#icon-nyc-logo"
+          = "resources for"
+        div class="c-side-hero__title__large rotating-text"
+            div class="rotating-text"
+              span data-js="rotate-text" class="rotating-text__entry"
+                = "Learning"
+              span data-js="rotate-text" class="rotating-text__entry"
+                = "Playing"
+              span data-js="rotate-text" class="rotating-text__entry"
+                = "Making"
+              span data-js="rotate-text" class="rotating-text__entry"
+                = "Growing"
+              span data-js="rotate-controller" id="rotate" class="animated"
+      a href="#" class="button--outline button--outline--white"
+        = "Check out these tips"
+
+
+= content('script')
+  javascript:
+   gunyc.animations();

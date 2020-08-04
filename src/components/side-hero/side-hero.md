@@ -1,0 +1,1 @@
+Side hero is a static container in the front page that contains rotating text and CTA button. * Classes are in quote for demonstration purpuses please unquote the classes for use. [Click here for a demo page.](/side-hero-demo)
