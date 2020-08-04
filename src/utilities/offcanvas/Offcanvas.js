@@ -28,6 +28,7 @@ class Offcanvas {
 		const nav = document.querySelector(`.${this._settings.nav}`)
 		const mainOff = document.querySelector(`.${this._settings.mainOff}`)
 		const footer = document.querySelector('.c-footer')
+		console.log('footer:', "footer")
 
 		// Depending on the argument passed toggle element class
     let openClass = "";
