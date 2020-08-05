@@ -14,5 +14,7 @@
 = content('main')
   = mixin('content-header', title);
   div
+    a href="/side-hero-demo"
+      = "Demonstration"
     = mixin('section', 'Side Hero', 'components/side-hero/side-hero');
 
