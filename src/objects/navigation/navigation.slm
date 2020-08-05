@@ -68,5 +68,4 @@ div class="o-offcanvas js-offcanvas" id="offcanvas-ages"
                   title
                     = 'Search'
                   use xlink:href="#icon-search"
-
   a class="o-offcanvas__overlay" data-js="offcanvas-ages" aria-hidden="true"
