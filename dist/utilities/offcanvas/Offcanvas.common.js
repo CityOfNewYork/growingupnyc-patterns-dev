@@ -944,8 +944,7 @@ var Offcanvas = function Offcanvas(settings) {
   };
   var nav = document.querySelector("." + this._settings.nav);
   var mainOff = document.querySelector("." + this._settings.mainOff);
-  var footer = document.querySelector('.c-footer');
-  console.log('footer:', "footer"); // Depending on the argument passed toggle element class
+  var footer = document.querySelector('.c-footer'); // Depending on the argument passed toggle element class
 
   var openClass = "";
 
