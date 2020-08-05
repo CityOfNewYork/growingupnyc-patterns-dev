@@ -15,7 +15,7 @@
 = content('main')
   / = mixin('content-header', title);
   div class="my-10 text-center"
-    a href="/side-navigation"
+    a href="side-navigation"
       = "Back to Side Navigation"
   div class="js-parallax p-20 bg-color-dark-gray-light"
   article class="o-container js-sticky-container desktop:flex"

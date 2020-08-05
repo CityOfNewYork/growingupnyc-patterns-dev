@@ -1,1 +1,1 @@
-[Click here for a demo page.](/offcanvas-demo)
+[Click here for a demo page.](offcanvas-demo)

@@ -18,7 +18,7 @@
     button type="button" class="button--primary bg-color-blue text-color-white text-center" id="cookie-remover-button"
           = "Remove Cookie"
     div class="my-4 text-center"
-        a href="/alert-banner"
+        a href="alert-banner"
           = "Back to Alert Banner"
 
 
