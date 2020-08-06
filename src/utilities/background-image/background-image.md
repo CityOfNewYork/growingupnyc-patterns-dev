@@ -1,0 +1,1 @@
+Background images are accessed via CDN.

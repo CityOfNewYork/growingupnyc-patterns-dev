@@ -15,4 +15,4 @@
 = content('main')
   = mixin('content-header', title);
   div
-    = mixin('section', 'Brain Building Tip', 'components/tip-card/tip-card');
+    = mixin('section', title, 'components/tip-card/tip-card');

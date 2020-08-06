@@ -1,0 +1,1 @@
+Section highlighter measures the position of a section and checks if a section reaches the top of the screen. If a section reaches the top of the screen, a class is added to the corresponding menu item. The class changes the color and adds a pointing icon to the menu item.

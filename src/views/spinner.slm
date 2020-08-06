@@ -1,6 +1,6 @@
 = extend('layouts/default')
 
-- title = 'Sticker'
+- title = 'Spinner'
 
 / Partials
 = partial('partials/head.mixin.slm');

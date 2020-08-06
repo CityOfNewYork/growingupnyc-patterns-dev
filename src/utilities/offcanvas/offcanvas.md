@@ -1,1 +1,1 @@
-[Click here for a demo page.](offcanvas-demo)
+Offcanvas is a toggle utility that slides the main page to reveal a menu. Users can pass an argument to specify which position they want the menu to show up. [Click here for a demo page.](offcanvas-demo)

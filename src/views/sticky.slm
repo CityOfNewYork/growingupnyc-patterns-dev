@@ -15,7 +15,7 @@
 = content('main')
   = mixin('content-header', title);
   div
-    = mixin('section', '', 'utilities/sticky/sticky');
+    = mixin('section', title, 'utilities/sticky/sticky');
 
 = content('script')
   javascript:

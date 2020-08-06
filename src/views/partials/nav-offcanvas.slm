@@ -33,7 +33,7 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
     a href="sticker" class="block"
       = 'Sticker'
     a href="table" class="block"
-      = 'table'
+      = 'Table'
 
   div class="tablet:flex-1 w-full mb-10"
     h3
@@ -105,13 +105,13 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
     h3
       = 'Utilities'
     a href="accessibility" class="block"
-      = 'accessibility'
+      = 'Accessibility'
     a href="animations" class="block"
-      = 'animations'
+      = 'Animations'
     a href="background-image" class="block"
-      = 'background image'
+      = 'Background image'
     a href="color" class="block"
-      = 'color'
+      = 'Color'
     a href="fonts" class="block"
       = 'Font'
     a href="form-effects" class="block"
@@ -123,7 +123,7 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
     a href="section-highlighter" class="block"
       = 'Section Highlighter'
     a href="sticky" class="block"
-      = 'sticky'
+      = 'Sticky'
     a href="tailwind" class="block"
       = 'Tailwind'
     a href="typography" class="block"

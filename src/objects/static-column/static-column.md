@@ -1,1 +1,1 @@
-The Static Column object is a container that sits at the top of the viewer's page. It is recommended to checkout the demos to see the columns in action. * Classes are in double quote for demo pages convenience purpuses only, please remove the additional qoute for implementation. [Click here for a demo page.](static-column-demo)
+The Static Column object is a container that sits at the top of the viewer's page. It is recommended to checkout the demos to see the columns in action. [Click here for a demo page.](static-column-demo)

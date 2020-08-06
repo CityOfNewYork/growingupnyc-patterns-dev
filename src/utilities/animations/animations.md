@@ -1,0 +1,1 @@
+Animation utility rotates text at the Growing Up NYC front page.
