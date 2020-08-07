@@ -66,11 +66,10 @@
                     title
                       = 'Search'
                     use xlink:href="#icon-search"
-    a class="o-offcanvas__overlay" data-js="offcanvas-ages" aria-hidden="true"
-      div class="my-10 text-center"
-        a href="navigation"
-          = "Back to Navigation"
+    div class="o-offcanvas__main js-offcanvas__main o-offcanvas__main-right"
+      a class="o-offcanvas__overlay" data-js="offcanvas-ages" aria-hidden="true"
+
 
 = content('script')
   javascript:
-   var navigation = gunyc.navigation({sideSelector: 'right'});
+   gunyc.navigation({sideSelector: 'right'});

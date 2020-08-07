@@ -53,8 +53,8 @@
   <body>
     <div><div></div></div>
     <div class="o-offcanvas js-offcanvas bg-color-blue-light" id="offcanvas-ages">
-      <nav class="o-offcanvas__side js-offcanvas__side o-offcanvas__side-right" id="ages">
-        <button class="o-offcanvas__close button--text is-active" data-toggle="offcanvas-ages">
+      <nav aria-label="ages-heading" class="o-offcanvas__side js-offcanvas__side" id="age" role="navigation">
+        <button class="o-offcanvas__close button--text is-active" data-js="offcanvas-ages" data-toggle="offcanvas-ages">
           <svg class="icon--small" role="img">
             <title>Close Resources by Age</title>
             <use xlink:href="#icon-close"></use>
@@ -103,7 +103,20 @@
           </li>
         </ol>
       </nav>
-      <div class="o-offcanvas__main bg-color-blue-light js-offcanvas__main o-offcanvas__main-right"><a class="o-navigation__nav-link js-offcanvas text-color-white" data-js="offcanvas-patterns" href="#ages">Ages</a></div>
+      <div class="o-offcanvas__main bg-color-blue-light js-offcanvas__main">
+        <header class="o-navigation">
+          <div class="o-container">
+            <nav class="o-navigation_nav">
+              <ul class="o-inline">
+                <li class="o-inline_item flex justify-end"><a class="o-navigation__nav-link js-offcanvas text-color-blue-light pt-5" data-js="offcanvas-ages" href="#ages">Menu</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section>
+          <div class="my-20 text-center py-20"><a class="text-color-white" href="offcanvas">Back to Offcnavas</a></div>
+        </section>
+      </div>
     </div>
     <script src="scripts/growingup-nyc.js"></script>
     <script type="text/javascript">
@@ -112,7 +125,7 @@
       gunyc.icons();
     </script>
     <script type="text/javascript">
-      var navigation = gunyc.navigation({ sideSelector: 'down' });
+      gunyc.navigation({ sideSelector: 'right' });
     </script>
   </body>
 </html>

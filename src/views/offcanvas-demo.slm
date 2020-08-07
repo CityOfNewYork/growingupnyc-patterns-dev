@@ -14,8 +14,8 @@
 
 = content('main')
   div class="o-offcanvas js-offcanvas bg-color-blue-light" id="offcanvas-ages"
-    nav class="o-offcanvas__side js-offcanvas__side o-offcanvas__side-right" id="ages"
-      button data-toggle="offcanvas-ages" class="o-offcanvas__close button--text is-active"
+    nav class="o-offcanvas__side js-offcanvas__side" role="navigation" aria-label="ages-heading" id="age"
+      button data-toggle="offcanvas-ages" class="o-offcanvas__close button--text is-active" data-js="offcanvas-ages"
         svg class="icon--small" role="img"
           title = "Close Resources by Age"
           use xlink:href="#icon-close"
@@ -88,11 +88,21 @@
             li
               a class="c-list-box__subitem" tabindex="0"
                 = "5 Months"
-    div class="o-offcanvas__main bg-color-blue-light js-offcanvas__main o-offcanvas__main-right"
-      a class='o-navigation__nav-link js-offcanvas text-color-white' href='#ages' data-js="offcanvas-patterns"
-        = 'Ages'
+    div class="o-offcanvas__main bg-color-blue-light js-offcanvas__main"
+      header class="o-navigation"
+        div class="o-container"
+          nav class="o-navigation_nav"
+            ul class="o-inline"
+              li class="o-inline_item flex justify-end"
+                a class='o-navigation__nav-link js-offcanvas text-color-blue-light pt-5' href='#ages' data-js="offcanvas-ages"
+                  = 'Menu'
+      section
+        div class="my-20 text-center py-20"
+          a href="offcanvas" class="text-color-white"
+            = "Back to Offcnavas"
+
 
 
 = content('script')
   javascript:
-   var navigation = gunyc.navigation({sideSelector: 'down'});
+   gunyc.navigation({sideSelector: 'right'});
