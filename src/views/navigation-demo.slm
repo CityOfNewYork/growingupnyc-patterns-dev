@@ -43,10 +43,10 @@
               a href="#" class="c-list-box__subitem"
                 = '9 months'
 
-    div class='o-offcanvas__main mt-20 mb-40'
+    div class='o-offcanvas__main mb-40'
       header class='o-navigation'
         div class='o-container'
-          a href="#" class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu"
+          a href="#" class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-8"
             span class="o-navigation__logo"
               = 'Growing Up NYC'
           nav class='o-navigation__nav'
@@ -68,7 +68,9 @@
                     use xlink:href="#icon-search"
     div class="o-offcanvas__main js-offcanvas__main o-offcanvas__main-right"
       a class="o-offcanvas__overlay" data-js="offcanvas-ages" aria-hidden="true"
-
+      div class="my-20 text-center py-20"
+        a href="navigation" class="text-color-blue-light"
+          = "Back to Navigation"
 
 = content('script')
   javascript:

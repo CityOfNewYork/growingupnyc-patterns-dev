@@ -18,8 +18,6 @@ footer class="c-footer"
         = 'Input'
       a href="layouts" class="block text-color-white"
         = 'Layouts'
-      a href="list-box" class="block text-color-white"
-        = 'List Box'
       a href="lists" class="block text-color-white"
         = 'Lists'
       a href="spinner" class="block text-color-white"

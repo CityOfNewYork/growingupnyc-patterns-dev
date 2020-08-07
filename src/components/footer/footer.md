@@ -1,0 +1,1 @@
+The Footer component contains logos, menu, and signup form.

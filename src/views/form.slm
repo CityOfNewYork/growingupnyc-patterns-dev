@@ -16,7 +16,7 @@
   = mixin('content-header', title);
   div
     = mixin('section', 'Form', 'components/form/form');
-    = mixin('section', false, 'components/form/form-contact');
+    = mixin('section', 'Contact Form', 'components/form/form-contact');
 
 = content('script')
   javascript:

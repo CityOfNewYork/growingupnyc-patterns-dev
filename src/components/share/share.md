@@ -1,0 +1,1 @@
+The share component lets visitors share a specific page they are browsing. The sharing happens by texting the page's link to the phone number provided.

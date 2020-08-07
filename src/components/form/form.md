@@ -1,0 +1,1 @@
+Newsletter signup form usually presented within Growing up NYC footer.

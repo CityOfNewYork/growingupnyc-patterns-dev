@@ -1,0 +1,1 @@
+The language switcher component allows visitors to choose the language of their choice. The component utilizes WPML for most of the language-translations. Events, however, rely on google for translation.

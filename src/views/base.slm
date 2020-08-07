@@ -13,4 +13,4 @@
 
 = content('main')
   = mixin('content-header', title);
-  = mixin('section', false, 'elements/base/base');
+  = mixin('section', 'Base', 'elements/base/base');

@@ -14,4 +14,4 @@
 
 = content('main')
   = mixin('content-header', title);
-  = mixin('section', false, 'components/list-box/list-box');
+  = mixin('section', title, 'components/list-box/list-box');
