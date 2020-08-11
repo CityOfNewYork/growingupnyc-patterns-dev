@@ -140,7 +140,7 @@
         <a aria-hidden="true" class="o-offcanvas__overlay" data-js="offcanvas-patterns"></a>
         <main class="pt-12 mobile:pt-20 tablet:pt-32">
           <div>
-            <div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10">
+            <div class="layout--row desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-full ml-auto mr-auto px-10">
               <h2 class="text-center">GROWINGUP NYC Patterns Library</h2>
               <div class="my-16">
                 <p class="inline">The Patterns of Growing Up NYC are a shared vocabulary between the code, design, and user interface (UI) of</p>
@@ -157,7 +157,7 @@
                   <li>Tailwindcss integration.</li>
                 </ul>
               </div>
-              <div class="px-5 py-10">
+              <div class="py-10">
                 <h3 class="my-8">Instalation</h3>
                 <div class="my8"><p>The Patterns are available as an NPM package and can be installed with the following command.</p></div>
                 <div class="border-solid border border-color-gray rounded-md py-4 px-6 bg-color-gray-light mt-8 mb-8 flex justify-between">
@@ -169,28 +169,28 @@
               </div>
             </div>
             <div class="px-10 py-10  bg-color-gray-light">
-              <div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 tablet:flex tablet:flex-col">
+              <div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:flex tablet:flex-col">
                 <div><h3 class="my-8">Links</h3></div>
                 <div class="tablet:flex tablet:flex-wrap">
-                  <div class="my-8 tablet:w-1/2 ">
+                  <div class="my-8 pr-5 tablet:w-1/2 ">
                     <div>
                       <h3 class="c-card__title"><a class="my-4" href="typography">Typography</a></h3>
                       <p>The Typography Pattern reference.</p>
                     </div>
                   </div>
-                  <div class="my-8 tablet:w-1/2 ">
+                  <div class="my-8 pr-5 tablet:w-1/2 ">
                     <div>
                       <h3 class="c-card__title"><a class="my-4" href="color">Color</a></h3>
                       <p>The Color Pattern reference.</p>
                     </div>
                   </div>
-                  <div class="my-8 tablet:w-1/2 ">
+                  <div class="my-8 pr-5 tablet:w-1/2 ">
                     <div>
                       <h3 class="c-card__title"><a class="my-4" href="button">Button</a></h3>
                       <p>The Button Pattern set reference.</p>
                     </div>
                   </div>
-                  <div class="my-8 tablet:w-1/2 ">
+                  <div class="my-8 pr-5 tablet:w-1/2 ">
                     <div>
                       <h3 class="c-card__title"><a class="my-4" href="icons">Icons</a></h3>
                       <p>The Icon Pattern set reference.</p>
@@ -198,37 +198,12 @@
                   </div>
                 </div>
               </div>
-              <div class="tablet:w-8/12 w-full ml-auto mr-auto tablet:px-24 text-center my-16">
-                <div class="rotating-text">
-                  <span class="rotating-text__entry" data-js="rotate-text">Button</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Divider</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Checkbox</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Hero</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Icons</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Input</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Layouts</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">List Box</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Lists</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Icons</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Spinner</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Sticker</span>
-                  <span class="rotating-text__entry" data-js="rotate-text">Table</span>
-                  <h3 class="c-card__title"><span class="animated" data-js="rotate-controller" id="rotate"></span></h3>
-                </div>
-              </div>
-            </div>
-            <div class="layout--row desktop-lg:w-8/12 tablet:w-10/12 w-full ml-auto mr-auto desktop:px-24 px-10">
-              <div class="px-5 py-10">
-                <h3 class="my-8">NYC Civic Service Design</h3>
-                <div class="my-8"><p>Growing Up NYC was built using NYC Civic Service Design principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can contact the Service Design Studio to find out how you can implement service design in your work.</p></div>
-                <div class="text-center my-8"><a class="button--primary bg-color-blue text-color-white js-offcanvas" href="https://civicservicedesign.com/service-design-principles-c763f64ac950">Read the Principles</a></div>
-              </div>
             </div>
           </div>
         </main>
       </div>
     </div>
-    <footer class="c-footer">
+    <footer class="c-footer text-center">
       <div class="o-container flex flex-wrap mb-10">
         <div class="tablet:flex-1 w-full mb-10">
           <h3>Elements</h3>
@@ -296,7 +271,7 @@
           <a class="block text-color-white" href="typography">Typography</a>
         </div>
       </div>
-      <div class="o-container flex flex-wrap mb-20">
+      <div class="o-container flex flex-wrap mb-20 text-left">
         <div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap">
           <div class="c-footer__logos flex flex-wrap -ml-5">
             <figure>
@@ -330,8 +305,6 @@
       gunyc.formEffect();
     </script>
     <script type="text/javascript">
-      gunyc.animations();
-
       function copy(event) {
         var text = document.getElementById('npm-install').innerText;
         var elem = document.createElement('textarea');
