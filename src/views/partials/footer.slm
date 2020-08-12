@@ -1,126 +1,14 @@
 footer class="c-footer text-center"
   div class="o-container flex flex-wrap mb-10"
-    div class="tablet:flex-1 w-full mb-10"
-      h3
-        = 'Elements'
-      a href="base" class="block text-color-white"
-        = 'Base'
-      a href="button" class="block text-color-white"
-        = 'Button'
-      a href="divider" class="block text-color-white"
-        = 'Divider'
-      a href="checkbox" class="block text-color-white"
-        = 'Checkbox'
-      a href="hero" class="block text-color-white"
-        = 'Hero'
-      a href="icons" class="block text-color-white"
-        = 'Icons'
-      a href="input" class="block text-color-white"
-        = 'Input'
-      a href="layouts" class="block text-color-white"
-        = 'Layouts'
-      a href="lists" class="block text-color-white"
-        = 'Lists'
-      a href="spinner" class="block text-color-white"
-        = 'Spinner'
-      a href="sticker" class="block text-color-white"
-        = 'Sticker'
-      a href="table" class="block text-color-white"
-        = 'table'
-
-    div class="tablet:flex-1 w-full mb-10"
-      h3
-        = 'Components'
-      a href="age-guide-card" class="block text-color-white"
-        = 'Age Guide Card'
-      a href="arrow-pager" class="block text-color-white"
-        = 'Arrow pager'
-      a href="block text-color-white-list" class="block text-color-white"
-        = 'Block List'
-      a href="card" class="block text-color-white"
-        = 'Card'
-      a href="details-list" class="block text-color-white"
-        = 'Details List'
-      a href="footer" class="block text-color-white"
-        = 'Footer'
-      a href="form" class="block text-color-white"
-        = 'Form'
-      a href="hero" class="block text-color-white"
-        = 'Hero'
-      a href="language-switcher" class="block text-color-white"
-        = 'Language switcher'
-      a href="list-box" class="block text-color-white"
-        = 'List Box'
-      a href="share" class="block text-color-white"
-        = 'Share'
-      a href="side-hero" class="block text-color-white"
-        = 'Side hero'
-      a href="side-navigation" class="block text-color-white"
-        = 'Side Navigation'
-      a href="tip" class="block text-color-white"
-        = 'Tip'
-      a href="tip-card" class="block text-color-white"
-        = 'Tip Card'
-      a href="tout" class="block text-color-white"
-        = 'Tout'
-
-    div class="tablet:flex-1 w-full mb-10"
-      h3
-        = 'Objects'
-      a href="accordion" class="block text-color-white"
-        = 'Accordion'
-      a href="alert-banner" class="block text-color-white"
-        = 'Alert banner'
-      a href="article" class="block text-color-white"
-        = 'Article'
-      a href="container" class="block text-color-white"
-        = 'Container'
-      a href="content" class="block text-color-white"
-        = 'Content'
-      a href="feature-photo" class="block text-color-white"
-        = 'Feature photo'
-      a href="flex-embed" class="block text-color-white"
-        = 'Flex embed'
-      a href="inline-list" class="block text-color-white"
-        = 'Inline List'
-      a href="navigation" class="block text-color-white"
-        = 'Navigation'
-      a href="newsletter" class="block text-color-white"
-        = 'Newsletter'
-      a href="overlay" class="block text-color-white"
-        = 'Overlay'
-      a href="search" class="block text-color-white"
-        = 'Search'
-      a href="static-column" class="block text-color-white"
-        = 'Static column'
-
-    div class="tablet:flex-1 w-full mb-10"
-      h3
-        = 'Utilities'
-      a href="accessibility" class="block text-color-white"
-        = 'accessibility'
-      a href="animations" class="block text-color-white"
-        = 'animations'
-      a href="background-image" class="block text-color-white"
-        = 'background image'
-      a href="color" class="block text-color-white"
-        = 'color'
-      a href="fonts" class="block text-color-white"
-        = 'Font'
-      a href="form-effects" class="block text-color-white"
-        = 'Form Effects'
-      a href="offcanvas" class="block text-color-white"
-        = 'Offcanvas'
-      a href="reveal" class="block text-color-white"
-        = 'Reveal'
-      a href="section-highlighter" class="block text-color-white"
-        = 'Section Highlighter'
-      a href="sticky" class="block text-color-white"
-        = 'sticky'
-      a href="tailwind" class="block text-color-white"
-        = 'Tailwind'
-      a href="typography" class="block text-color-white"
-        = 'Typography'
+    - for (var arr of this.tokens['patterns'])
+      - for (var prob in arr)
+        div class="tablet:flex-1 w-full mb-10"
+          h3 = prob
+          - var menus = arr[prob]
+          - for (var singleMenu of menus)
+            - for (var key in singleMenu)
+                a href=`${key}` class="block text-color-white"
+                  = singleMenu[key]
   div class="o-container flex flex-wrap mb-20 text-left"
     div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap"
       div class="c-footer__logos flex flex-wrap -ml-5"

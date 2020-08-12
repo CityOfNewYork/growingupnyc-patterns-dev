@@ -59,6 +59,8 @@ class Offcanvas {
         * @param {object} event - The event object
         */
         offCanvasElem.addEventListener('changeOpenState', function (event) {
+        console.log('event:', event)
+
           if (event.detail) {
             if (!(/^(?:a|select|input|button|textarea)$/i.test(offCanvasSide.tagName))) {
               offCanvasSide.tabIndex = -1;
@@ -95,6 +97,7 @@ class Offcanvas {
       if (!targetElem) return;
 
       toggleElem.addEventListener('click', function (event) {
+				console.log('click event')
         let toggleEvent;
         let toggleClass = (toggleElem.dataset.toggleClass) ?
           toggleElem.dataset.toggleClass : openClass;
@@ -106,10 +109,12 @@ class Offcanvas {
         if (openClass === 'is-open-left') {
           nav.classList.toggle("o-offcanvas__side-left")
         } else if (openClass === 'is-open-down'){
-          nav.classList.toggle("o-offcanvas__side-down")
-          footer.classList.toggle("c-footer-down")
+					nav.classList.toggle("o-offcanvas__side-down")
+					console.log('is-open-down')
+					footer.classList.toggle("c-footer-down")
 				} else {
-          nav.classList.toggle("o-offcanvas__side-right")
+					nav.classList.toggle("o-offcanvas__side-right")
+					console.log('reset to 0')
         }
 
         // Toggle custom class if it is set
@@ -140,6 +145,7 @@ class Offcanvas {
     });
   };
 }
+
 Offcanvas.side = "right";
 Offcanvas.nav = "js-offcanvas__side";
 Offcanvas.mainOff = "js-offcanvas__main";
