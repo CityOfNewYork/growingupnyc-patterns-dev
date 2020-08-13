@@ -1,0 +1,146 @@
+nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="patterns" role="navigation" aria-label="patterns-heading"
+  h2 id="patterns-heading" class="show-for-screen-reader"
+    = 'Resources by Patterns'
+  button data-js="offcanvas-patterns" class="o-offcanvas__close button--text"
+    svg class="icon--small" role="img"
+      title = 'Close Resources by Patterns'
+      use xlink:href="#icon-close"
+
+  div class="tablet:flex-1 w-full mb-10"
+    h3 = 'Elements'
+    a href="base" class="block"
+      = 'Base'
+    a href="button" class="block"
+      = 'Button'
+    a href="divider" class="block"
+      = 'Divider'
+    a href="checkbox" class="block"
+      = 'Checkbox'
+    a href="hero" class="block"
+      = 'Hero'
+    a href="icons" class="block"
+      = 'Icons'
+    a href="input" class="block"
+      = 'Input'
+    a href="layouts" class="block"
+      = 'Layouts'
+    a href="lists" class="block"
+      = 'Lists'
+    a href="spinner" class="block"
+      = 'Spinner'
+    a href="sticker" class="block"
+      = 'Sticker'
+    a href="table" class="block"
+      = 'Table'
+
+  div class="tablet:flex-1 w-full mb-10"
+    h3
+      = 'Components'
+    a href="age-guide-card" class="block"
+      = 'Age Guide Card'
+    a href="arrow-pager" class="block"
+      = 'Arrow pager'
+    a href="block-list" class="block"
+      = 'Block List'
+    a href="card" class="block"
+      = 'Card'
+    a href="details-list" class="block"
+      = 'Details List'
+    a href="footer" class="block"
+      = 'Footer'
+    a href="form" class="block"
+      = 'Form'
+    a href="hero" class="block"
+      = 'Hero'
+    a href="language-switcher" class="block"
+      = 'Language switcher'
+    a href="list-box" class="block"
+      = 'List Box'
+    a href="share" class="block"
+      = 'Share'
+    a href="side-hero" class="block"
+      = 'Side hero'
+    a href="side-navigation" class="block"
+      = 'Side Navigation'
+    a href="tip" class="block"
+      = 'Tip'
+    a href="tip-card" class="block"
+      = 'Tip Card'
+    a href="tout" class="block"
+      = 'Tout'
+
+  div class="tablet:flex-1 w-full mb-10"
+    h3
+      = 'Objects'
+    a href="accordion" class="block"
+      = 'Accordion'
+    a href="alert-banner" class="block"
+      = 'Alert banner'
+    a href="article" class="block"
+      = 'Article'
+    a href="container" class="block"
+      = 'Container'
+    a href="content" class="block"
+      = 'Content'
+    a href="feature-photo" class="block"
+      = 'Feature photo'
+    a href="flex-embed" class="block"
+      = 'Flex embed'
+    a href="inline-list" class="block"
+      = 'Inline List'
+    a href="navigation" class="block"
+      = 'Navigation'
+    a href="newsletter" class="block"
+      = 'Newsletter'
+    a href="overlay" class="block"
+      = 'Overlay'
+    a href="search" class="block"
+      = 'Search'
+    a href="static-column" class="block"
+      = 'Static column'
+
+  div class="tablet:flex-1 w-full mb-10"
+    h3
+      = 'Utilities'
+    a href="accessibility" class="block"
+      = 'Accessibility'
+    a href="animations" class="block"
+      = 'Animations'
+    a href="background-image" class="block"
+      = 'Background image'
+    a href="color" class="block"
+      = 'Color'
+    a href="fonts" class="block"
+      = 'Font'
+    a href="form-effects" class="block"
+      = 'Form Effects'
+    a href="offcanvas" class="block"
+      = 'Offcanvas'
+    a href="reveal" class="block"
+      = 'Reveal'
+    a href="section-highlighter" class="block"
+      = 'Section Highlighter'
+    a href="sticky" class="block"
+      = 'Sticky'
+    a href="tailwind" class="block"
+      = 'Tailwind'
+    a href="typography" class="block"
+      = 'Typography'
+    a href="color" class="block"
+      = 'Color'
+    a href="fonts" class="block"
+      = 'Font'
+    a href="form-effects" class="block"
+      = 'Form Effects'
+    a href="offcanvas" class="block"
+      = 'Offcanvas'
+    a href="reveal" class="block"
+      = 'Reveal'
+    a href="section-highlighter" class="block"
+      = 'Section Highlighter'
+    a href="sticky" class="block"
+      = 'Sticky'
+    a href="tailwind" class="block"
+      = 'Tailwind'
+    a href="typography" class="block"
+      = 'Typography'

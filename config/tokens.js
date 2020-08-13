@@ -250,6 +250,7 @@ module.exports = {
     'icon-vroom-logo-white-es',
     'icon-vroom-logo-orange',
     'icon-vroom-logo-orange-es'
+<<<<<<< HEAD
   ],
   'patterns': [
     {'Elements': [
@@ -319,5 +320,9 @@ module.exports = {
     }
   ],
 	version: package.version,
+=======
+	],
+  version: `"${version}"`,
+>>>>>>> main offcanvas updated to slid down according to the size of the nav element
   cdn: `"https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/"`
 };

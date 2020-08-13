@@ -945,7 +945,8 @@ var Offcanvas = (function () {
     };
     var nav = document.querySelector("." + this._settings.nav);
     var mainOff = document.querySelector("." + this._settings.mainOff);
-    var footer = document.querySelector('.c-footer'); // Depending on the argument passed toggle element class
+    var footer = document.querySelector('.c-footer');
+    var offcanvasParent = document.querySelector("." + this._settings.offCanvas); // Depending on the argument passed toggle element class
 
     var openClass = "";
 
@@ -989,10 +990,10 @@ var Offcanvas = (function () {
       });
     }
 
-    this._toggle(openClass, nav, mainOff, footer);
+    this._toggle(openClass, nav, mainOff, footer, offcanvasParent);
   };
 
-  Offcanvas.prototype._toggle = function _toggle(openClass, nav, mainOff, footer) {
+  Offcanvas.prototype._toggle = function _toggle(openClass, nav, mainOff, footer, offcanvasParent) {
     var linkActiveClass = 'is-active';
     var toggleElems = document.querySelectorAll('[data-js]');
 
@@ -1033,6 +1034,10 @@ var Offcanvas = (function () {
           nav.classList.toggle("o-offcanvas__side-down");
           console.log('is-open-down');
           footer.classList.toggle("c-footer-down");
+          Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
+
+          window.onresize = function () {// Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
+          };
         } else {
           nav.classList.toggle("o-offcanvas__side-right");
           console.log('reset to 0');
@@ -1062,6 +1067,18 @@ var Offcanvas = (function () {
         targetElem.dispatchEvent(toggleEvent);
       });
     });
+  };
+
+  Offcanvas.updateDimension = function (nav, mainOff, offcanvasParent) {
+    var navHeight = nav.clientHeight;
+    var classes = offcanvasParent.classList;
+    var openDown = classes.contains('is-open-down');
+
+    if (openDown) {
+      mainOff.style.top = 0;
+    } else {
+      mainOff.style.top = navHeight + "px";
+    }
   };
 
   Offcanvas.side = "right";

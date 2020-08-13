@@ -18,18 +18,19 @@ class Offcanvas {
    * @constructor
    */
   constructor(settings) {
-		this._settings = {
-			sideSelector: (settings.sideSelector) ? settings.sideSelector : Offcanvas.side,
-			nav: Offcanvas.nav,
-			mainOff: Offcanvas.mainOff,
-			offCanvas: Offcanvas.offCanvas
-		};
+    this._settings = {
+      sideSelector: (settings.sideSelector) ? settings.sideSelector : Offcanvas.side,
+      nav: Offcanvas.nav,
+      mainOff: Offcanvas.mainOff,
+      offCanvas: Offcanvas.offCanvas
+    };
 
-		const nav = document.querySelector(`.${this._settings.nav}`)
-		const mainOff = document.querySelector(`.${this._settings.mainOff}`)
-		const footer = document.querySelector('.c-footer')
+    const nav = document.querySelector(`.${this._settings.nav}`)
+    const mainOff = document.querySelector(`.${this._settings.mainOff}`)
+    const footer = document.querySelector('.c-footer')
+    const offcanvasParent = document.querySelector(`.${this._settings.offCanvas}`)
 
-		// Depending on the argument passed toggle element class
+    // Depending on the argument passed toggle element class
     let openClass = "";
     if (this._settings.sideSelector === 'left') {
       openClass = 'is-open-left';
@@ -39,12 +40,12 @@ class Offcanvas {
         mainOff.classList.toggle("o-offcanvas__main-right")
     } else if (this._settings.sideSelector === 'down') {
         openClass = 'is-open-down';
-				mainOff.classList.toggle("o-offcanvas__main-down")
-				nav.classList.toggle("w-full")
+        mainOff.classList.toggle("o-offcanvas__main-down")
+        nav.classList.toggle("w-full")
 
     }
 
-		// Offcanvas element
+    // Offcanvas element
     const offCanvas = document.querySelectorAll(`.${this._settings.offCanvas}`);
 
     if (offCanvas) {
@@ -59,7 +60,6 @@ class Offcanvas {
         * @param {object} event - The event object
         */
         offCanvasElem.addEventListener('changeOpenState', function (event) {
-        console.log('event:', event)
 
           if (event.detail) {
             if (!(/^(?:a|select|input|button|textarea)$/i.test(offCanvasSide.tagName))) {
@@ -71,10 +71,10 @@ class Offcanvas {
       });
     }
 
-    this._toggle(openClass, nav, mainOff, footer);
+    this._toggle(openClass, nav, mainOff, footer, offcanvasParent);
   }
 
-  _toggle(openClass, nav, mainOff, footer) {
+  _toggle(openClass, nav, mainOff, footer, offcanvasParent) {
 
 
     const linkActiveClass = 'is-active';
@@ -109,12 +109,15 @@ class Offcanvas {
         if (openClass === 'is-open-left') {
           nav.classList.toggle("o-offcanvas__side-left")
         } else if (openClass === 'is-open-down'){
-					nav.classList.toggle("o-offcanvas__side-down")
-					console.log('is-open-down')
-					footer.classList.toggle("c-footer-down")
-				} else {
-					nav.classList.toggle("o-offcanvas__side-right")
-					console.log('reset to 0')
+          nav.classList.toggle("o-offcanvas__side-down")
+          footer.classList.toggle("c-footer-down")
+
+          Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
+          window.onresize = function () {
+            // Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
+          }
+        } else {
+          nav.classList.toggle("o-offcanvas__side-right")
         }
 
         // Toggle custom class if it is set
@@ -144,6 +147,18 @@ class Offcanvas {
       });
     });
   };
+}
+
+Offcanvas.updateDimension = function(nav, mainOff, offcanvasParent) {
+  let navHeight = nav.clientHeight;
+  let classes = offcanvasParent.classList;
+  let openDown = classes.contains('is-open-down')
+
+  if (openDown) {
+    mainOff.style.top = 0;
+  } else {
+    mainOff.style.top = `${navHeight}px`;
+  }
 }
 
 Offcanvas.side = "right";
