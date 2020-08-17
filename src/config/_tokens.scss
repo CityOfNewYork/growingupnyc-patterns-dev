@@ -1,10 +1,9 @@
 $tokens:(
-  opts: (
-    output: "./src/config/_tokens.scss"
-  ),
+  output: "./src/config/_tokens.scss",
   fonts: (
     system: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
-    icons: ("FontAwesome", sans-serif)
+    text-sans: ("Open Sans", sans-serif),
+    display-sans: ("museo-sans-rounded", sans-serif)
   ),
   font-weights: (
     medium: 500,
@@ -177,6 +176,20 @@ $tokens:(
       checkbox: Checkbox
     ), (
       hero: Hero
+    ), (
+      icons: Icons
+    ), (
+      input: Input
+    ), (
+      layouts: Layouts
+    ), (
+      lists: Lists
+    ), (
+      spinner: Spinner
+    ), (
+      sticker: Sticker
+    ), (
+      table: Table
     ))
   ), (
     Components: ((
@@ -191,6 +204,26 @@ $tokens:(
       details-list: Details List
     ), (
       footer: Footer
+    ), (
+      form: Form
+    ), (
+      hero: Hero
+    ), (
+      language-switcher: Language switcher
+    ), (
+      list-box: List Box
+    ), (
+      share: Share
+    ), (
+      side-hero: Side hero
+    ), (
+      side-navigation: Side Navigation
+    ), (
+      tip: Tip
+    ), (
+      tip-card: Tip Card
+    ), (
+      tout: Tout
     ))
   ), (
     Objects: ((
@@ -205,6 +238,20 @@ $tokens:(
       content: Content
     ), (
       feature-photo: Feature photo
+    ), (
+      flex-embed: Flex embed
+    ), (
+      inline-list: Inline List
+    ), (
+      navigation: Navigation
+    ), (
+      newsletter: Newsletter
+    ), (
+      overlay: Overlay
+    ), (
+      search: Search
+    ), (
+      static-column: Static column
     ))
   ), (
     Utilities: ((
@@ -219,8 +266,20 @@ $tokens:(
       fonts: Font
     ), (
       form-effects: Form Effects
+    ), (
+      offcanvas: Offcanvas
+    ), (
+      reveal: Reveal
+    ), (
+      section-highlighter: Section Highlighter
+    ), (
+      sticky: Sticky
+    ), (
+      tailwind: Tailwind
+    ), (
+      typography: Typography
     ))
   )),
-  version: "0.0.1-alpha",
+  version: 0.0.1-alpha,
   cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/"
 );

@@ -1,0 +1,98 @@
+= extend('/slm/layouts/demo-default')
+
+- title = 'Static Column Demo'
+
+/ Partials
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/partials/section.mixin.slm');
+
+
+/ Content blocks
+= content('head');
+  = mixin('head');
+
+= content('main')
+  header class="c-banner py-24 bg-color-gray-dark"
+   div class=" bg-color-gray-dark"
+  main id="main" role="main" class="" 
+   article class="o-container js-sticky-container flex flex-wrap"
+    div class="o-article-sidebar large:w-4/12"
+      div class="o-content-container--compact u-shift-up"
+        ol class="c-nav-list js-sticky js-section-set o-sticky-nav" data-js="sticky"
+          li class="c-nav-list__item"
+            a class="scroll" href="#section-events" data-section="section-events" class="js-section c-nav-list__link"
+              = "Events"
+              svg aria-hidden="true" class="icon--caret"
+                use xlink:href="#icon-caret-right"
+          li class="c-nav-list__item"
+            a class="scroll" href="#section-programs" data-section="section-programs" class="js-section c-nav-list__link"
+              = "Programs"
+              svg aria-hidden="true" class="icon--caret"
+                use xlink:href="#icon-caret-right"
+          li class="c-nav-list__item"
+            a class="scroll" href="#section-milestones" data-section="section-milestones" class="js-section c-nav-list__link"
+              = "Milestones"
+              svg aria-hidden="true" class="icon--caret"
+                use xlink:href="#icon-caret-right"
+      
+    div class="o-article js-sticky-article large:w-8/12"
+      section class="c-block-list o-content-container pt-12" id="section-events"
+        h2 = "Events"
+        div
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          
+      section class="c-block-list o-content-container pt-12" id="section-programs"
+        h2 = "Programs"
+        div
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          
+      section class="c-block-list o-content-container pt-12" id="section-milestones"
+        h2 = "Milestones"
+        div
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          p 
+            = "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”"
+          p 
+            = "The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin."
+          
+      
+  footer class="c-footer py-48 bg-color-gray-dark"
+   div class="my-4 text-center m-auto"
+    a href="/sticky" class="text-color-white"
+     = "Back to Sticky"
+
+
+= content('script')
+  javascript:
+   var sticky = gunyc.sticky();
+   var scroll = gunyc.scroll();
