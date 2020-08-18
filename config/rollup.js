@@ -4,10 +4,10 @@
 
 
 const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
-const commonjs = require('@rollup/plugin-commonjs');    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-const babel = require('rollup-plugin-babel');           // Transpile source code.
-const buble = require('@rollup/plugin-buble');          // Convert ES2015 with buble.
-const replace = require('@rollup/plugin-replace');      // Replace content while bundling.
+const commonjs = require('@rollup/plugin-commonjs'); // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+const babel = require('rollup-plugin-babel'); // Transpile source code.
+const buble = require('@rollup/plugin-buble'); // Convert ES2015 with buble.
+const replace = require('@rollup/plugin-replace'); // Replace content while bundling.
 /**
  * Config
  */
@@ -75,25 +75,24 @@ rollup.dist = [
  * Our list of modules we are exporting
  * @type {Array}
  */
-module.exports = [
-  {
+module.exports = [{
     input: './src/js/main.js',
-    output: {
+    output: [{
       name: 'GUNYC',
       file: `./dist/scripts/growingup-nyc.js`,
-      sourcemap: (process.env.NODE_ENV === 'production')
-        ? false : rollup.sourcemap,
+      sourcemap: (process.env.NODE_ENV === 'production') ?
+        false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
-    },
-    plugins: rollup.local
+    }],
+    plugins: rollup.local,
+    devModule: true
   },
   {
     input: `${process.env.PWD}/node_modules/@nycopportunity/patterns-framework/src/utilities/forms/forms.js`,
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Forms',
         file: `${process.env.PWD}/dist/utilities/forms/forms.iffe.js`,
         format: 'iife',
@@ -111,8 +110,7 @@ module.exports = [
     input: `${process.env.PWD}/node_modules/@nycopportunity/patterns-framework/src/utilities/icons/icons.js`,
     // input: `./src/elements/icons/icons.js`,
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Icons',
         file: `./dist/elements/icons/icons.iffe.js`,
         format: 'iife',
@@ -125,14 +123,14 @@ module.exports = [
         strict: rollup.strict
       }
     ]
-	},
-	{
+  },
+  {
     input: `${process.env.PWD}/node_modules/smoothscroll-polyfill/dist/smoothscroll.js`,
     output: {
       name: 'Polyfills',
       file: `./dist/scripts/polyfills.js`,
-      sourcemap: (process.env.NODE_ENV === 'production')
-        ? false : rollup.sourcemap,
+      sourcemap: (process.env.NODE_ENV === 'production') ?
+        false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
@@ -142,8 +140,7 @@ module.exports = [
   {
     input: './src/objects/navigation/Navigation.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'InputAutocomplete',
         file: `./dist/objects/navigation/Navigation.iffe.js`,
         format: 'iife',
@@ -160,8 +157,7 @@ module.exports = [
   {
     input: './src/objects/static-column/staticColumn.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'StaticColumn',
         file: `./dist/objects/static-column/StaticColumn.iffe.js`,
         format: 'iife',
@@ -178,8 +174,7 @@ module.exports = [
   {
     input: './src/objects/navigation/Navigation.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Navigation',
         file: `./dist/objects/navigation/Navigation.iffe.js`,
         format: 'iife',
@@ -196,8 +191,7 @@ module.exports = [
   {
     input: './src/utilities/animations/Animations.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Animations',
         file: `./dist/utilities/animations/Animations.iffe.js`,
         format: 'iife',
@@ -214,8 +208,7 @@ module.exports = [
   {
     input: './src/objects/accordion/Accordion.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Accordion',
         file: `./dist/objects/accordion/Accordion.iffe.js`,
         format: 'iife',
@@ -232,8 +225,7 @@ module.exports = [
   {
     input: './src/utilities/offcanvas/Offcanvas.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Offcanvas',
         file: `./dist/utilities/offcanvas/Offcanvas.iffe.js`,
         format: 'iife',
@@ -250,8 +242,7 @@ module.exports = [
   {
     input: './src/objects/overlay/Overlay.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Overlay',
         file: `./dist/objects/overlay/Overlay.iffe.js`,
         format: 'iife',
@@ -268,8 +259,7 @@ module.exports = [
   {
     input: './src/objects/newsletter/Newsletter.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Newsletter',
         file: `./dist/objects/newsletter/Newsletter.iffe.js`,
         format: 'iife',
@@ -286,8 +276,7 @@ module.exports = [
   {
     input: './src/utilities/form-effects/FormEffects.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'FormEffects',
         file: `./dist/utilities/form-effects/FormEffects.iffe.js`,
         format: 'iife',
@@ -304,8 +293,7 @@ module.exports = [
   {
     input: './src/objects/search/Search.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Search',
         file: `./dist/objects/search/Search.iffe.js`,
         format: 'iife',
@@ -322,8 +310,7 @@ module.exports = [
   {
     input: './src/components/side-navigation/Scroll.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Scroll',
         file: `./dist/components/side-navigation/Scroll.iffe.js`,
         format: 'iife',
@@ -340,8 +327,7 @@ module.exports = [
   {
     input: './src/utilities/sticky/Sticky.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'Sticky',
         file: `./dist/utilities/sticky/Sticky.iffe.js`,
         format: 'iife',
@@ -358,8 +344,7 @@ module.exports = [
   {
     input: './src/utilities/section-highlighter/SectionHighlighter.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'SectionHighlighter',
         file: `./dist/utilities/section-highlighter/SectionHighlighter.iffe.js`,
         format: 'iife',
@@ -376,8 +361,7 @@ module.exports = [
   {
     input: './src/components/language-switcher/LanguageSwitcher.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'LanguageSwitcher',
         file: `./dist/components/language-switcher/LanguageSwitcher.iffe.js`,
         format: 'iife',
@@ -390,12 +374,11 @@ module.exports = [
         strict: rollup.strict
       }
     ]
-	},
-	{
+  },
+  {
     input: './src/objects/alert-banner/AlertBanner.js',
     plugins: rollup.dist,
-    output: [
-      {
+    output: [{
         name: 'AlertBanner',
         file: `./dist/objects/alert-banner/AlertBanner.iffe.js`,
         format: 'iife',
