@@ -22,7 +22,7 @@
     "lodash": "^4.17.19"
   },
   "dependencies": {
-    "@nycopportunity/patterns-framework": "^1.0.0-6",
+    "@nycopportunity/patterns-framework": "^1.0.0-14",
     "animate.css": "^3.7.2",
     "js-cookie": "^2.2.1",
     "miss-plete-js": "^1.4.5",

@@ -1,19 +1,17 @@
 'use strict';
-// Utilities
-import SectionHighlighter from '../utilities/section-highlighter/SectionHighlighter';
+
+// Polyfills
+import '../../dist/scripts/polyfills';
+import '../utilities/functions/foreach';
 
 // Elements
 
 // Components
 
-
 // Objects
 import Navigation from '../objects/navigation/Navigation';
 import Accordion from '../objects/accordion/Accordion';
 import Overlay from '../objects/overlay/Overlay';
-import Icons from '../../node_modules/@nycopportunity/patterns-framework/src/utilities/icons/icons';
-// import Toggle from '../utilities/toggle/Toggle';
-// import Sticky from '../utilities/sticky/Sticky';
 import AlertBanner from '../objects/alert-banner/AlertBanner';
 import Animations from '../utilities/animations/Animations';
 import Form from '../components/form/Form';
@@ -21,18 +19,18 @@ import StaticColumn from '../objects/static-column/staticColumn'
 import Scroll from '../components/side-navigation/Scroll'
 import LanguageSwitcher from '../components/language-switcher/LanguageSwitcher'
 import Sticky from '../utilities/sticky/Sticky'
-// import Offcanvas from '../utilities/offcanvas/Offcanvas'
-// import OffcanvasToggle from '../utilities/offcanvas/OffcanvasToggle'
 import FormEffect from '../utilities/form-effects/FormEffects'
 import Reveal from '../utilities/reveal/Reveal'
-// import AnotherJs from '../utilities/offcanvas/AnotherJs'
-// import AccordionToggle from '../objects/accordion/AccordionToggle'
 import Newsletter from '../objects/newsletter/Newsletter'
 import Share from '../components/share/Share'
-import 'scripts/polyfills'
-// import ShareForm from '../components/tip/ShareForm'
 
-/** import components here as they are written. */
+// Utilities
+import SectionHighlighter from '../utilities/section-highlighter/SectionHighlighter';
+
+/**
+ * NYCO Patterns Framework
+ */
+import Icons from '../../node_modules/@nycopportunity/patterns-framework/src/utilities/icons/icons';
 
 /**
  * The Main module
