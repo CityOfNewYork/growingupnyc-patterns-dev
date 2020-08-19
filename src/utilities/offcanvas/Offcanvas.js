@@ -1,56 +1,29 @@
 'use strict';
 
-import forEach from 'lodash/forEach';
-
-if(window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
-if(window.HTMLCollection && !HTMLCollection.prototype.forEach) {
-  HTMLCollection.prototype.forEach = Array.prototype.forEach;
-}
-
 class Offcanvas {
-  /**
-   * @param  {object} settings This could be some configuration options.
-   *                           for the pattern module.
-   * @param  {object} data     This could be a set of data that is needed
-   *                           for the pattern module to render.
-   * @constructor
-   */
+
   constructor(settings) {
+
     this._settings = {
       sideSelector: (settings.sideSelector) ? settings.sideSelector : Offcanvas.side,
-      nav: Offcanvas.nav,
-      mainOff: Offcanvas.mainOff,
-      offCanvas: Offcanvas.offCanvas
+      nav: (settings.nav) ? settings.nav : Offcanvas.nav,
+      mainOff: (settings.mainOff) ? settings.mainOff : Offcanvas.mainOff,
+      offCanvas: (settings.offCanvas) ? settings.offCanvas : Offcanvas.offCanvas
     };
 
-    const nav = document.querySelector(`.${this._settings.nav}`)
-    const mainOff = document.querySelector(`.${this._settings.mainOff}`)
-    const footer = document.querySelector('.c-footer')
-    const offcanvasParent = document.querySelector(`.${this._settings.offCanvas}`)
+    const nav = document.querySelector(this._settings.nav)
+    const mainOff = document.querySelector(this._settings.mainOff)
+    // const footer = document.querySelector('.c-footer')
+    const offcanvasParent = document.querySelector(this._settings.offCanvas)
+    const offCanvas = document.querySelectorAll(this._settings.offCanvas);
 
     // Depending on the argument passed toggle element class
-    let openClass = "";
-    if (this._settings.sideSelector === 'left') {
-      openClass = 'is-open-left';
-      mainOff.classList.toggle("o-offcanvas__main-left")
-    } else if (this._settings.sideSelector === 'right') {
-        openClass = 'is-open-right';
-        mainOff.classList.toggle("o-offcanvas__main-right")
-    } else if (this._settings.sideSelector === 'down') {
-        openClass = 'is-open-down';
-        mainOff.classList.toggle("o-offcanvas__main-down")
-        nav.classList.toggle("w-full")
-
-    }
+    mainOff.classList.toggle(`o-offcanvas__main-${this._settings.sideSelector}`)
 
     // Offcanvas element
-    const offCanvas = document.querySelectorAll(`.${this._settings.offCanvas}`);
-
     if (offCanvas) {
-      forEach(offCanvas, function (offCanvasElem) {
-        const offCanvasSide = offCanvasElem.querySelector('.js-offcanvas__side');
+      offCanvas.forEach((offCanvasElem) => {
+        const offCanvasSide = offCanvasElem.querySelector(this._settings.nav);
 
         /**
         * Add event listener for 'changeOpenState'.
@@ -71,85 +44,74 @@ class Offcanvas {
       });
     }
 
-    this._toggle(openClass, nav, mainOff, footer, offcanvasParent);
+    // Offcanvas.toggle(openClass, nav, mainOff, footer, offcanvasParent);
+    Offcanvas.toggle(this._settings.sideSelector, nav, mainOff, offcanvasParent);
   }
-
-  _toggle(openClass, nav, mainOff, footer, offcanvasParent) {
-
-
-    const linkActiveClass = 'is-active';
-    const toggleElems = document.querySelectorAll('[data-js]');
-
-    if (!toggleElems) return;
-
-    /**
-    * For each toggle element, get its target from the data-toggle attribute.
-    * Bind an event handler to toggle the openClass on/off on the target element
-    * when the toggle element is clicked.
-    */
-    forEach(toggleElems, function (toggleElem) {
-      const targetElemSelector = Offcanvas.dataset(toggleElem, 'js');
-
-      if (!targetElemSelector) return;
-
-      const targetElem = document.getElementById(targetElemSelector);
-
-      if (!targetElem) return;
-
-      toggleElem.addEventListener('click', function (event) {
-				console.log('click event')
-        let toggleEvent;
-        let toggleClass = (toggleElem.dataset.toggleClass) ?
-          toggleElem.dataset.toggleClass : openClass;
-
-        event.preventDefault();
-
-        // Toggle the element's active class
-        toggleElem.classList.toggle(linkActiveClass);
-        if (openClass === 'is-open-left') {
-          nav.classList.toggle("o-offcanvas__side-left")
-        } else if (openClass === 'is-open-down'){
-          nav.classList.toggle("o-offcanvas__side-down")
-          footer.classList.toggle("c-footer-down")
-
-          Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
-          window.onresize = function () {
-            // Offcanvas.updateDimension(nav, mainOff, offcanvasParent);
-          }
-        } else {
-          nav.classList.toggle("o-offcanvas__side-right")
-        }
-
-        // Toggle custom class if it is set
-        if (toggleClass !== openClass)
-          targetElem.classList.toggle(toggleClass);
-        // Toggle the default open class
-        targetElem.classList.toggle(openClass);
-
-        // Toggle the appropriate aria hidden attribute
-        targetElem.setAttribute('aria-hidden',
-          !(targetElem.classList.contains(toggleClass))
-        );
-
-        // Fire the custom open state event to trigger open functions
-        if (typeof window.CustomEvent === 'function') {
-          toggleEvent = new CustomEvent('changeOpenState', {
-            detail: targetElem.classList.contains(openClass)
-          });
-        } else {
-          toggleEvent = document.createEvent('CustomEvent');
-          toggleEvent.initCustomEvent('changeOpenState', true, true, {
-            detail: targetElem.classList.contains(openClass)
-          });
-        }
-
-        targetElem.dispatchEvent(toggleEvent);
-      });
-    });
-  };
 }
 
-Offcanvas.updateDimension = function(nav, mainOff, offcanvasParent) {
+// Offcanvas.toggle = function (openClass, nav, mainOff, footer, offcanvasParent){
+Offcanvas.toggle = function (dir, nav, mainOff, offcanvasParent){
+  const openClass = `is-open-${dir}`;
+  const linkActiveClass = 'is-active';
+  const toggleElems = document.querySelectorAll('[data-js]');
+
+  if (!toggleElems) return;
+
+  /**
+  * For each toggle element, get its target from the data-toggle attribute.
+  * Bind an event handler to toggle the openClass on/off on the target element
+  * when the toggle element is clicked.
+  */
+  toggleElems.forEach((toggleElem) => {
+    const targetElemSelector = Offcanvas.dataset(toggleElem, 'js');
+
+    if (!targetElemSelector) return;
+
+    const targetElem = document.getElementById(targetElemSelector);
+
+    if (!targetElem) return;
+
+    toggleElem.addEventListener('click', function (event) {
+      let toggleEvent;
+      let toggleClass = (toggleElem.dataset.toggleClass) ?
+        toggleElem.dataset.toggleClass : openClass;
+
+      event.preventDefault();
+
+      // Toggle the element's active class
+      toggleElem.classList.toggle(linkActiveClass);
+      nav.classList.toggle(`o-offcanvas__side-${dir}`)
+      
+
+      // Toggle custom class if it is set
+      if (toggleClass !== openClass)
+        targetElem.classList.toggle(toggleClass);
+      // Toggle the default open class
+      targetElem.classList.toggle(openClass);
+
+      // Toggle the appropriate aria hidden attribute
+      targetElem.setAttribute('aria-hidden',
+        !(targetElem.classList.contains(toggleClass))
+      );
+
+      // Fire the custom open state event to trigger open functions
+      if (typeof window.CustomEvent === 'function') {
+        toggleEvent = new CustomEvent('changeOpenState', {
+          detail: targetElem.classList.contains(openClass)
+        });
+      } else {
+        toggleEvent = document.createEvent('CustomEvent');
+        toggleEvent.initCustomEvent('changeOpenState', true, true, {
+          detail: targetElem.classList.contains(openClass)
+        });
+      }
+
+      targetElem.dispatchEvent(toggleEvent);
+    });
+  });
+}
+
+Offcanvas.updateDimension = function (nav, mainOff, offcanvasParent) {
   let navHeight = nav.clientHeight;
   let classes = offcanvasParent.classList;
   let openDown = classes.contains('is-open-down')
@@ -161,12 +123,6 @@ Offcanvas.updateDimension = function(nav, mainOff, offcanvasParent) {
   }
 }
 
-Offcanvas.side = "right";
-Offcanvas.nav = "js-offcanvas__side";
-Offcanvas.mainOff = "js-offcanvas__main";
-Offcanvas.offCanvas = "js-offcanvas";
-
-
 Offcanvas.dataset = function (elem, attr) {
   if (typeof elem.dataset === 'undefined') {
     return elem.getAttribute('data-' + attr);
@@ -174,5 +130,19 @@ Offcanvas.dataset = function (elem, attr) {
   return elem.dataset[attr];
 }
 
+/**
+ * Defaults
+ */
+// starting location
+Offcanvas.side = "right";
+
+// the side nav
+Offcanvas.nav = ".js-offcanvas__side";
+
+// the main contnet
+Offcanvas.mainOff = ".js-offcanvas__main";
+
+// the offcanvas trigger
+Offcanvas.offCanvas = ".js-offcanvas";
 
 export default Offcanvas;

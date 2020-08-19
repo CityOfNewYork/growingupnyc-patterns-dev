@@ -7,25 +7,26 @@ import '../utilities/functions/foreach';
 // Elements
 
 // Components
+import Form from '../components/form/Form';
+import Scroll from '../components/side-navigation/Scroll';
+import LanguageSwitcher from '../components/language-switcher/LanguageSwitcher'
+import Share from '../components/share/Share'
 
 // Objects
 import Navigation from '../objects/navigation/Navigation';
 import Accordion from '../objects/accordion/Accordion';
 import Overlay from '../objects/overlay/Overlay';
 import AlertBanner from '../objects/alert-banner/AlertBanner';
-import Animations from '../utilities/animations/Animations';
-import Form from '../components/form/Form';
 import StaticColumn from '../objects/static-column/staticColumn'
-import Scroll from '../components/side-navigation/Scroll'
-import LanguageSwitcher from '../components/language-switcher/LanguageSwitcher'
-import Sticky from '../utilities/sticky/Sticky'
-import FormEffect from '../utilities/form-effects/FormEffects'
-import Reveal from '../utilities/reveal/Reveal'
 import Newsletter from '../objects/newsletter/Newsletter'
-import Share from '../components/share/Share'
 
 // Utilities
 import SectionHighlighter from '../utilities/section-highlighter/SectionHighlighter';
+import Animations from '../utilities/animations/Animations';
+import Offcanvas from '../utilities/offcanvas/offCanvas';
+import Sticky from '../utilities/sticky/Sticky'
+import FormEffect from '../utilities/form-effects/FormEffects'
+import Reveal from '../utilities/reveal/Reveal'
 
 /**
  * NYCO Patterns Framework
@@ -41,10 +42,9 @@ class main {
     return (settings) ? new Navigation(settings) : new Navigation();
   }
 
-
-	// offCanvas(settings = false) {
-  //   return (settings) ? new Offcanvas(settings) : new Offcanvas();
-  // }
+	offCanvas(settings = false) {
+    return (settings) ? new Offcanvas(settings) : new Offcanvas();
+  }
 
 	newsletter(settings = false) {
     return (settings) ? new Newsletter(settings) : new Newsletter();
@@ -66,7 +66,7 @@ class main {
     return new Accordion();
   }
 
-  icons(path) {
+  icons(path = 'icons.svg') {
     return new Icons(path);
   }
 
