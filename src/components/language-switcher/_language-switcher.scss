@@ -103,33 +103,6 @@
       }
     }
   }
-
-  .google-translate-logo {
-    padding-top: 0;
-
-    &:before {
-      content: "";
-      -webkit-mask: url("../../../svg/icon-google-translate.svg") no-repeat 50% 50%;
-      mask: url("../../../svg/icon-google-translate.svg") no-repeat 50% 50%;
-      display: inline-block;
-      height: 35px;
-      width: 72px;
-      margin-bottom: -3px;
-      background-color: $color-gray;
-
-      @if ($language=='ar') or ($language=='ur') {
-        width: 30px;
-      }
-
-      @else {
-        width: 22px;
-      }
-    }
-
-    &:hover:before {
-      background-color: $color-primary;
-    }
-  }
 }
 
 @media screen and (max-width: $screen-tablet) {
