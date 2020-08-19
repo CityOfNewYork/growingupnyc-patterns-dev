@@ -33,6 +33,6 @@ var Icons = function Icons(path) {
 };
 
 /** @type {String} The path of the icon file */
-Icons.path = 'icons.svg';
+Icons.path = 'svg/icons.svg';
 
 module.exports = Icons;

@@ -7,14 +7,16 @@ var LanguageSwitcher = function LanguageSwitcher() {
     target: LanguageSwitcher.Target,
     currentLanguage: LanguageSwitcher.currentLanguage,
     languageSwitcherWrapper: LanguageSwitcher.LanguageSwitcherWrapper,
-    logoWrapper: LanguageSwitcher.logoWrapper
+    logoWrapper: LanguageSwitcher.logoWrapper,
+    googleTranslateLogo: LanguageSwitcher.googleTranslateLogo
   };
   var languagesDiv = document.querySelector("." + this._settings.target);
   var languageSwitcherWrapper = document.querySelector("." + this._settings.languageSwitcherWrapper);
   var logoWrapper = document.querySelector("." + this._settings.logoWrapper);
   var body = document.querySelector("body");
   var allLanguages = document.querySelectorAll(".wpml-ls-item");
-  var offanvas = document.querySelector(".o-offcanvas__main"); // Media Query
+  var offanvas = document.querySelector(".o-offcanvas__main");
+  var googleTranslateLogo = document.querySelector("." + this._settings.googleTranslateLogo); // Media Query
 
   var isMobile = LanguageSwitcher.checkScreenSize(); // Gotchas --
 
@@ -61,31 +63,24 @@ var LanguageSwitcher = function LanguageSwitcher() {
   if (document.querySelector(".wpml-ls-legacy-list-horizontal")) {
     var ul = document.querySelector(".wpml-ls-legacy-list-horizontal").getElementsByTagName("ul");
     ul[0].appendChild(li);
-  } // Hide all languages
+  } // Hide all languages and google translate logo
 
 
-  this._hideAllLanguages(allLanguages);
+  this._hideAllLanguages(allLanguages, googleTranslateLogo); // On click (Translate Link) reveal language list
 
-  var cloned = languageSwitcherWrapper.cloneNode(true);
-  console.log(cloned); // On click (Translate Link) reveal language list
 
   aTag.addEventListener('click', function (e) {
-    this$1._toggle(allLanguages);
+    this$1._toggle(allLanguages, googleTranslateLogo);
 
     li.style.display = "none"; // on mobile"mobile-languages-switcher" class will reposition and style the language switcher
 
-    languageSwitcherWrapper.classList.toggle("mobile-languages-switcher"); // Adjusting logo postion on pages without language switcher
+    languageSwitcherWrapper.classList.toggle("mobile-languages-switcher");
+    console.log('languageSwitcherWrapper:', languageSwitcherWrapper); // Adjusting logo postion on pages without language switcher
     // logoWrapper.classList.add("ls-logo");
 
     LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile); // On mobile change body element overflow to hidden
 
     LanguageSwitcher.addOverflowHidden(isMobile, body);
-
-    if (isMobile.matches) {
-      cloned.classList.remove("c-language-switcher-wrapper"); // console.log(cloned)
-
-      offanvas.prepend(cloned);
-    }
   }); // Add "Pick a language" title on mobile
 
   var liTag = document.createElement("li");
@@ -115,14 +110,13 @@ var LanguageSwitcher = function LanguageSwitcher() {
   closeIconLi.appendChild(CloseIconATag); // On mobile On click close language switcher
 
   CloseIconATag.addEventListener('click', function (e) {
-    this$1._hideAllLanguages(allLanguages);
+    this$1._hideAllLanguages(allLanguages, googleTranslateLogo);
 
     languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
     li.style.display = ""; // logoWrapper.classList.remove("ls-logo");
 
     LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
     body.classList.remove("overflow-hidden");
-    offanvas.removeChild(cloned);
   }); // Onresize check screen size and apply all the changes
 
   window.addEventListener("resize", function () {
@@ -142,19 +136,21 @@ var LanguageSwitcher = function LanguageSwitcher() {
 }; // Unhide language list
 
 
-LanguageSwitcher.prototype._toggle = function _toggle(allLanguages) {
+LanguageSwitcher.prototype._toggle = function _toggle(allLanguages, googleTranslateLogo) {
   allLanguages.forEach(function (item) {
     item.style.display = "";
   });
+  googleTranslateLogo.style.display = "";
 }; // Hide language list
 
 
-LanguageSwitcher.prototype._hideAllLanguages = function _hideAllLanguages(allLanguages) {
+LanguageSwitcher.prototype._hideAllLanguages = function _hideAllLanguages(allLanguages, googleTranslateLogo) {
   allLanguages.forEach(function (item) {
     if (!item.classList.contains('wpml-ls-current-language')) {
       item.style.display = "none";
     }
   });
+  googleTranslateLogo.style.display = "none";
 }; // Media query
 
 
@@ -177,11 +173,11 @@ LanguageSwitcher.addCloseIconTitle = function (liTag, closeIconLi, isMobile) {
   }
 };
 /**
-* On screen desktop remove the li element with text content 'Pick a language' and the li containing close icon
-* @param {} liTag- li element with textContetn 'Pick a language'
-* @param {} closeIconLi- li element with close icon
-* @param {} isMobile- boolon value that checks if screen size is less tha 700px
-*/
+ * On screen desktop remove the li element with text content 'Pick a language' and the li containing close icon
+ * @param {} liTag- li element with textContetn 'Pick a language'
+ * @param {} closeIconLi- li element with close icon
+ * @param {} isMobile- boolon value that checks if screen size is less tha 700px
+ */
 
 
 LanguageSwitcher.removeCloseIconTitle = function (liTag, closeIconLi, isMobile) {
@@ -193,10 +189,10 @@ LanguageSwitcher.removeCloseIconTitle = function (liTag, closeIconLi, isMobile) 
   }
 };
 /**
-* On screen size less that 700px added overflow hidden class the body element
-* @param {} body- body element
-* @param {} isMobile- boolon value that checks if screen size is less tha 700px
-*/
+ * On screen size less that 700px added overflow hidden class the body element
+ * @param {} body- body element
+ * @param {} isMobile- boolon value that checks if screen size is less tha 700px
+ */
 
 
 LanguageSwitcher.addOverflowHidden = function (isMobile, body) {
@@ -205,10 +201,10 @@ LanguageSwitcher.addOverflowHidden = function (isMobile, body) {
   }
 };
 /**
-* On desktop remove the overflow-hidden class from body element
-* @param {} isMobile- Check screensize
-* @param {} body- Body element
-*/
+ * On desktop remove the overflow-hidden class from body element
+ * @param {} isMobile- Check screensize
+ * @param {} body- Body element
+ */
 
 
 LanguageSwitcher.removeOverflowHidden = function (isMobile, body) {
@@ -222,5 +218,6 @@ LanguageSwitcher.Target = "wpml-ls-legacy-list-horizontal";
 LanguageSwitcher.currentLanguage = "wpml-ls-current-language";
 LanguageSwitcher.LanguageSwitcherWrapper = "c-language-switcher-wrapper";
 LanguageSwitcher.logoWrapper = "o-navigation__logo-wrapper";
+LanguageSwitcher.googleTranslateLogo = "google-translate-logo";
 
 module.exports = LanguageSwitcher;
