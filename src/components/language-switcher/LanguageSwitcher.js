@@ -81,13 +81,15 @@ class LanguageSwitcher {
       li.style.display = "none";
       // on mobile"mobile-languages-switcher" class will reposition and style the language switcher
       languageSwitcherWrapper.classList.toggle("mobile-languages-switcher");
-      console.log('languageSwitcherWrapper:', languageSwitcherWrapper)
       // Adjusting logo postion on pages without language switcher
       // logoWrapper.classList.add("ls-logo");
       LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile)
 
       // On mobile change body element overflow to hidden
       LanguageSwitcher.addOverflowHidden(isMobile, body);
+
+      logoWrapper.style.marginTop = "-4.375rem";
+
 
     })
 
