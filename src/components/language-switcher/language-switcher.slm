@@ -2,7 +2,7 @@
 / Language-switcher
 
 div class="c-language-switcher-wrapper"
-  div class="o-container c-language-switcher desktop:flex desktop:justify-end"
+  div class="o-container c-language__switcher desktop:flex desktop:justify-end flex-col"
     div class="c-language-switcher__horizontal wpml-ls-legacy-list-horizontal"
       ul
         li class="wpml-ls-slot-top_widget wpml-ls-item wpml-ls-item-en wpml-ls-first-item wpml-ls-item-legacy-list-horizontal"
@@ -49,3 +49,7 @@ div class="c-language-switcher-wrapper"
           a class="wpml-ls-link" href="" title="Haitian Creole"
             span
               = 'Haitian Creole'
+    span class="google-translate-logo"
+      svg class="icon--google" role="img"
+        title = "Close Resources by Age"
+        use xlink:href="#icon-google-translate"

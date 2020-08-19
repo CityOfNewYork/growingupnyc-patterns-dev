@@ -7,10 +7,11 @@
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
 
 .animated {
-	@include animate();
+  @include animate();
 }
 
-body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
   -webkit-backface-visibility: hidden;
 }
 
@@ -20,6 +21,6 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 }
 
 // Hide languages list
-.rotating-text__entry {display: none;}
-
-
+.rotating-text__entry {
+  display: none;
+}

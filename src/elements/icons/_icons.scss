@@ -16,6 +16,17 @@
   }
 }
 
+.icon--google {
+  height: 1.6125rem;
+  width: 10.375rem;
+
+	@media screen and (min-width: $screen-desktop) {
+
+    height: 1.6125rem;
+    width: 10.375rem;
+  }
+}
+
 .icon--logo-guny {
   height: rem-calc(87);
   width: rem-calc(118);
@@ -88,6 +99,7 @@
   top: rem-calc(-3);
   width: rem-calc(63);
 }
+
 
 // Align the caret with the text it's next to
 .icon--caret {

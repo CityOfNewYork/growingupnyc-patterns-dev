@@ -12,57 +12,66 @@
   display: flex;
   justify-content: flex-end;
 
-  @if ($language == 'ar') or ($language == 'ur') {
-      text-align: left;
-    }
+  @if ($language=='ar') or ($language=='ur') {
+    text-align: left;
+  }
 }
+
 .wpml-ls-legacy-list-horizontal {
   padding: 7px 0 0;
 
   .wpml-ls-item-button {
 
-        .title-tag {
-          padding-top: 0;
+    .title-tag {
+      padding-top: 0;
 
-          &:before {
-            content: "";
-            -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg")  no-repeat 50% 50%;
-            mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg")  no-repeat 50% 50%;
-            display: inline-block;
-            height: 15px;
-            width: 22px;
-            margin-bottom: -3px;
-            background-color: $color-gray;
+      &:before {
+        content: "";
+        -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg") no-repeat 50% 50%;
+        mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg") no-repeat 50% 50%;
+        display: inline-block;
+        height: 15px;
+        width: 22px;
+        margin-bottom: -3px;
+        background-color: $color-gray;
 
-            @if ($language == 'ar') or ($language == 'ur') {
-              width: 30px;
-            } @else {
-              width: 22px;
-            }
-          }
-          &:hover:before {
-            background-color: $color-primary;
-          }
+        @if ($language=='ar') or ($language=='ur') {
+          width: 30px;
         }
+
+        @else {
+          width: 22px;
+        }
+      }
+
+      &:hover:before {
+        background-color: $color-primary;
+      }
+    }
   }
 
   ul {
     list-style: none;
   }
+
   li {
     display: inline-block;
     margin-right: rem-calc(5);
+
     &:last-child {
       margin-right: 0;
+
       a {
         padding-right: 0;
       }
     }
+
     a {
       font-size: rem-calc(11);
       color: $color-gray;
       padding: 5px 8px;
       text-decoration: none;
+
       &:hover {
         color: $color-primary;
       }
@@ -71,6 +80,7 @@
     &.wpml-ls-current-language {
       a {
         color: $color-primary;
+
         &:before {
           content: "";
           -webkit-mask: url(https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-check.svg) no-repeat 50% 50%;
@@ -82,28 +92,57 @@
           position: relative;
           top: .125rem;
 
-          @if ($language == 'ar') or ($language == 'ur') {
+          @if ($language=='ar') or ($language=='ur') {
             margin-left: .1875rem;
-          } @else {
+          }
+
+          @else {
             margin-right: .1875rem;
           }
         }
       }
     }
   }
+
+  .google-translate-logo {
+    padding-top: 0;
+
+    &:before {
+      content: "";
+      -webkit-mask: url("../../../svg/icon-google-translate.svg") no-repeat 50% 50%;
+      mask: url("../../../svg/icon-google-translate.svg") no-repeat 50% 50%;
+      display: inline-block;
+      height: 35px;
+      width: 72px;
+      margin-bottom: -3px;
+      background-color: $color-gray;
+
+      @if ($language=='ar') or ($language=='ur') {
+        width: 30px;
+      }
+
+      @else {
+        width: 22px;
+      }
+    }
+
+    &:hover:before {
+      background-color: $color-primary;
+    }
+  }
 }
 
 @media screen and (max-width: $screen-tablet) {
 
-	// mobile-languages-switcher class is added to the language switcher div on lnguage switcher click
+  // mobile-languages-switcher class is added to the language switcher div on lnguage switcher click
   .mobile-languages-switcher {
-        position: fixed;
-        bottom: 0;
-        background-color: white;
-        height: 50%;
-        width: 100%;
-        overflow: scroll;
-        z-index: 99;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    height: 50%;
+    width: 100%;
+    overflow: scroll;
+    z-index: 99;
 
     .o-container {
       padding: 0;
@@ -115,87 +154,103 @@
       padding: 1rem 0;
       margin: 0;
     }
-      .o-container {
-          .wpml-ls-legacy-list-horizontal {
-            width: 100%;
-            padding: 0 1rem;
 
-            .pick-a-language {
-              font-size: .6875rem;
-              color: #999;
-              text-decoration: none;
-            }
-            ul {
-              li {
-                &:first-child {
-                  border: none;
-                  width: 50%;
-                  display: inline-block;
+    .o-container {
+      .wpml-ls-legacy-list-horizontal {
+        width: 100%;
+        padding: 0 1rem;
 
-                  @if ($language == 'ar') or ($language == 'ur') {
-                    text-align: right;
-                  } @else {
-                    text-align: left;
-                  }
-                }
-                &:nth-child(2) {
-                  border: none;
-                  width: 50%;
-                  display: inline-block;
+        .pick-a-language {
+          font-size: .6875rem;
+          color: #999;
+          text-decoration: none;
+        }
 
-                  @if ($language == 'ar') or ($language == 'ur') {
-                    text-align: left;
-                  } @else {
-                    text-align: right;
-                  }
-
-                  a {
-                    @if ($language == 'ar') or ($language == 'ur') {
-                      text-align: left;
-                    } @else {
-                      text-align: right;
-                    }
-
-                  }
-                }
-
-                a {
-                  padding: 0;
-                    @if ($language == 'ar') or ($language == 'ur') {
-                      text-align: right;
-                    } @else {
-                      text-align: left;
-                    }
-                }
-              }
-            }
-						// Close lnaguage switcher icon
-            .ls-close-link {
-                    &:before {
-                  content: "";
-                  -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg")  no-repeat 50% 50%;
-                  mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg")  no-repeat 50% 50%;
-                  display: inline-block;
-                  height: 25px;
-                  width: 32px;
-                  margin-bottom: -8px;
-                  background-color: $color-gray;
-                  @if ($language == 'ar') or ($language == 'ur') {
-                    width: 30px;
-                  } @else {
-                    width: 22px;
-                  }
-                }
-                &:hover:before {
-                  background-color: $color-primary;
-                }
-              }
-            .wpml-ls-item-ht {
+        ul {
+          li {
+            &:first-child {
               border: none;
+              width: 50%;
+              display: inline-block;
+
+              @if ($language=='ar') or ($language=='ur') {
+                text-align: right;
+              }
+
+              @else {
+                text-align: left;
+              }
+            }
+
+            &:nth-child(2) {
+              border: none;
+              width: 50%;
+              display: inline-block;
+
+              @if ($language=='ar') or ($language=='ur') {
+                text-align: left;
+              }
+
+              @else {
+                text-align: right;
+              }
+
+              a {
+                @if ($language=='ar') or ($language=='ur') {
+                  text-align: left;
+                }
+
+                @else {
+                  text-align: right;
+                }
+
+              }
+            }
+
+            a {
+              padding: 0;
+
+              @if ($language=='ar') or ($language=='ur') {
+                text-align: right;
+              }
+
+              @else {
+                text-align: left;
+              }
             }
           }
+        }
+
+        // Close lnaguage switcher icon
+        .ls-close-link {
+          &:before {
+            content: "";
+            -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg") no-repeat 50% 50%;
+            mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg") no-repeat 50% 50%;
+            display: inline-block;
+            height: 25px;
+            width: 32px;
+            margin-bottom: -8px;
+            background-color: $color-gray;
+
+            @if ($language=='ar') or ($language=='ur') {
+              width: 30px;
+            }
+
+            @else {
+              width: 22px;
+            }
+          }
+
+          &:hover:before {
+            background-color: $color-primary;
+          }
+        }
+
+        .wpml-ls-item-ht {
+          border: none;
+        }
       }
     }
+  }
 }
-
-
