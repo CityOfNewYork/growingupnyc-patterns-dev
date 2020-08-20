@@ -227,3 +227,15 @@
     }
   }
 }
+
+.google-translate-logo {
+  text-align: center;
+
+  @media screen and (min-width: $screen-tablet) {
+    text-align: right;
+
+    @if ($language=='ar') or ($language=='ur') {
+      text-align: left;
+    }
+   }
+}
