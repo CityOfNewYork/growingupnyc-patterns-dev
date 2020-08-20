@@ -27,7 +27,7 @@ class Offcanvas {
 
 		const nav = document.querySelector(`.${this._settings.nav}`)
 		const mainOff = document.querySelector(`.${this._settings.mainOff}`)
-		const footer = document.querySelector('.c-footer')
+		const footer = document.querySelector('.o-footer')
 
 		// Depending on the argument passed toggle element class
     let openClass = "";
@@ -111,7 +111,7 @@ class Offcanvas {
         } else if (openClass === 'is-open-down'){
 					nav.classList.toggle("o-offcanvas__side-down")
 					console.log('is-open-down')
-					footer.classList.toggle("c-footer-down")
+					footer.classList.toggle("o-footer-down")
 				} else {
 					nav.classList.toggle("o-offcanvas__side-right")
 					console.log('reset to 0')
