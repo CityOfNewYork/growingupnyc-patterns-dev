@@ -22,6 +22,7 @@ class LanguageSwitcher {
     const allLanguages = document.querySelectorAll(".wpml-ls-item");
     const offanvas = document.querySelector(".o-offcanvas__main")
     const googleTranslateLogo = document.querySelector(`.${this._settings.googleTranslateLogo}`)
+    let isLanguageSwitcherOpen = false;
     // Media Query
     let isMobile = LanguageSwitcher.checkScreenSize();
 
@@ -73,24 +74,21 @@ class LanguageSwitcher {
     }
 
     // Hide all languages and google translate logo
-    this._hideAllLanguages(allLanguages, googleTranslateLogo);
+    this._hideAllLanguages(allLanguages, googleTranslateLogo, isMobile);
 
     // On click (Translate Link) reveal language list
     aTag.addEventListener('click', (e) => {
-      this._toggle(allLanguages, googleTranslateLogo);
+      isLanguageSwitcherOpen = true;
+      this._toggle(allLanguages, googleTranslateLogo, isMobile);
       li.style.display = "none";
       // on mobile"mobile-languages-switcher" class will reposition and style the language switcher
       languageSwitcherWrapper.classList.toggle("mobile-languages-switcher");
       // Adjusting logo postion on pages without language switcher
-      // logoWrapper.classList.add("ls-logo");
+      logoWrapper.classList.add("ls-logo");
       LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile)
 
       // On mobile change body element overflow to hidden
       LanguageSwitcher.addOverflowHidden(isMobile, body);
-
-      logoWrapper.style.marginTop = "-4.375rem";
-
-
     })
 
     // Add "Pick a language" title on mobile
@@ -122,10 +120,12 @@ class LanguageSwitcher {
 
     // On mobile On click close language switcher
     CloseIconATag.addEventListener('click', (e) => {
-      this._hideAllLanguages(allLanguages, googleTranslateLogo);
+      isLanguageSwitcherOpen = false;
+
+      this._hideAllLanguages(allLanguages, googleTranslateLogo, isMobile);
       languageSwitcherWrapper.classList.remove("mobile-languages-switcher");
       li.style.display = "";
-      // logoWrapper.classList.remove("ls-logo");
+      logoWrapper.classList.remove("ls-logo");
       LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile)
 
       body.classList.remove("overflow-hidden");
@@ -135,12 +135,31 @@ class LanguageSwitcher {
 
     // Onresize check screen size and apply all the changes
     window.addEventListener("resize", function () {
+      console.log('isLanguageSwitcherOpen:', isLanguageSwitcherOpen)
       isMobile = LanguageSwitcher.checkScreenSize();
       if (!isMobile.matches) {
         LanguageSwitcher.removeCloseIconTitle(liTag, closeIconLi, isMobile);
       }
 
       // On mobile and if the translate button is clicked add overflowe-hidden class to the body element
+      if (!isLanguageSwitcherOpen) {
+
+        if (isMobile.matches) {
+          googleTranslateLogo.style.display = "none";
+        } else {
+          googleTranslateLogo.style.removeProperty('display')
+          googleTranslateLogo.style.visibility = "hidden";
+        }
+      } else {
+          if (isMobile.matches) {
+            googleTranslateLogo.style.display = "";
+          } else {
+            googleTranslateLogo.style.removeProperty('display')
+            googleTranslateLogo.style.visibility = "visible";
+          }
+
+      }
+
       if (languageSwitcherWrapper.classList.contains("mobile-languages-switcher")) {
         LanguageSwitcher.addOverflowHidden(isMobile, body);
         LanguageSwitcher.addCloseIconTitle(liTag, closeIconLi, isMobile);
@@ -150,21 +169,29 @@ class LanguageSwitcher {
   }
 
   // Unhide language list
-  _toggle(allLanguages, googleTranslateLogo) {
+  _toggle(allLanguages, googleTranslateLogo, isMobile) {
     allLanguages.forEach(item => {
       item.style.display = ""
     })
-    googleTranslateLogo.style.display = ""
+    if (isMobile.matches) {
+      googleTranslateLogo.style.display = "";
+    } else {
+      googleTranslateLogo.style.visibility = "visible";
+    }
   }
 
   // Hide language list
-  _hideAllLanguages(allLanguages, googleTranslateLogo) {
+  _hideAllLanguages(allLanguages, googleTranslateLogo, isMobile) {
     allLanguages.forEach(item => {
       if (!item.classList.contains('wpml-ls-current-language')) {
         item.style.display = "none"
       }
     });
-    googleTranslateLogo.style.display = "none";
+    if (isMobile.matches) {
+      googleTranslateLogo.style.display = "none";
+    } else {
+      googleTranslateLogo.style.visibility = "hidden";
+    }
 
   }
 }
