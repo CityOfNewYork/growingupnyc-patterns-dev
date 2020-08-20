@@ -22,9 +22,30 @@ $font-size-xx-large: map-get($font-sizes, 'font-size-xx-large');
 $font-size-xxx-large-mobile: map-get($font-sizes, 'font-size-xxx-large-mobile');
 $font-size-xxx-large: map-get($font-sizes, 'font-size-xxx-large');
 
-// $font-family-text: map-get($fonts, 'text-sans');
-// $font-family-display: map-get($fonts, 'display-sans');
-
 $font-weight-medium: map-get($font-weights, 'medium');
 $font-weight-semibold: map-get($font-weights, 'semibold');
 $font-weight-extrablack: map-get($font-weights, 'extrablack');
+
+
+$font-family-text: "open-sans", sans-serif;
+$font-family-display: "museo-sans-rounded", sans-serif;
+@if ($language == 'ar') {
+  $font-family-text: 'Markazi Text', serif;
+  $font-family-display: 'El Messiri', sans-serif;
+}
+@if ($language == 'ko') {
+  $font-family-text: 'Noto Sans KR', sans-serif;
+  $font-family-display: 'Jua', sans-serif;
+}
+@if ($language == 'ru') {
+  $font-family-text: "open-sans", sans-serif;
+  $font-family-display:  "Nunito", sans-serif;
+}
+@if ($language == 'ur') {
+  $font-family-text: 'Markazi Text', serif;
+  $font-family-display: 'El Messiri', sans-serif;
+}
+@if ($language == 'zh-hant') {
+  $font-family-text: 'source-han-sans-traditional', sans-serif;
+  $font-family-display: 'Noto Sans TC', sans-serif;
+}

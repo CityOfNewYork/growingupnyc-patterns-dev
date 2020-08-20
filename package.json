@@ -1,6 +1,6 @@
 {
-  "name": "growingupnyc-patterns",
-  "version": "0.0.1-alpha",
+  "name": "@nycopportunity/growingup-patterns",
+  "version": "0.0.1-1",
   "description": "Patterns library for Growing Up NYC",
   "author": "Mayor's Office for Economic Opportunity",
   "license": "ISC",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@nycopportunity/patterns-framework": "^1.0.0-14",
-    "animate.css": "^3.7.2",
     "animate.scss": "0.0.6",
     "js-cookie": "^2.2.1",
     "miss-plete-js": "^1.4.5",

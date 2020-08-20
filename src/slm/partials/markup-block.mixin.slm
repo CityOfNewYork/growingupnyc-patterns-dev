@@ -3,4 +3,4 @@
     - if(this.grid === 'false')
       div class="mt-6 bg-color-gray-light py-8 px-4 overflow-hidden"
         pre
-          = 'code{{ '+ this.markup +' }}';
+          = this.include(this.markup.replace('.slm', ''));

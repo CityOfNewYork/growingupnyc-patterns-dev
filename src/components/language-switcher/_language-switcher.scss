@@ -2,10 +2,10 @@
  * Language-switcher
  */
 
-// Dependencies
+@import 'config/cdn';
+@import 'config/colors';
 @import 'scss/functions/rem-calc';
 
-// Declarations
 .c-language__switcher {
   text-align: right;
   z-index: 1;
@@ -21,14 +21,13 @@
   padding: 7px 0 0;
 
   .wpml-ls-item-button {
-
     .title-tag {
       padding-top: 0;
 
       &:before {
         content: "";
-        -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg") no-repeat 50% 50%;
-        mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-translate.svg") no-repeat 50% 50%;
+        -webkit-mask: url("#{$cdn}svg/icon-translate.svg")  no-repeat 50% 50%;
+        mask: url("#{$cdn}svg/icon-translate.svg")  no-repeat 50% 50%;
         display: inline-block;
         height: 15px;
         width: 22px;
@@ -65,7 +64,6 @@
         padding-right: 0;
       }
     }
-
     a {
       font-size: rem-calc(11);
       color: $color-gray;
@@ -83,8 +81,8 @@
 
         &:before {
           content: "";
-          -webkit-mask: url(https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-check.svg) no-repeat 50% 50%;
-          mask: url(https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-check.svg) no-repeat 50% 50%;
+          -webkit-mask: url('#{$cdn}svg/icon-check.svg') no-repeat 50% 50%;
+          mask: url('#{$cdn}svg/icon-check.svg') no-repeat 50% 50%;
           display: inline-block;
           width: 10px;
           height: 10px;
@@ -105,6 +103,7 @@
   }
 }
 
+// mobile-languages-switcher class is added to the language switcher div on lnguage switcher click
 @media screen and (max-width: $screen-tablet) {
 
   // mobile-languages-switcher class is added to the language switcher div on lnguage switcher click
@@ -127,7 +126,6 @@
       padding: 1rem 0 !important;
       margin: 0 !important;
     }
-
     .o-container {
       .wpml-ls-legacy-list-horizontal {
         width: 100%;
@@ -198,8 +196,8 @@
         .ls-close-link {
           &:before {
             content: "";
-            -webkit-mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg") no-repeat 50% 50%;
-            mask: url("https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns-development@master/dist/svg/icon-close.svg") no-repeat 50% 50%;
+            -webkit-mask: url("#{$cdn}svg/icon-close.svg") no-repeat 50% 50%;
+            mask: url("#{$cdn}svg/icon-close.svg") no-repeat 50% 50%;
             display: inline-block;
             height: 25px;
             width: 32px;

@@ -5,6 +5,10 @@
 @import 'config/media';
 @import 'scss/functions/rem-calc';
 
+/**
+ * Logos
+ */
+
 .icon--logo {
   height: rem-calc(85);
   width: rem-calc(157);
@@ -37,6 +41,13 @@
   }
 }
 
+.icon--logo-cc {
+  height: rem-calc(85);
+
+	@media screen and (min-width: $screen-desktop) {
+    height: rem-calc(85);
+  }
+}
 
 .icon--vroom {
   height: rem-calc(30.6);
@@ -48,36 +59,17 @@
   }
 }
 
-.icon--large {
-  height: rem-calc(37);
-  width: rem-calc(37);
-
-	@media screen and (min-width: $screen-desktop) {
-    height: rem-calc(50);
-    width: rem-calc(50);
-  }
+.icon--nyc {
+  height: rem-calc(21);
+  margin: rem-calc(0 3);
+  position: relative;
+  top: rem-calc(-3);
+  width: rem-calc(63);
 }
 
-.icon--medium {
-  height: rem-calc(37);
-  width: rem-calc(37);
-
-	@media screen and (min-width: $screen-tablet) {
-    height: rem-calc(35);
-    width: rem-calc(35);
-  }
-}
-
-.icon--small {
-  height: rem-calc(22);
-  width: rem-calc(22);
-}
-
-.icon--xsmall {
-  height: 1em;
-  width: 1em;
-  vertical-align: top;
-}
+/**
+ * Icons Sizes
+ */
 
 .icon--xxsmall {
   height: rem-calc(13);
@@ -92,16 +84,40 @@
   }
 }
 
-.icon--nyc {
-  height: rem-calc(21);
-  margin: rem-calc(0 3);
-  position: relative;
-  top: rem-calc(-3);
-  width: rem-calc(63);
+.icon--xsmall {
+  height: 1em;
+  width: 1em;
+  vertical-align: center;
 }
 
+.icon--small {
+  height: rem-calc(22);
+  width: rem-calc(22);
+}
 
-// Align the caret with the text it's next to
+.icon--medium {
+  height: rem-calc(37);
+  width: rem-calc(37);
+
+	@media screen and (min-width: $screen-tablet) {
+    height: rem-calc(35);
+    width: rem-calc(35);
+  }
+}
+
+.icon--large {
+  height: rem-calc(37);
+  width: rem-calc(37);
+
+	@media screen and (min-width: $screen-desktop) {
+    height: rem-calc(50);
+    width: rem-calc(50);
+  }
+}
+
+/**
+ * Carets - Align the caret next to text
+ */
 .icon--caret {
   @extend .icon--small;
   margin-top: rem-calc(-3);

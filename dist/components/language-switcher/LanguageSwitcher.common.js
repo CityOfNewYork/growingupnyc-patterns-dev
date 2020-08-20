@@ -3,8 +3,8 @@
 var LanguageSwitcher = function LanguageSwitcher() {
   var this$1 = this;
   this._settings = {
-    selector: LanguageSwitcher.Selector,
-    target: LanguageSwitcher.Target,
+    selector: LanguageSwitcher.selector,
+    target: LanguageSwitcher.target,
     currentLanguage: LanguageSwitcher.currentLanguage,
     languageSwitcherWrapper: LanguageSwitcher.LanguageSwitcherWrapper,
     logoWrapper: LanguageSwitcher.logoWrapper,
@@ -246,10 +246,10 @@ LanguageSwitcher.removeOverflowHidden = function (isMobile, body) {
   }
 };
 
-LanguageSwitcher.Selector = "rounded";
-LanguageSwitcher.Target = "wpml-ls-legacy-list-horizontal";
+LanguageSwitcher.selector = "rounded";
+LanguageSwitcher.target = "wpml-ls-legacy-list-horizontal";
 LanguageSwitcher.currentLanguage = "wpml-ls-current-language";
-LanguageSwitcher.LanguageSwitcherWrapper = "c-language-switcher-wrapper";
+LanguageSwitcher.languageSwitcherWrapper = "c-language-switcher-wrapper";
 LanguageSwitcher.logoWrapper = "o-navigation__logo-wrapper";
 LanguageSwitcher.googleTranslateLogo = "google-translate-logo";
 

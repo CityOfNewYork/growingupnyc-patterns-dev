@@ -5,9 +5,7 @@ import $ from 'jquery';
 import Cookies from 'js-cookie';
 import Utility from './utility.js';
 
-
 /* eslint no-undef: "off" */
-// const Variables = require('../../variables.json');
 
 /**
  * This component handles validation and submission for share by email and

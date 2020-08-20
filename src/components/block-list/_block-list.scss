@@ -8,7 +8,6 @@
 @import 'scss/functions/font-size';
 @import 'scss/functions/rem-calc';
 
-
 .c-block-list {
   position: relative;
 
@@ -46,11 +45,9 @@
   color: $color-dark-gray-dark;
   @include font-size-small;
   margin-bottom: rem-calc(-20);
-  // @include text-uppercase;
 }
 
 // Block List Text
-//
 // Content that appears before the block list
 .c-block-list--shade .c-block-list__text {
   color: $color-gray-dark;
@@ -66,15 +63,9 @@
     color: $color-blue;
   }
 
-  .no-touchevents & {
-    &:hover {
-      color: $color-blue;
-    }
-  }
 }
 
 // Block List Inner
-//
 // Inner container within a block list
 .c-block-list__inner {
   margin-bottom: rem-calc(35);
@@ -92,7 +83,6 @@
 }
 
 // Block List Item
-//
 // Individual item within the list
 .c-block-list__item {
   padding: rem-calc(8 0);

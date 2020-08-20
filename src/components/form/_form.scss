@@ -1,9 +1,11 @@
-// Signup Form
-//
-// Small form designed to be displayed within a page, rather than on a page itself
-// Doesn't technically have to be used for email signups.
+/**
+ * Form
+ */
 
 @import 'config/colors';
+@import 'config/media';
+@import 'scss/functions/font-size';
+@import 'scss/functions/rem-calc';
 
 // Signup Form Fieldset
 .form__fieldset {
@@ -74,8 +76,6 @@
   margin-right: 0;
 }
 
-
-
 .mc-field-group {
   padding-bottom: rem-calc(15);
 
@@ -109,9 +109,6 @@ input[type="search"].form-field {
   appearance: none;
 }
 
-// Size Variations
-
-// Large
 .form-field--large {
   @include font-size-x-large;
   line-height: normal;
@@ -127,8 +124,6 @@ input[type="search"].form-field {
 }
 
 // Icons
-
-// Layout
 .form-field__icon-container {
   position: relative;
 }
@@ -151,12 +146,6 @@ input[type="search"].form-field {
     color: $color-secondary;
   }
 
-  .no-touchevents & {
-    &:hover {
-      color: $color-secondary;
-    }
-  }
-
   + .form-field__icon {
     right: rem-calc(50);
 
@@ -173,16 +162,8 @@ input[type="search"].form-field {
     color: $color-text;
   }
 
-  .no-touchevents & {
-    &:hover {
-      color: $color-text;
-    }
-  }
 }
 
-// Icon Size Variations
-
-// Large
 .form-field__icon--large {
   width: rem-calc(20);
 
@@ -195,8 +176,6 @@ input[type="search"].form-field {
   }
 }
 
-
-// Signup Form h2
 .signup-form {
   @include font-size-small;
   h2 {
@@ -212,9 +191,6 @@ input[type="search"].form-field {
 }
 
 
-// Signup Form Field
-//
-//
 // Text input field
 .signup-form__field {
   border: 2px solid transparent;
@@ -254,7 +230,6 @@ input[type="search"].form-field {
   width: 100%;
 }
 
-
 // Inner content within a label. The data-content
 .signup-form__label-content {
   transition: transform 250ms ease-in-out;
@@ -288,8 +263,6 @@ input[type="search"].form-field {
   }
 }
 
-
-// Wrapper around checkbox input, label, and hidden field (if its a Tools checkbox)
 .signup-form__checkbox {
   line-height: rem-calc(20);
   margin-top: rem-calc(10);
@@ -311,7 +284,6 @@ input[type="search"].form-field {
   margin: auto;
 }
 
-
 .signup-form-logo {
   width: rem-calc(150);
 }
@@ -326,7 +298,6 @@ input[type="search"].form-field {
   position: absolute;
   width: 100%;
 }
-
 
 // Signup form Input
 .signup-form__input {
@@ -366,7 +337,6 @@ input[type="search"].form-field {
     width: 60%;
   }
 }
-
 
 // Signup Form Success Message
 .c-signup-form__response {

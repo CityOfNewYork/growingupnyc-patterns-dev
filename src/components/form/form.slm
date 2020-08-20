@@ -9,14 +9,12 @@ div class='bg-color-blue-light p-4'
 
     div class='signup-form__error guny-error'
 
-    / {# EMAIL #}
     div class='form__input signup-form__input'
       label for='mce-EMAIL' class='signup-form__label'
         span class='signup-form__label-content' data-content='Email' title='Email'
           = 'Email'
       input type='email' value='' name='EMAIL' class='signup-form__field input' id='mce-EMAIL'
 
-    / {# ZIPCODE #}
     div class='form__input signup-form__input form__input--short'
       label for='mce-ZIP' class='signup-form__label'
         span class='signup-form__label-content' data-content='Zip code' title='Zip code'
@@ -28,8 +26,8 @@ div class='bg-color-blue-light p-4'
       legend
         = 'I would like to receive updates for:'
 
-      - for (index in this.site.forms.ageGroups)
-        - value = this.site.forms.ageGroups[index];
+      - for (index in this.forms.ageGroups)
+        - value = this.forms.ageGroups[index];
         span class='form__checkbox'
           label class='checkbox' for='${value.id}'
             input id='${value.id}' class='checkbox__field' name='${value.name}' type='checkbox' value='${value.value}'  required='true'

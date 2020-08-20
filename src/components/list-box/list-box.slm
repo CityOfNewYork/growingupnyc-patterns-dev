@@ -1,6 +1,7 @@
 /
 / List-box
 / List styled as colorful boxes. Often used with the accordion pattern.
+
 ol class="c-list-box c-list-box--primary" data-multiselectable="true"
   li class="c-list-box__item"
     h3 class="c-list-box__heading bg-color-pink" id="ages-heading-baby" tabindex="0"

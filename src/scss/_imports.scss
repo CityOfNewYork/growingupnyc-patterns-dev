@@ -47,7 +47,6 @@
 @import 'components/block-list/block-list';
 @import 'components/card/card';
 @import 'components/details-list/details-list';
-@import 'components/footer/footer';
 @import 'components/form/form';
 @import 'components/hero/hero';
 @import 'components/language-switcher/language-switcher';
@@ -71,6 +70,7 @@
 @import 'objects/content/content';
 @import 'objects/feature-photo/feature-photo';
 @import 'objects/flex-embed/flex-embed';
+@import 'objects/footer/footer';
 @import 'objects/inline-list/inline-list';
 @import 'objects/overlay/overlay';
 @import 'objects/navigation/navigation';
@@ -85,6 +85,7 @@
 @import 'utilities/accessibility/accessibility';
 @import 'utilities/animations/animations';
 @import 'utilities/color/color';
+@import 'utilities/color/color-milestones';
 @import 'utilities/font/font';
 @import 'utilities/typography/typography';
 @import 'utilities/offcanvas/offcanvas';

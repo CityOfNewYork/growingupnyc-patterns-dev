@@ -2,14 +2,11 @@
  * List-box
  */
 
-// Dependencies
-@import 'config/fonts';
 @import 'config/colors';
+@import 'config/fonts';
 @import 'scss/functions/font-size';
 @import 'scss/functions/rem-calc';
 
-
-// Declarations
 .c-list-box {
   display: block;
   padding: rem-calc(6 4 2);
@@ -20,7 +17,6 @@
 }
 
 // List Box Item
-//
 // Section within the list box. Encompasses the list heading and any sublists.
 .c-list-box__item {
   display: block;
@@ -35,11 +31,9 @@
 }
 
 // List Box Heading
-//
 // Top level list item or section heading.
 // If used with the accordion pattern, this will be whatever the accordion drawer
 // heading is.
-//
 .c-list-box__heading {
   border-radius: rem-calc(3);
   display: block;
@@ -92,16 +86,6 @@
       color: $color-text;
     }
   }
-
-  .no-touchevents & {
-    &:hover {
-      color: $color-secondary;
-
-      .icon {
-        color: $color-text;
-      }
-    }
-  }
 }
 
 .c-list-box--tertiary .c-list-box__heading {
@@ -120,7 +104,6 @@
 }
 
 // List Box Subheading
-//
 // Optional subtitle on a list box heading
 .c-list-box__subheading {
   display: block;
@@ -133,7 +116,6 @@
 }
 
 // List Box Content
-//
 // The sublist of items within a box
 .c-list-box--primary .c-list-box__content {
   background: $color-primary;
@@ -159,7 +141,6 @@
 
 
 // List Box Subitem
-//
 // Item within a sublist. If the sublist is a list of links, this class may be applied
 // to the a element rather than the li element.
 .c-list-box__subitem {
@@ -230,13 +211,6 @@
 .c-list-box--quaternary .c-list-box__subitem {
   &:focus {
     background: $color-blue-dark;
-  }
-
-  .no-touchevents & {
-    &:hover {
-      background: $color-blue-dark;
-      color: inherit;
-    }
   }
 }
 

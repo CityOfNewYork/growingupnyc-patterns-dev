@@ -2,9 +2,9 @@
  * Button
  */
 
+@import 'config/fonts';
 @import 'config/colors';
 @import 'config/transitions';
-@import 'config/fonts';
 @import 'scss/functions/font-size';
 @import 'scss/functions/rem-calc';
 
@@ -29,20 +29,12 @@
   }
 }
 
-// Primary button
-//
-// Primary button. Solid color initially and turns ghosty on hover
-//
-// .button--primary - Primary button
-// .button--full-width - Button spans width of parent
-//
-
+// Primary button - Solid color initially and turns ghosty on hover
 .button--primary {
   @extend %button-base;
   background: $color-text-invert;
   color: $color-text;
   letter-spacing: 1px;
-  // text-transform: uppercase;
 
   &:focus {
     background: transparent;
@@ -59,13 +51,7 @@
   }
 }
 
-// Outlined Button
-//
-// Secondary button. Ghosty initially and turns solid on hover
-//
-// .button--outline--gray - Grey outline
-// .button--outline--white - White outline
-
+// Outlined Button - Ghosty initially and turns solid on hover
 .button--outline {
   @extend %button-base;
   background: transparent;
@@ -104,22 +90,17 @@
 
 }
 
-// Pill button
-//
-// Pill button. Used primarily for tags
-//
-// .button--pill - Standard, primary-colored version
-// .button--pill--alt - Darker-colored version
+// Pill button - Used primarily for tags
 .button--pill {
   @extend %button-base;
   background: $color-primary;
   border: 0;
   border-radius: rem-calc(15);
   color: $color-text-invert;
-  @include font-size($font-size-xx-small);
+  font-size: $font-size-xx-small !important;
   margin: rem-calc(0 2 4 0);
-  min-width: 0;
-  padding: rem-calc(10 17);
+  min-width: 0 !important;
+  padding: 10px 17px;
 
   &:focus {
     background: $color-secondary;
@@ -129,10 +110,6 @@
   &:hover {
     background: $color-secondary;
     color: $color-text-invert !important;
-  }
-
-	@media screen and (min-width: $screen-mobile) {
-    min-width: 0;
   }
 }
 
@@ -161,11 +138,7 @@
 }
 
 // Simple Button
-//
 // Basic blue button used for links within a detail page
-//
-// .button--simple - Simple button
-// .button--simple--alt - Alternate, darker blue version
 .button--simple {
   @extend %button-base;
   background: $color-primary;
@@ -205,7 +178,6 @@
 }
 
 // Text-only button
-//
 // Button styled to look like a text link.
 // Can also be used with an SVG icon for an icon-only button
 .button--text {

@@ -1,300 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
-    <link href="styles/site-default.css" rel="stylesheet" />
-    <script type="text/javascript">
-      (function(d) {
-        var config = {
-            kitId: 'wyh7nce',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h = d.documentElement,
-          t = setTimeout(function() {
-            h.className = h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
-          }, config.scriptTimeout),
-          tk = d.createElement('script'),
-          f = false,
-          s = d.getElementsByTagName('script')[0],
-          a;
-        h.className += ' wf-loading';
-        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-        tk.async = true;
-        tk.onload = tk.onreadystatechange = function() {
-          a = this.readyState;
-          if (f || (a && a != 'complete' && a != 'loaded')) return;
-          f = true;
-          clearTimeout(t);
-          try {
-            Typekit.load(config);
-          } catch (e) {}
-        };
-        s.parentNode.insertBefore(tk, s);
-      })(document);
-    </script>
-    <title>Growing Up NYC Patterns</title>
-    <noscript>
-      <style>
-        body {
-          visibility: visible !important;
-        }
-      </style>
-    </noscript>
-    <script type="text/javascript">
-      function load() {
-        document.body.style.visibility = 'visible';
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  <link href="styles/site-default.css" rel="stylesheet" />
+  <title>Growing Up NYC Patterns</title><noscript>
+    <style>
+      body {
+        visibility: visible !important;
       }
-    </script>
-  </head>
-  <body>
-    <div class="o-offcanvas js-offcanvas" id="offcanvas-patterns">
-      <nav aria-label="patterns-heading" class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="patterns" role="navigation">
-        <h2 class="show-for-screen-reader" id="patterns-heading">Resources by Patterns</h2>
-        <button class="o-offcanvas__close button--text" data-js="offcanvas-patterns">
-          <svg class="icon--small" role="img">
-            <title>Close Resources by Patterns</title>
-            <use xlink:href="#icon-close"></use>
-          </svg>
-        </button>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Elements</h3>
-          <a class="block" href="base">Base</a>
-          <a class="block" href="button">Button</a>
-          <a class="block" href="divider">Divider</a>
-          <a class="block" href="checkbox">Checkbox</a>
-          <a class="block" href="hero">Hero</a>
-          <a class="block" href="icons">Icons</a>
-          <a class="block" href="input">Input</a>
-          <a class="block" href="layouts">Layouts</a>
-          <a class="block" href="lists">Lists</a>
-          <a class="block" href="spinner">Spinner</a>
-          <a class="block" href="sticker">Sticker</a>
-          <a class="block" href="table">Table</a>
+    </style>
+  </noscript>
+  <script type="text/javascript">
+    function load() {
+      document.body.style.visibility = 'visible'
+    };
+  </script>
+</head>
+
+<body>
+  <div class="o-offcanvas js-offcanvas" id="offcanvas-patterns">
+    <nav aria-label="patterns-heading"
+      class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side"
+      id="patterns" role="navigation">
+      <h2 class="show-for-screen-reader" id="patterns-heading">Resources by
+        Patterns</h2><button class="o-offcanvas__close button--text"
+        data-js="offcanvas-patterns"><svg class="icon--small" role="img">
+          <title>Close Resources by Patterns</title>
+          <use xlink:href="#icon-close"></use>
+        </svg></button>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Elements</h3><a class="block" href="base">Base</a><a class="block"
+          href="button">Button</a><a class="block" href="divider">Divider</a><a
+          class="block" href="checkbox">Checkbox</a><a class="block"
+          href="hero">Hero</a><a class="block" href="icons">Icons</a><a
+          class="block" href="input">Input</a><a class="block"
+          href="layouts">Layouts</a><a class="block" href="lists">Lists</a><a
+          class="block" href="spinner">Spinner</a><a class="block"
+          href="sticker">Sticker</a><a class="block" href="table">Table</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Components</h3><a class="block" href="age-guide-card">Age Guide
+          Card</a><a class="block" href="arrow-pager">Arrow pager</a><a
+          class="block" href="block-list">Block List</a><a class="block"
+          href="card">Card</a><a class="block" href="details-list">Details
+          List</a><a class="block" href="footer">Footer</a><a class="block"
+          href="form">Form</a><a class="block" href="hero">Hero</a><a
+          class="block" href="language-switcher">Language switcher</a><a
+          class="block" href="list-box">List Box</a><a class="block"
+          href="share">Share</a><a class="block" href="side-hero">Side
+          hero</a><a class="block" href="side-navigation">Side Navigation</a><a
+          class="block" href="tip">Tip</a><a class="block" href="tip-card">Tip
+          Card</a><a class="block" href="tout">Tout</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Objects</h3><a class="block" href="accordion">Accordion</a><a
+          class="block" href="alert-banner">Alert banner</a><a class="block"
+          href="article">Article</a><a class="block"
+          href="container">Container</a><a class="block"
+          href="content">Content</a><a class="block"
+          href="feature-photo">Feature photo</a><a class="block"
+          href="flex-embed">Flex embed</a><a class="block"
+          href="inline-list">Inline List</a><a class="block"
+          href="navigation">Navigation</a><a class="block"
+          href="newsletter">Newsletter</a><a class="block"
+          href="overlay">Overlay</a><a class="block" href="search">Search</a><a
+          class="block" href="static-column">Static column</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Utilities</h3><a class="block"
+          href="accessibility">Accessibility</a><a class="block"
+          href="animations">Animations</a><a class="block"
+          href="background-image">Background image</a><a class="block"
+          href="color">Color</a><a class="block" href="fonts">Font</a><a
+          class="block" href="form-effects">Form Effects</a><a class="block"
+          href="offcanvas">Offcanvas</a><a class="block"
+          href="reveal">Reveal</a><a class="block"
+          href="section-highlighter">Section Highlighter</a><a class="block"
+          href="sticky">Sticky</a><a class="block"
+          href="tailwind">Tailwind</a><a class="block"
+          href="typography">Typography</a>
+      </div>
+    </nav>
+    <div class="o-offcanvas__main js-offcanvas__main">
+      <header class="o-navigation p-12">
+        <div class="o-container"><a
+            class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-1 mobile:h-16 desktop:h-20 shadow-none p-1"
+            href="/growingupnyc-patterns-development"><span
+              class="o-navigation__logo">Growing Up NYC</span></a>
+          <nav class="o-navigation__nav">
+            <ul class="o-inline text-left -mt-8">
+              <li class="o-inline__item"><a
+                  class="o-navigation__nav-link js-offcanvas"
+                  data-js="offcanvas-patterns" href="#patterns">Patterns</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Components</h3>
-          <a class="block" href="age-guide-card">Age Guide Card</a>
-          <a class="block" href="arrow-pager">Arrow pager</a>
-          <a class="block" href="block-list">Block List</a>
-          <a class="block" href="card">Card</a>
-          <a class="block" href="details-list">Details List</a>
-          <a class="block" href="footer">Footer</a>
-          <a class="block" href="form">Form</a>
-          <a class="block" href="hero">Hero</a>
-          <a class="block" href="language-switcher">Language switcher</a>
-          <a class="block" href="list-box">List Box</a>
-          <a class="block" href="share">Share</a>
-          <a class="block" href="side-hero">Side hero</a>
-          <a class="block" href="side-navigation">Side Navigation</a>
-          <a class="block" href="tip">Tip</a>
-          <a class="block" href="tip-card">Tip Card</a>
-          <a class="block" href="tout">Tout</a>
-        </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Objects</h3>
-          <a class="block" href="accordion">Accordion</a>
-          <a class="block" href="alert-banner">Alert banner</a>
-          <a class="block" href="article">Article</a>
-          <a class="block" href="container">Container</a>
-          <a class="block" href="content">Content</a>
-          <a class="block" href="feature-photo">Feature photo</a>
-          <a class="block" href="flex-embed">Flex embed</a>
-          <a class="block" href="inline-list">Inline List</a>
-          <a class="block" href="navigation">Navigation</a>
-          <a class="block" href="newsletter">Newsletter</a>
-          <a class="block" href="overlay">Overlay</a>
-          <a class="block" href="search">Search</a>
-          <a class="block" href="static-column">Static column</a>
-        </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Utilities</h3>
-          <a class="block" href="accessibility">Accessibility</a>
-          <a class="block" href="animations">Animations</a>
-          <a class="block" href="background-image">Background image</a>
-          <a class="block" href="color">Color</a>
-          <a class="block" href="fonts">Font</a>
-          <a class="block" href="form-effects">Form Effects</a>
-          <a class="block" href="offcanvas">Offcanvas</a>
-          <a class="block" href="reveal">Reveal</a>
-          <a class="block" href="section-highlighter">Section Highlighter</a>
-          <a class="block" href="sticky">Sticky</a>
-          <a class="block" href="tailwind">Tailwind</a>
-          <a class="block" href="typography">Typography</a>
-        </div>
-      </nav>
-      <div class="o-offcanvas__main js-offcanvas__main">
-        <header class="o-navigation p-12">
-          <div class="o-container">
-            <a class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-1 mobile:h-16 desktop:h-20 shadow-none p-1" href="/growingupnyc-patterns-development"><span class="o-navigation__logo">Growing Up NYC</span></a>
-            <nav class="o-navigation__nav">
-              <ul class="o-inline text-left -mt-8">
-                <li class="o-inline__item"><a class="o-navigation__nav-link js-offcanvas" data-js="offcanvas-patterns" href="#patterns">Patterns</a></li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <a aria-hidden="true" class="o-offcanvas__overlay" data-js="offcanvas-patterns"></a>
-        <main class="pt-12 mobile:pt-20 tablet:pt-32">
+      </header><a aria-hidden="true" class="o-offcanvas__overlay"
+        data-js="offcanvas-patterns"></a>
+      <main class="pt-12 mobile:pt-20 tablet:pt-32">
+        <div>
+          <header></header>
           <div>
-            <header></header>
-            <div>
-              <div class="desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-11/12 ml-auto mr-auto">
-                <div class="flex flex-wrap desktop-lg:mb-20 desktop:mb-10"><h1 class="type-h1 ">Lists</h1></div>
-                <div class="html-tag my-8"><div><p>Basic list elements often used with single program page.</p>
-</div></div>
-                <div class="my-8 py-4">
+            <div
+              class="desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-11/12 ml-auto mr-auto">
+              <div class="flex flex-wrap desktop-lg:mb-20 desktop:mb-10">
+                <h1 class="type-h1 ">Lists</h1>
+              </div>
+              <div class="html-tag my-8">
+                <div>
+                  <p>Basic list elements often used with single program page.
+                  </p>
+                </div>
+              </div>
+              <div class="my-8 py-4">
+                <div>
                   <div>
-                    <div>
-                      <ol class="list-order-no-style">
-                        <li>Baby</li>
-                        <li>Toddler</li>
-                        <li>Pre-Schooler</li>
-                      </ol>
-                    </div>
-                    <div class="mt-6 bg-color-gray-light py-8 px-4 overflow-hidden"><pre>&lt;ol class=&quot;list-order-no-style&quot;&gt;
+                    <ol class="list-order-no-style">
+                      <li>Baby</li>
+                      <li>Toddler</li>
+                      <li>Pre-Schooler</li>
+                    </ol>
+                  </div>
+                  <div
+                    class="mt-6 bg-color-gray-light py-8 px-4 overflow-hidden">
+                    <pre>&lt;ol class=&quot;list-order-no-style&quot;&gt;
   &lt;li&gt;Baby&lt;/li&gt;
   &lt;li&gt;Toddler&lt;/li&gt;
   &lt;li&gt;Pre-Schooler&lt;/li&gt;
-&lt;/ol&gt;
-</pre></div>
+&lt;/ol&gt;</pre>
                   </div>
                 </div>
               </div>
-              <div class="desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-11/12 ml-auto mr-auto">
-                <div class="flex flex-wrap desktop-lg:mb-20 desktop:mb-10"><h1 class="type-h1 ">Unordred List</h1></div>
-                <div class="html-tag my-8"><div></div></div>
-                <div class="my-8 py-4">
+            </div>
+            <div
+              class="desktop-lg:w-8/12 desktop:w-10/12 tablet:w-10/12 w-11/12 ml-auto mr-auto">
+              <div class="flex flex-wrap desktop-lg:mb-20 desktop:mb-10">
+                <h1 class="type-h1 ">Unordred List</h1>
+              </div>
+              <div class="html-tag my-8">
+                <div></div>
+              </div>
+              <div class="my-8 py-4">
+                <div>
                   <div>
-                    <div>
-                      <div class="list-unordered--check">
-                        <ul>
-                          <li>Children are 6-weeks to 4-years old</li>
-                          <li>Meet income guidelines</li>
-                          <li>Working and non-working families may be eligible</li>
-                        </ul>
-                      </div>
+                    <div class="list-unordered--check">
+                      <ul>
+                        <li>Children are 6-weeks to 4-years old</li>
+                        <li>Meet income guidelines</li>
+                        <li>Working and non-working families may be eligible
+                        </li>
+                      </ul>
                     </div>
-                    <div class="mt-6 bg-color-gray-light py-8 px-4 overflow-hidden"><pre>&lt;div class=&quot;list-unordered--check&quot;&gt;
+                  </div>
+                  <div
+                    class="mt-6 bg-color-gray-light py-8 px-4 overflow-hidden">
+                    <pre>&lt;div class=&quot;list-unordered--check&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;Children are 6-weeks to 4-years old&lt;/li&gt;
     &lt;li&gt;Meet income guidelines&lt;/li&gt;
     &lt;li&gt;Working and non-working families may be eligible&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/div&gt;
-</pre></div>
+&lt;/div&gt;</pre>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer class="o-footer text-center">
+    <div class="o-container flex flex-wrap mb-10">
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Elements</h3><a class="block text-color-white"
+          href="base">Base</a><a class="block text-color-white"
+          href="button">Button</a><a class="block text-color-white"
+          href="divider">Divider</a><a class="block text-color-white"
+          href="checkbox">Checkbox</a><a class="block text-color-white"
+          href="hero">Hero</a><a class="block text-color-white"
+          href="icons">Icons</a><a class="block text-color-white"
+          href="input">Input</a><a class="block text-color-white"
+          href="layouts">Layouts</a><a class="block text-color-white"
+          href="lists">Lists</a><a class="block text-color-white"
+          href="spinner">Spinner</a><a class="block text-color-white"
+          href="sticker">Sticker</a><a class="block text-color-white"
+          href="table">Table</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Components</h3><a class="block text-color-white"
+          href="age-guide-card">Age Guide Card</a><a
+          class="block text-color-white" href="arrow-pager">Arrow pager</a><a
+          class="block text-color-white" href="block-list">Block List</a><a
+          class="block text-color-white" href="card">Card</a><a
+          class="block text-color-white" href="details-list">Details List</a><a
+          class="block text-color-white" href="footer">Footer</a><a
+          class="block text-color-white" href="form">Form</a><a
+          class="block text-color-white" href="hero">Hero</a><a
+          class="block text-color-white" href="language-switcher">Language
+          switcher</a><a class="block text-color-white" href="list-box">List
+          Box</a><a class="block text-color-white" href="share">Share</a><a
+          class="block text-color-white" href="side-hero">Side hero</a><a
+          class="block text-color-white" href="side-navigation">Side
+          Navigation</a><a class="block text-color-white" href="tip">Tip</a><a
+          class="block text-color-white" href="tip-card">Tip Card</a><a
+          class="block text-color-white" href="tout">Tout</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Objects</h3><a class="block text-color-white"
+          href="accordion">Accordion</a><a class="block text-color-white"
+          href="alert-banner">Alert banner</a><a class="block text-color-white"
+          href="article">Article</a><a class="block text-color-white"
+          href="container">Container</a><a class="block text-color-white"
+          href="content">Content</a><a class="block text-color-white"
+          href="feature-photo">Feature photo</a><a
+          class="block text-color-white" href="flex-embed">Flex embed</a><a
+          class="block text-color-white" href="inline-list">Inline List</a><a
+          class="block text-color-white" href="navigation">Navigation</a><a
+          class="block text-color-white" href="newsletter">Newsletter</a><a
+          class="block text-color-white" href="overlay">Overlay</a><a
+          class="block text-color-white" href="search">Search</a><a
+          class="block text-color-white" href="static-column">Static column</a>
+      </div>
+      <div class="tablet:flex-1 w-full mb-10">
+        <h3>Utilities</h3><a class="block text-color-white"
+          href="accessibility">Accessibility</a><a
+          class="block text-color-white" href="animations">Animations</a><a
+          class="block text-color-white" href="background-image">Background
+          image</a><a class="block text-color-white" href="color">Color</a><a
+          class="block text-color-white" href="fonts">Font</a><a
+          class="block text-color-white" href="form-effects">Form Effects</a><a
+          class="block text-color-white" href="offcanvas">Offcanvas</a><a
+          class="block text-color-white" href="reveal">Reveal</a><a
+          class="block text-color-white" href="section-highlighter">Section
+          Highlighter</a><a class="block text-color-white"
+          href="sticky">Sticky</a><a class="block text-color-white"
+          href="tailwind">Tailwind</a><a class="block text-color-white"
+          href="typography">Typography</a>
       </div>
     </div>
-    <footer class="c-footer text-center">
-      <div class="o-container flex flex-wrap mb-10">
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Elements</h3>
-          <a class="block text-color-white" href="base">Base</a>
-          <a class="block text-color-white" href="button">Button</a>
-          <a class="block text-color-white" href="divider">Divider</a>
-          <a class="block text-color-white" href="checkbox">Checkbox</a>
-          <a class="block text-color-white" href="hero">Hero</a>
-          <a class="block text-color-white" href="icons">Icons</a>
-          <a class="block text-color-white" href="input">Input</a>
-          <a class="block text-color-white" href="layouts">Layouts</a>
-          <a class="block text-color-white" href="lists">Lists</a>
-          <a class="block text-color-white" href="spinner">Spinner</a>
-          <a class="block text-color-white" href="sticker">Sticker</a>
-          <a class="block text-color-white" href="table">Table</a>
-        </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Components</h3>
-          <a class="block text-color-white" href="age-guide-card">Age Guide Card</a>
-          <a class="block text-color-white" href="arrow-pager">Arrow pager</a>
-          <a class="block text-color-white" href="block-list">Block List</a>
-          <a class="block text-color-white" href="card">Card</a>
-          <a class="block text-color-white" href="details-list">Details List</a>
-          <a class="block text-color-white" href="footer">Footer</a>
-          <a class="block text-color-white" href="form">Form</a>
-          <a class="block text-color-white" href="hero">Hero</a>
-          <a class="block text-color-white" href="language-switcher">Language switcher</a>
-          <a class="block text-color-white" href="list-box">List Box</a>
-          <a class="block text-color-white" href="share">Share</a>
-          <a class="block text-color-white" href="side-hero">Side hero</a>
-          <a class="block text-color-white" href="side-navigation">Side Navigation</a>
-          <a class="block text-color-white" href="tip">Tip</a>
-          <a class="block text-color-white" href="tip-card">Tip Card</a>
-          <a class="block text-color-white" href="tout">Tout</a>
-        </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Objects</h3>
-          <a class="block text-color-white" href="accordion">Accordion</a>
-          <a class="block text-color-white" href="alert-banner">Alert banner</a>
-          <a class="block text-color-white" href="article">Article</a>
-          <a class="block text-color-white" href="container">Container</a>
-          <a class="block text-color-white" href="content">Content</a>
-          <a class="block text-color-white" href="feature-photo">Feature photo</a>
-          <a class="block text-color-white" href="flex-embed">Flex embed</a>
-          <a class="block text-color-white" href="inline-list">Inline List</a>
-          <a class="block text-color-white" href="navigation">Navigation</a>
-          <a class="block text-color-white" href="newsletter">Newsletter</a>
-          <a class="block text-color-white" href="overlay">Overlay</a>
-          <a class="block text-color-white" href="search">Search</a>
-          <a class="block text-color-white" href="static-column">Static column</a>
-        </div>
-        <div class="tablet:flex-1 w-full mb-10">
-          <h3>Utilities</h3>
-          <a class="block text-color-white" href="accessibility">Accessibility</a>
-          <a class="block text-color-white" href="animations">Animations</a>
-          <a class="block text-color-white" href="background-image">Background image</a>
-          <a class="block text-color-white" href="color">Color</a>
-          <a class="block text-color-white" href="fonts">Font</a>
-          <a class="block text-color-white" href="form-effects">Form Effects</a>
-          <a class="block text-color-white" href="offcanvas">Offcanvas</a>
-          <a class="block text-color-white" href="reveal">Reveal</a>
-          <a class="block text-color-white" href="section-highlighter">Section Highlighter</a>
-          <a class="block text-color-white" href="sticky">Sticky</a>
-          <a class="block text-color-white" href="tailwind">Tailwind</a>
-          <a class="block text-color-white" href="typography">Typography</a>
+    <div class="o-container flex flex-wrap mb-20 text-left">
+      <div class="o-footer__section  tablet:w-1/2 flex-col flex-wrap">
+        <div class="o-footer__logos flex flex-wrap -ml-5">
+          <figure><svg class="icon--logo">
+              <title>Growing Up NYC Logo</title>
+              <use xlink:href="#icon-growingupnyc-logo-white"></use>
+            </svg></figure>
         </div>
       </div>
-      <div class="o-container flex flex-wrap mb-20 text-left">
-        <div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap">
-          <div class="c-footer__logos flex flex-wrap -ml-5">
-            <figure>
-              <svg class="icon--logo">
-                <title>Growing Up NYC Logo</title>
-                <use xlink:href="#icon-growingupnyc-logo-white"></use>
-              </svg>
-            </figure>
-          </div>
-        </div>
-        <div class="c-footer__section  tablet:w-1/2 flex-col flex-wrap">
-          <p>Maintained by</p>
-          <div class="c-footer__logos flex flex-wrap">
-            <figure>
-              <svg class="icon--logo">
-                <title>Growing Up NYC Logo</title>
-                <use xlink:href="#icon-mayors-office-logo"></use>
-              </svg>
-            </figure>
-          </div>
+      <div class="o-footer__section  tablet:w-1/2 flex-col flex-wrap">
+        <p>Maintained by</p>
+        <div class="o-footer__logos flex flex-wrap">
+          <figure><svg class="icon--logo">
+              <title>Growing Up NYC Logo</title>
+              <use xlink:href="#icon-mayors-office-logo"></use>
+            </svg></figure>
         </div>
       </div>
-    </footer>
-    <script src="scripts/growingup-nyc.js"></script>
-    <script type="text/javascript">
-      var gunyc = new GUNYC();
-      gunyc.navigation({ sideSelector: 'down' });
-      gunyc.icons();
-      gunyc.accordion();
-      gunyc.newsletter();
-      gunyc.formEffect();
-    </script>
-    <script src="/reload/reload.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="scripts/growingup-nyc.js"></script>
+  <script type="text/javascript">
+    var gunyc = new GUNYC();
+    gunyc.navigation({
+      sideSelector: 'down'
+    });
+    gunyc.icons();
+    gunyc.accordion();
+    gunyc.newsletter();
+    gunyc.formEffect();
+  </script>
+</body>
+
 </html>

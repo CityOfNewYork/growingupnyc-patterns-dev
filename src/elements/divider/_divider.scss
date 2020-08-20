@@ -2,10 +2,9 @@
  * Divider
  */
 
-@import 'config/tokens';
 @import 'config/colors';
+@import 'scss/functions/rem-calc';
 
-// Declarations
 .divider {
   background: $color-gray-light;
   border-radius: 6.5px;

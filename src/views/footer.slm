@@ -14,4 +14,4 @@
 = content('main')
   = mixin('content-header', title);
   div
-    = mixin('section', 'Footer', 'components/footer/footer');
+    = mixin('section', 'Footer', 'objects/footer/footer');

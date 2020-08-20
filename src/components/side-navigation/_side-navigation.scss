@@ -3,8 +3,9 @@
  */
 
 @import 'config/colors';
+@import 'scss/functions/rem-calc';
+@import 'scss/functions/font-size';
 
-// Local Variables
 $indicator-size: 10px;
 
 .c-nav-list {
@@ -38,14 +39,6 @@ $indicator-size: 10px;
     background-color: $color-primary;
     border-color: $color-primary;
     color: $color-text-invert;
-  }
-
-  .no-touchevents & {
-    &:hover {
-      background-color: $color-primary;
-      border-color: $color-primary;
-      color: $color-text-invert;
-    }
   }
 
 	@media screen and (min-width: $screen-desktop) {
@@ -86,36 +79,32 @@ $indicator-size: 10px;
 
 
     @if ($language == 'ar') or ($language == 'ur') {
-      .no-touchevents & {
-        &:hover {
-          &:after {
-            content: '';
-            display: block;
-            border: $indicator-size solid transparent;
-            border-left-color: inherit;
-            margin-top: -#{$indicator-size};
-            position: absolute;
-            top: 50%;
+      &:hover {
+        &:after {
+          content: '';
+          display: block;
+          border: $indicator-size solid transparent;
+          border-left-color: inherit;
+          margin-top: -#{$indicator-size};
+          position: absolute;
+          top: 50%;
 
-            left: -#{$indicator-size * 2};
-            transform: rotate(180deg);
-          }
+          left: -#{$indicator-size * 2};
+          transform: rotate(180deg);
         }
       }
     }
     @else {
-      .no-touchevents & {
-        &:hover {
-          &:after {
-            content: '';
-            display: block;
-            border: $indicator-size solid transparent;
-            border-left-color: inherit;
-            margin-top: -#{$indicator-size};
-            position: absolute;
-            right: -#{$indicator-size * 2};
-            top: 50%;
-          }
+      &:hover {
+        &:after {
+          content: '';
+          display: block;
+          border: $indicator-size solid transparent;
+          border-left-color: inherit;
+          margin-top: -#{$indicator-size};
+          position: absolute;
+          right: -#{$indicator-size * 2};
+          top: 50%;
         }
       }
     }

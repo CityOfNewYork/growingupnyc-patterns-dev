@@ -1,9 +1,6 @@
 /
 / Block-list
 
-
-div class="c-block-list"
-
 div class="o-content-container c-block-list c-block-list--shade"
   h2
     = 'Other Child Care Programs'

@@ -4,6 +4,7 @@
 
 const package = require(`${process.env.PWD}/package.json`);
 const tokens = require(`${process.env.PWD}/config/tokens`);
+const patterns = require(`${process.env.PWD}/config/nav`);
 
 /**
  * Config
@@ -14,6 +15,7 @@ module.exports = {
   views: 'views',
   dist: 'dist',
   tokens: tokens,
+  patterns: patterns,
   beautify: {
     indent_size: 2,
     indent_char: ' ',
@@ -29,7 +31,7 @@ module.exports = {
     }
   },
   urls: {
-    production: 'https://cityofnewyork.github.io/growingupnyc-patterns',
+    production: 'https://nycopportunity.github.io/growingupnyc-patterns',
     cdn: `https://cdn.jsdelivr.net/gh/CityOfNewYork/growingupnyc-patterns@v${package.version}/dist`
   },
   forms: {

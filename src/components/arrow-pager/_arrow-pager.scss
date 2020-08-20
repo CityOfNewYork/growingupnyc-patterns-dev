@@ -2,7 +2,10 @@
  * Arrow-pager
  */
 
-// Declarations
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/media';
+@import 'scss/functions/font-size';
 
 .c-arrow-pager {
   font-family: $font-family-display;
@@ -25,10 +28,11 @@
 		svg {
 			transform: rotate(180deg);
 		}
-	}
-}
-
-.previous {
-  float: left;
-  padding-right: 5px;
+  }
+  
+  &:hover {
+    svg {
+			fill: $color-primary;
+		}
+  }
 }

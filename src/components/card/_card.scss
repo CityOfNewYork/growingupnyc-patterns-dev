@@ -2,12 +2,11 @@
  * Card
  */
 
-// Dependencies
-
 @import 'config/media';
 @import 'config/colors';
 @import 'config/stickers';
-
+@import 'scss/functions/font-size';
+@import 'scss/functions/rem-calc';
 
 .c-card {
   background: $color-background;
@@ -44,7 +43,6 @@
 }
 
 // Content Card Sticker
-//
 // Badge holding card icon or short descriptor
 .c-card__sticker {
   order: 1;
@@ -73,9 +71,7 @@
   }
 }
 
-
 // Content Card Title
-//
 .c-card__title {
   font-family: $font-family-display;
   font-size: rem-calc(22);
@@ -100,21 +96,16 @@
 }
 
 // Content Card Tags
-//
 // Pill-style display of categories or other metadata.
-
 .c-card__tags {
   margin: rem-calc(0 0 10);
   order: 5;
 }
 
 // Content Card Subtitle
-//
 // Displayed below the title on most variations,
 // above the title when c-card--subtitle-first variation is used.
 // Strongly emphasized text is displayed in a darker color.
-//
-
 .c-card__subtitle {
   color: $color-text-weak;
   font-family: $font-family-display;
@@ -145,10 +136,7 @@
 }
 
 // Content Card Body
-//
 // Body text within the card
-//
-
 .c-card__body {
   @include font-size-small;
   margin: rem-calc(0 0 12);
@@ -156,7 +144,6 @@
 }
 
 // Content Card Link
-//
 .c-card__link {
   color: $color-text-weak;
   margin: rem-calc(0 0 16);
@@ -168,14 +155,6 @@
 
     &:focus {
       color: $color-text;
-    }
-  }
-
-  .no-touchevents & {
-    a {
-      &:hover {
-        color: $color-text;
-      }
     }
   }
 }
@@ -198,16 +177,9 @@
   &:focus {
     color: $color-text;
   }
-
-  .no-touchevents & {
-    &:hover {
-      color: $color-text;
-    }
-  }
 }
 
 // Content Card Label
-//
 .c-card__label {
   background: $color-background;
   border-radius: 3px;

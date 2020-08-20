@@ -7,7 +7,6 @@
 = partial('/slm/partials/content-header.mixin.slm');
 = partial('/slm/partials/section.mixin.slm');
 
-
 / Content blocks
 = content('head');
   = mixin('head');

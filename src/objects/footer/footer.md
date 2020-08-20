@@ -1,0 +1,1 @@
+The Footer object contains logos, menu, and signup form.

@@ -1,4 +1,11 @@
-//SMS form
+/**
+ * Share
+ */
+
+@import 'config/colors';
+@import 'config/media';
+@import 'scss/functions/rem-calc';
+
 .form-container {
   display: block;
   justify-content: center;

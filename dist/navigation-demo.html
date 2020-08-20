@@ -1,119 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
-    <link href="styles/site-default.css" rel="stylesheet" />
-    <script type="text/javascript">
-      (function(d) {
-        var config = {
-            kitId: 'wyh7nce',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h = d.documentElement,
-          t = setTimeout(function() {
-            h.className = h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
-          }, config.scriptTimeout),
-          tk = d.createElement('script'),
-          f = false,
-          s = d.getElementsByTagName('script')[0],
-          a;
-        h.className += ' wf-loading';
-        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-        tk.async = true;
-        tk.onload = tk.onreadystatechange = function() {
-          a = this.readyState;
-          if (f || (a && a != 'complete' && a != 'loaded')) return;
-          f = true;
-          clearTimeout(t);
-          try {
-            Typekit.load(config);
-          } catch (e) {}
-        };
-        s.parentNode.insertBefore(tk, s);
-      })(document);
-    </script>
-    <title>Growing Up NYC Patterns</title>
-    <noscript>
-      <style>
-        body {
-          visibility: visible !important;
-        }
-      </style>
-    </noscript>
-    <script type="text/javascript">
-      function load() {
-        document.body.style.visibility = 'visible';
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  <link href="styles/site-default.css" rel="stylesheet" />
+  <title>Growing Up NYC Patterns</title><noscript>
+    <style>
+      body {
+        visibility: visible !important;
       }
-    </script>
-  </head>
-  <body>
-    <div><div></div></div>
-    <div class="o-offcanvas js-offcanvas" id="offcanvas-ages">
-      <nav aria-label="ages-heading" class="o-offcanvas__side js-offcanvas__side" id="ages" role="navigation">
-        <h2 class="show-for-screen-reader" id="ages-heading">Resources by Age</h2>
-        <button class="o-offcanvas__close button--text" data-js="offcanvas-ages">
-          <svg class="icon--small" role="img">
-            <title>Close Resources by Age</title>
-            <use xlink:href="#icon-close"></use>
-          </svg>
-        </button>
-        <ol class="js-accordion c-list-box c-list-box--secondary" data-multiselectable="true">
-          <li class="c-list-box__item">
-            <h3 class="js-accordion__header c-list-box__heading" id="baby-heading" tabindex="0">Baby</h3>
-            <ol class="js-accordion__content c-list-box__content">
-              <li><a class="c-list-box__subitem" href="#">2 months</a></li>
-            </ol>
-            <ol class="js-accordion__content c-list-box__content">
-              <li><a class="c-list-box__subitem" href="#">4 months</a></li>
-            </ol>
-            <ol class="js-accordion__content c-list-box__content">
-              <li><a class="c-list-box__subitem" href="#">6 months</a></li>
-            </ol>
-            <ol class="js-accordion__content c-list-box__content">
-              <li><a class="c-list-box__subitem" href="#">9 months</a></li>
-            </ol>
-          </li>
-        </ol>
-      </nav>
-      <div class="o-offcanvas__main mb-40">
-        <header class="o-navigation">
-          <div class="o-container">
-            <a class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-8" href="#"><span class="o-navigation__logo">Growing Up NYC</span></a>
-            <nav class="o-navigation__nav">
-              <ul class="o-inline">
-                <li class="o-inline__item"><a class="o-navigation__nav-link" href="#">Programs</a></li>
-                <li class="o-inline__item"><a class="o-navigation__nav-link" href="#">Events</a></li>
-                <li class="o-inline__item"><a class="o-navigation__nav-link js-offcanvas" data-js="offcanvas-ages" href="#ages">Ages</a></li>
-                <li class="o-inline__item">
-                  <a class="o-navigation__nav-link" href="#search">
-                    <svg class="o-navigation__icon o-navigation__icon__search" role="img">
-                      <title>Search</title>
-                      <use xlink:href="#icon-search"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-      </div>
-      <div class="o-offcanvas__main js-offcanvas__main o-offcanvas__main-right">
-        <a aria-hidden="true" class="o-offcanvas__overlay" data-js="offcanvas-ages"></a>
-        <div class="my-20 text-center py-20"><a class="text-color-blue-light" href="navigation">Back to Navigation</a></div>
-      </div>
+    </style>
+  </noscript>
+  <script type="text/javascript">
+    function load() {
+      document.body.style.visibility = 'visible'
+    };
+  </script>
+</head>
+
+<body>
+  <div>
+    <div></div>
+  </div>
+  <div class="o-offcanvas js-offcanvas" id="offcanvas-ages">
+    <nav aria-label="ages-heading" class="o-offcanvas__side js-offcanvas__side"
+      id="ages" role="navigation">
+      <h2 class="show-for-screen-reader" id="ages-heading">Resources by Age</h2>
+      <button class="o-offcanvas__close button--text"
+        data-js="offcanvas-ages"><svg class="icon--small" role="img">
+          <title>Close Resources by Age</title>
+          <use xlink:href="#icon-close"></use>
+        </svg></button>
+      <ol class="js-accordion c-list-box c-list-box--secondary"
+        data-multiselectable="true">
+        <li class="c-list-box__item">
+          <h3 class="js-accordion__header c-list-box__heading" id="baby-heading"
+            tabindex="0">Baby</h3>
+          <ol class="js-accordion__content c-list-box__content">
+            <li><a class="c-list-box__subitem" href="#">2 months</a></li>
+          </ol>
+          <ol class="js-accordion__content c-list-box__content">
+            <li><a class="c-list-box__subitem" href="#">4 months</a></li>
+          </ol>
+          <ol class="js-accordion__content c-list-box__content">
+            <li><a class="c-list-box__subitem" href="#">6 months</a></li>
+          </ol>
+          <ol class="js-accordion__content c-list-box__content">
+            <li><a class="c-list-box__subitem" href="#">9 months</a></li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+    <div class="o-offcanvas__main mb-40">
+      <header class="o-navigation">
+        <div class="o-container"><a
+            class="o-navigation__logo-wrapper o-navigation__logo-wrapper-no-menu mt-8"
+            href="#"><span class="o-navigation__logo">Growing Up NYC</span></a>
+          <nav class="o-navigation__nav">
+            <ul class="o-inline">
+              <li class="o-inline__item"><a class="o-navigation__nav-link"
+                  href="#">Programs</a></li>
+              <li class="o-inline__item"><a class="o-navigation__nav-link"
+                  href="#">Events</a></li>
+              <li class="o-inline__item"><a
+                  class="o-navigation__nav-link js-offcanvas"
+                  data-js="offcanvas-ages" href="#ages">Ages</a></li>
+              <li class="o-inline__item"><a class="o-navigation__nav-link"
+                  href="#search"><svg
+                    class="o-navigation__icon o-navigation__icon__search"
+                    role="img">
+                    <title>Search</title>
+                    <use xlink:href="#icon-search"></use>
+                  </svg></a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     </div>
-    <script src="scripts/growingup-nyc.js"></script>
-    <script type="text/javascript">
-      var gunyc = new GUNYC();
-      gunyc.accordion();
-      gunyc.icons();
-    </script>
-    <script type="text/javascript">
-      gunyc.navigation({ sideSelector: 'right' });
-    </script>
-  </body>
+    <div class="o-offcanvas__main js-offcanvas__main o-offcanvas__main-right"><a
+        aria-hidden="true" class="o-offcanvas__overlay"
+        data-js="offcanvas-ages"></a>
+      <div class="my-20 text-center py-20"><a class="text-color-blue-light"
+          href="navigation">Back to Navigation</a></div>
+    </div>
+  </div>
+  <script src="scripts/growingup-nyc.js"></script>
+  <script type="text/javascript">
+    var gunyc = new GUNYC();
+    gunyc.accordion();
+    gunyc.icons();
+  </script>
+  <script type="text/javascript">
+    gunyc.navigation({
+      sideSelector: 'right'
+    });
+  </script>
+</body>
+
 </html>

@@ -2,13 +2,17 @@
  * Details-list
  */
 
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/media';
+@import 'scss/functions/rem-calc';
+
 .c-details-list {
   background: $color-background-shade;
   border-radius: 3px;
   padding: rem-calc(10 0);
 }
 
-// Details List Term
 .c-details-list__term {
   font-family: $font-family-display;
   @include font-size-large;
@@ -21,7 +25,6 @@
   }
 }
 
-// Details List Description
 .c-details-list__descr {
   padding: rem-calc(0 20 15);
   word-wrap: break-word;

@@ -13,7 +13,7 @@ div class="bg-color-gray-light p-10"
 
     div class="c-card__subtitle"
       p
-        strong = 'Program Name'
+        strong = 'EarlyLearn NYC Child Care'
       p = 'NYC Department of Education'
 
     div class="c-card__tags"

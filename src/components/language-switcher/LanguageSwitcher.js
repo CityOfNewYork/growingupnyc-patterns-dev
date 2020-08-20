@@ -7,8 +7,8 @@ class LanguageSwitcher {
    */
   constructor() {
     this._settings = {
-      selector: LanguageSwitcher.Selector,
-      target: LanguageSwitcher.Target,
+      selector: LanguageSwitcher.selector,
+      target: LanguageSwitcher.target,
       currentLanguage: LanguageSwitcher.currentLanguage,
       languageSwitcherWrapper: LanguageSwitcher.LanguageSwitcherWrapper,
       logoWrapper: LanguageSwitcher.logoWrapper,
@@ -34,7 +34,6 @@ class LanguageSwitcher {
     if (!languageSwitcherWrapper) {
       logoWrapper.style.marginTop = "2rem";
     }
-
 
     // add 'Translate' title and hide all languages
     // Crated a list element and append an anchor tag with the string 'Translate'
@@ -117,7 +116,6 @@ class LanguageSwitcher {
     // Append close icon
     closeIconLi.appendChild(CloseIconATag)
 
-
     // On mobile On click close language switcher
     CloseIconATag.addEventListener('click', (e) => {
       isLanguageSwitcherOpen = false;
@@ -131,7 +129,6 @@ class LanguageSwitcher {
       body.classList.remove("overflow-hidden");
 
     })
-
 
     // Onresize check screen size and apply all the changes
     window.addEventListener("resize", function () {
@@ -254,13 +251,11 @@ LanguageSwitcher.removeOverflowHidden = function (isMobile, body) {
   }
 }
 
-
-LanguageSwitcher.Selector = "rounded"
-LanguageSwitcher.Target = "wpml-ls-legacy-list-horizontal"
+LanguageSwitcher.selector = "rounded"
+LanguageSwitcher.target = "wpml-ls-legacy-list-horizontal"
 LanguageSwitcher.currentLanguage = "wpml-ls-current-language"
-LanguageSwitcher.LanguageSwitcherWrapper = "c-language-switcher-wrapper"
+LanguageSwitcher.languageSwitcherWrapper = "c-language-switcher-wrapper"
 LanguageSwitcher.logoWrapper = "o-navigation__logo-wrapper"
 LanguageSwitcher.googleTranslateLogo = "google-translate-logo"
-
 
 export default LanguageSwitcher;

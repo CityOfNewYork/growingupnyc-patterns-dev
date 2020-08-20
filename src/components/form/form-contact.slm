@@ -51,8 +51,8 @@ div class='p-4'
       legend
         =  "I'd like to:"
 
-      - for (index in this.site.forms.requestType)
-        - value = this.site.forms.requestType[index];
+      - for (index in this.forms.requestType)
+        - value = this.forms.requestType[index];
         span class='form__checkbox'
           label class='checkbox' for='${value.id}'
             input id='${value.id}' class='checkbox__field' name='${value.name}' type='checkbox' value='${value.value}'  required='true'

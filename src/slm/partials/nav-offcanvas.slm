@@ -6,7 +6,7 @@ nav class="flex flex-wrap text-center o-offcanvas__side js-offcanvas__side" id="
       title = 'Close Resources by Patterns'
       use xlink:href="#icon-close"
 
-  - for (var arr of this.tokens['patterns'])
+  - for (var arr of this.patterns['patterns'])
     - for (var prob in arr)
       div class="tablet:flex-1 w-full mb-10"
         h3 = prob

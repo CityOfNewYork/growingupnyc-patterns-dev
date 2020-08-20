@@ -1,17 +1,16 @@
 /
 / Details-list
 
-
 dl class="c-details-list"
   dt class="c-details-list__term"
-   = 'Term'
+   = 'Date'
   dd class="c-details-list__descr"
-   = 'Description'
+   = 'August 20, 2020'
   dt class="c-details-list__term"
-   = 'Term'
+   = 'Location'
   dd class="c-details-list__descr"
-   = 'Description'
+   = 'Brooklyn, NY'
   dt class="c-details-list__term"
-   = 'Term'
+   = 'Cost'
   dd class="c-details-list__descr"
-   = 'Description'
+   = 'Free'

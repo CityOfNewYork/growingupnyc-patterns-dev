@@ -1,7 +1,8 @@
 /
 / Age-guide
 /
-div class="c-block-list__item"
+
+div
   div class="age-guide-card border-baby--primary tablet:flex"
     h3 class="age-guide-card__title bg-baby--primary tablet:w-2/12"
       a href="" title="" class="age-guide-card__title-link"
