@@ -50,7 +50,8 @@ $width-banner-logo-large: $width-banner-logo * 2.4;
 
   padding: 0 5px 6px;
   position: absolute;
-  top: rem-calc(-35);
+  // top: rem-calc(-35);
+  top: -2.5875rem;
   width: rem-calc($width-banner-logo);
 
   @media screen and (min-width: $screen-mobile) {
@@ -62,6 +63,7 @@ $width-banner-logo-large: $width-banner-logo * 2.4;
     height: rem-calc($height-banner-logo-large);
     padding: 0 16px 15px 14px;
     width: rem-calc($width-banner-logo-large);
+    top: -4.375rem;
   }
 
 

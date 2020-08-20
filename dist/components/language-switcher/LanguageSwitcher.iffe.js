@@ -135,6 +135,7 @@ var LanguageSwitcher = (function () {
 
       if (!isLanguageSwitcherOpen) {
         if (isMobile.matches) {
+          googleTranslateLogo.style.removeProperty('visibility');
           googleTranslateLogo.style.display = "none";
         } else {
           googleTranslateLogo.style.removeProperty('display');
@@ -142,6 +143,7 @@ var LanguageSwitcher = (function () {
         }
       } else {
         if (isMobile.matches) {
+          googleTranslateLogo.style.removeProperty('visibility');
           googleTranslateLogo.style.display = "";
         } else {
           googleTranslateLogo.style.removeProperty('display');
